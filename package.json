@@ -15,7 +15,7 @@
     "alloy"
   ],
   "scripts": {
-    "build-docs": "typedoc src/",
+    "build-docs": "typedoc src/ && touch docs/.nojekyll",
     "build-ts": "tsc -p tsconfig.json"
   },
   "devDependencies": {
