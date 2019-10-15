@@ -1,0 +1,25 @@
+{
+  "name": "alloy-ts",
+  "version": "0.1.0",
+  "description": "Alloy instances in TypeScript",
+  "repository": "https://github.com/alloy-js/alloy-ts.git",
+  "author": {
+    "name": "Tristan Dyer",
+    "email": "atristandyer@gmail.com",
+    "url": "https://www.github.com/atdyer"
+  },
+  "main": "dist/Alloy.js",
+  "types": "dist/Alloy.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "alloy"
+  ],
+  "scripts": {
+    "build-docs": "typedoc src/",
+    "build-ts": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typedoc": "0.15.0",
+    "typescript": "3.6.4"
+  }
+}

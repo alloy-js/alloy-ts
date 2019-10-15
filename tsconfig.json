@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "module": "es6",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
+  },
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
