@@ -1,7 +1,7 @@
 export class AlloySource {
 
-    _filename: string;
-    _source: string;
+    private readonly _filename: string;
+    private readonly _source: string;
 
     /**
      * Create a new source by extracting the Alloy source code from an XML

@@ -7,16 +7,16 @@ import { AlloyTuple } from './AlloyTuple';
 
 export class AlloyInstance {
 
-    _bitwidth: number = 0;
-    _builddate: Date = new Date(0);
-    _command: string = '';
-    _filename: string = '';
-    _maxseq: number = 0;
-    _sources: Array<AlloySource> = [];
+    private _bitwidth: number = 0;
+    private _builddate: Date = new Date(0);
+    private _command: string = '';
+    private _filename: string = '';
+    private _maxseq: number = 0;
+    private _sources: Array<AlloySource> = [];
 
-    _signatures: Array<AlloySignature>;
-    _fields: Array<AlloyField>;
-    _skolems: Array<AlloySkolem>;
+    private _signatures: Array<AlloySignature>;
+    private _fields: Array<AlloyField>;
+    private _skolems: Array<AlloySkolem>;
 
     /**
      * Assemble an Alloy instance from an XML document.
