@@ -58,7 +58,7 @@ export class AlloyInstance {
         this._fields = Array.from(fields.values());
         this._skolems = Array.from(skolems.values());
 
-        this._xml = new AlloySource(this.filename(), text);
+        this._xml = new AlloySource('XML', text);
 
     }
 
@@ -189,7 +189,8 @@ export class AlloyInstance {
     }
 
     /**
-     * Return the XML file that was used to construct this instance.
+     * Return the XML file that was used to construct this instance. The
+     * filename of the returned [[AlloySource]] will be "XML".
      */
     xml (): AlloySource {
 
