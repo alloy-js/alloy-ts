@@ -7,15 +7,10 @@ export class AlloySource {
      * Create a new source by extracting the Alloy source code from an XML
      * element.
      *
-     * @param element The "source" element from an Alloy XML file
+     * @param filename The source filename
+     * @param source The source code
      */
-    constructor (element: Element) {
-
-        let filename: string | null = element.getAttribute('filename');
-        let source: string | null = element.getAttribute('content');
-
-        if (!filename) throw Error('No filename attribute in XML file');
-        if (!source) throw Error('No source attribute in XML file');
+    constructor (filename: string, source: string) {
 
         this._filename = filename;
         this._source = source;
@@ -37,6 +32,25 @@ export class AlloySource {
     source (): string {
 
         return this._source;
+
+    }
+
+    /**
+     * Create a new source by extracting the Alloy source code from an XML
+     * element.
+     *
+     * @param element The XML element containing a "filename" attribute and a
+     * "content" attribute.
+     */
+    static fromElement (element: Element): AlloySource {
+
+        let filename: string | null = element.getAttribute('filename');
+        let source: string | null = element.getAttribute('content');
+
+        if (!filename) throw Error('No filename attribute in XML file');
+        if (!source) throw Error('No source attribute in XML file');
+
+        return new AlloySource(filename, source);
 
     }
 

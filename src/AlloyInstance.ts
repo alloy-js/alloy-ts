@@ -18,24 +18,22 @@ export class AlloyInstance {
     private _fields: Array<AlloyField>;
     private _skolems: Array<AlloySkolem>;
 
+    private _xml: AlloySource;
+
     /**
      * Assemble an Alloy instance from an XML document.
      *
      * @remarks
      * Extracts and parses all info from an instance that has been exported
-     * from Alloy in XML format. Typically, XML files are read in Javascript
-     * and the resulting document passed to this constructor as follows:
+     * from Alloy in XML format. The plain text read from the XML file is passed
+     * to the constructor; all XML parsing is performed automatically.
      *
-     * ```javascript
-     * let text = '...'; // The text read from the XML file
-     * let parser = new DOMParser();
-     * let doc = parser.parseFromString(text, 'application/xml');
-     * let instance = new AlloyInstance(doc);
-     * ```
-     *
-     * @param document The XML document
+     * @param text The text from an Alloy XML file.
      */
-    constructor (document: Document) {
+    constructor (text: string) {
+
+        let parser = new DOMParser();
+        let document = parser.parseFromString(text, 'application/xml');
 
         this._parseAlloyAttributes(document.querySelector('alloy'));
         this._parseInstanceAttributes(document.querySelector('instance'));
@@ -60,7 +58,7 @@ export class AlloyInstance {
         this._fields = Array.from(fields.values());
         this._skolems = Array.from(skolems.values());
 
-
+        this._xml = new AlloySource(this.filename(), text);
 
     }
 
@@ -191,6 +189,15 @@ export class AlloyInstance {
     }
 
     /**
+     * Return the XML file that was used to construct this instance.
+     */
+    xml (): AlloySource {
+
+        return this._xml;
+
+    }
+
+    /**
      * Parse the attributes of the "alloy" XML element
      *
      * @remarks
@@ -253,7 +260,7 @@ export class AlloyInstance {
      */
     private _parseSourceCode (elements: Array<Element>) {
 
-        this._sources = elements.map(element => new AlloySource(element));
+        this._sources = elements.map(element => AlloySource.fromElement(element));
 
     }
 

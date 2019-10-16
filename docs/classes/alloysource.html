@@ -96,6 +96,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloysource.html#filename" class="tsd-kind-icon">filename</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloysource.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="alloysource.html#fromelement" class="tsd-kind-icon">from<wbr>Element</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,13 +108,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Alloy<wbr>Source<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloysource.html" class="tsd-signature-type">AlloySource</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Alloy<wbr>Source<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloysource.html" class="tsd-signature-type">AlloySource</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/a56a5dc/src/AlloySource.ts#L4">AlloySource.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L4">AlloySource.ts:4</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -125,10 +126,18 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>element: <span class="tsd-signature-type">Element</span></h5>
+									<h5>filename: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The &quot;source&quot; element from an Alloy XML file</p>
+											<p>The source filename</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>source: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The source code</p>
 										</div>
 									</div>
 								</li>
@@ -146,7 +155,7 @@
 					<div class="tsd-signature tsd-kind-icon">_filename<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/a56a5dc/src/AlloySource.ts#L3">AlloySource.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L3">AlloySource.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +165,7 @@
 					<div class="tsd-signature tsd-kind-icon">_source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/a56a5dc/src/AlloySource.ts#L4">AlloySource.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L4">AlloySource.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/a56a5dc/src/AlloySource.ts#L28">AlloySource.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L23">AlloySource.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -195,7 +204,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/a56a5dc/src/AlloySource.ts#L37">AlloySource.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L32">AlloySource.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -204,6 +213,39 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="fromelement" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Element<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloysource.html" class="tsd-signature-type">AlloySource</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c2afeae/src/AlloySource.ts#L45">AlloySource.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new source by extracting the Alloy source code from an XML
+									element.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <span class="tsd-signature-type">Element</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The XML element containing a &quot;filename&quot; attribute and a
+										&quot;content&quot; attribute.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="alloysource.html" class="tsd-signature-type">AlloySource</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,6 +298,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="alloysource.html#source" class="tsd-kind-icon">source</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="alloysource.html#fromelement" class="tsd-kind-icon">from<wbr>Element</a>
 							</li>
 						</ul>
 					</li>
