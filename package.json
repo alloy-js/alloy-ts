@@ -15,10 +15,14 @@
     "alloy"
   ],
   "scripts": {
+    "build-bundle": "npm run build-ts; rollup dist/Alloy.js --file alloy-$npm_package_version.js --format umd --name 'Alloy'",
     "build-docs": "typedoc src/ && touch docs/.nojekyll",
-    "build-ts": "tsc -p tsconfig.json"
+    "build-ts": "tsc -p tsconfig.json",
+    "preversion": "rm alloy-$npm_package_version.js",
+    "version": "npm run build-bundle; gid add alloy-$npm_package_version.js; npm run build-docs"
   },
   "devDependencies": {
+    "rollup": "1.25.2",
     "typedoc": "0.15.0",
     "typescript": "3.6.4"
   }

@@ -1,12 +1,14 @@
-import { AlloyElement } from './AlloyElement';
 import { AlloyAtom } from './AlloyAtom';
+import { AlloyElement } from './AlloyElement';
+import { AlloyField } from './AlloyField';
+import { AlloyType } from './AlloyType';
 import {
     filter_exclude_labels,
     IDSig,
     is_subset,
-    subset_sort, subset_type_id
+    subset_sort,
+    subset_type_id
 } from './AlloyXML';
-import { AlloyField } from './AlloyField';
 
 /**
  * A signature in an Alloy instance.
@@ -190,11 +192,11 @@ export class AlloySignature extends AlloyElement {
     }
 
     /**
-     * Returns the string `signature`.
+     * Returns [[AlloyType.Signature]]
      */
-    expressionType (): string {
+    expressionType (): AlloyType {
 
-        return 'signature';
+        return AlloyType.Signature;
 
     }
 

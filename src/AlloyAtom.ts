@@ -1,5 +1,6 @@
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
+import { AlloyType } from './AlloyType';
 
 /**
  * An atom in an Alloy instance.
@@ -30,11 +31,11 @@ export class AlloyAtom extends AlloyElement {
     }
 
     /**
-     * Returns the string `atom`
+     * Returns [[AlloyType.Atom]]
      */
-    expressionType (): string {
+    expressionType (): AlloyType {
 
-        return 'atom';
+        return AlloyType.Atom;
 
     }
 

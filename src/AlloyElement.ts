@@ -1,6 +1,8 @@
 /**
  * The abstract superclass for all elements of an Alloy instance.
  */
+import { AlloyType } from './AlloyType';
+
 export abstract class AlloyElement {
 
     /**
@@ -27,7 +29,7 @@ export abstract class AlloyElement {
      * [[AlloySignature]] will return the string 'signature'.
      *
      */
-    abstract expressionType (): string;
+    abstract expressionType (): AlloyType;
 
     /**
      * Returns the unique ID of this element.

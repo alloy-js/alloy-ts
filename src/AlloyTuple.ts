@@ -1,6 +1,7 @@
-import { AlloyElement } from './AlloyElement';
 import { AlloyAtom } from './AlloyAtom';
+import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
+import { AlloyType } from './AlloyType';
 
 /**
  * # AlloyTuple
@@ -54,11 +55,11 @@ export class AlloyTuple extends AlloyElement {
     }
 
     /**
-     * Returns the string `tuple`.
+     * Returns [[AlloyType.Tuple]]
      */
-    expressionType (): string {
+    expressionType (): AlloyType {
 
-        return 'tuple';
+        return AlloyType.Tuple;
 
     }
 

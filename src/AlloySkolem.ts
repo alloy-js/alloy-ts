@@ -1,6 +1,7 @@
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
 import { AlloyTuple } from './AlloyTuple';
+import { AlloyType } from './AlloyType';
 import { IDSkolem } from './AlloyXML';
 
 /**
@@ -50,11 +51,11 @@ export class AlloySkolem extends AlloyElement {
     }
 
     /**
-     * Returns the string `skolem`.
+     * Returns [[AlloyType.Skolem]]
      */
-    expressionType (): string {
+    expressionType (): AlloyType {
 
-        return 'skolem';
+        return AlloyType.Skolem;
 
     }
 
