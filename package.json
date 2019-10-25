@@ -1,6 +1,6 @@
 {
   "name": "alloy-ts",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Alloy instances in TypeScript",
   "repository": "https://github.com/alloy-js/alloy-ts.git",
   "author": {
