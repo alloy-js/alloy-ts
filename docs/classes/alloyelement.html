@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -66,6 +64,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The abstract superclass for all elements of an Alloy instance.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -76,9 +81,6 @@
 								<a href="alloytuple.html" class="tsd-signature-type">AlloyTuple</a>
 							</li>
 							<li>
-								<a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a>
-							</li>
-							<li>
 								<a href="alloyfield.html" class="tsd-signature-type">AlloyField</a>
 							</li>
 							<li>
@@ -86,6 +88,9 @@
 							</li>
 							<li>
 								<a href="alloyatom.html" class="tsd-signature-type">AlloyAtom</a>
+							</li>
+							<li>
+								<a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a>
 							</li>
 						</ul>
 					</li>
@@ -113,6 +118,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#expressiontype" class="tsd-kind-icon">expression<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -130,7 +136,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyElement.ts#L11">AlloyElement.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L11">core/AlloyElement.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">_name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyElement.ts#L11">AlloyElement.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L11">core/AlloyElement.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -184,7 +190,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyElement.ts#L32">AlloyElement.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L32">core/AlloyElement.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -213,7 +219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyElement.ts#L44">AlloyElement.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L44">core/AlloyElement.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyElement.ts#L49">AlloyElement.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L49">core/AlloyElement.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,6 +258,28 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="size" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloyElement.ts#L58">core/AlloyElement.ts:58</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the size of this element.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -293,6 +321,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="alloyelement.html#name" class="tsd-kind-icon">name</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="alloyelement.html#size" class="tsd-kind-icon">size</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -315,29 +346,11 @@
 					<li class=" tsd-kind-class">
 						<a href="alloytuple.html" class="tsd-kind-icon">Alloy<wbr>Tuple</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/idfield.html" class="tsd-kind-icon">IDField</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/idsig.html" class="tsd-kind-icon">IDSig</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/idskolem.html" class="tsd-kind-icon">IDSkolem</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#filter_exclude_attr" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>attr</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#filter_exclude_labels" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>labels</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#is_subset" class="tsd-kind-icon">is_<wbr>subset</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#subset_sort" class="tsd-kind-icon">subset_<wbr>sort</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#subset_type_id" class="tsd-kind-icon">subset_<wbr>type_<wbr>id</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#alloysortfn" class="tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn</a>
 					</li>
 				</ul>
 			</nav>

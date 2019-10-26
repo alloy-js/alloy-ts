@@ -1,4 +1,5 @@
 {
+  "excludeNotExported": true,
   "includes": "src/",
   "mode": "file"
 }

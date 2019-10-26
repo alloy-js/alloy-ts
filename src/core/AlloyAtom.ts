@@ -1,6 +1,6 @@
+import { AlloyType } from '../AlloyTypes';
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
-import { AlloyType } from './AlloyType';
 
 /**
  * An atom in an Alloy instance.
@@ -59,6 +59,15 @@ export class AlloyAtom extends AlloyElement {
     isType (signature: AlloySignature): boolean {
 
         return this.typeHierarchy().includes(signature);
+
+    }
+
+    /**
+     * Returns the size of this atom. Atoms always have size 1.
+     */
+    size(): number {
+
+        return 1;
 
     }
 

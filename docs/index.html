@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -87,9 +85,9 @@
 
 <span class="hljs-keyword">import</span> { AlloyInstance, ...} <span class="hljs-keyword">from</span> <span class="hljs-string">'alloy-ts'</span>;</code></pre>
 				<p>If you&#39;re including the bundle in a web page, the library is exposed globally
-				as <code>Alloy</code>:</p>
+				as <code>alloy</code>:</p>
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-  <span class="hljs-keyword">const</span> instance = <span class="hljs-keyword">new</span> Alloy.AlloyInstance(...);
+  <span class="hljs-keyword">const</span> instance = <span class="hljs-keyword">new</span> alloy.AlloyInstance(...);
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 			</div>
 		</div>
@@ -98,6 +96,15 @@
 				<ul>
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/filtering.html">filtering</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sorting.html">sorting</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/xml.html">xml</a>
 					</li>
 				</ul>
 			</nav>
@@ -130,29 +137,11 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/alloytuple.html" class="tsd-kind-icon">Alloy<wbr>Tuple</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idfield.html" class="tsd-kind-icon">IDField</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idsig.html" class="tsd-kind-icon">IDSig</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idskolem.html" class="tsd-kind-icon">IDSkolem</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#filter_exclude_attr" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>attr</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#filter_exclude_labels" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>labels</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#is_subset" class="tsd-kind-icon">is_<wbr>subset</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#subset_sort" class="tsd-kind-icon">subset_<wbr>sort</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#subset_type_id" class="tsd-kind-icon">subset_<wbr>type_<wbr>id</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#alloysortfn" class="tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn</a>
 					</li>
 				</ul>
 			</nav>

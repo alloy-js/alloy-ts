@@ -1,8 +1,25 @@
+import { AlloyType } from '../AlloyTypes';
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
 import { AlloyTuple } from './AlloyTuple';
-import { AlloyType } from './AlloyType';
-import { IDSkolem } from './AlloyXML';
+
+/**
+ * An Alloy skolem paired with the ID assigned to it in the instance XML
+ * file.
+ */
+interface IDSkolem {
+
+    /**
+     * The ID assigned to the skolem in the instance XML file
+     */
+    id: number,
+
+    /**
+     * The skolem
+     */
+    skolem: AlloySkolem
+
+}
 
 /**
  * # AlloySkolem

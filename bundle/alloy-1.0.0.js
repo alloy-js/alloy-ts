@@ -1,9 +1,45 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Tristan Dyer
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = global || self, factory(global.Alloy = {}));
+    (global = global || self, factory(global.alloy = {}));
 }(this, (function (exports) { 'use strict';
 
+    var AlloyType;
+    (function (AlloyType) {
+        AlloyType["Atom"] = "atom";
+        AlloyType["Field"] = "field";
+        AlloyType["Signature"] = "signature";
+        AlloyType["Skolem"] = "skolem";
+        AlloyType["Tuple"] = "tuple";
+    })(AlloyType || (AlloyType = {}));
+
+    /**
+     * The abstract superclass for all elements of an Alloy instance.
+     */
     class AlloyElement {
         /**
          * Create a new named Element.
@@ -19,15 +55,6 @@
             return this._name;
         }
     }
-
-    var AlloyType;
-    (function (AlloyType) {
-        AlloyType["Atom"] = "atom";
-        AlloyType["Field"] = "field";
-        AlloyType["Signature"] = "signature";
-        AlloyType["Skolem"] = "skolem";
-        AlloyType["Tuple"] = "tuple";
-    })(AlloyType || (AlloyType = {}));
 
     /**
      * An atom in an Alloy instance.
@@ -69,6 +96,12 @@
          */
         isType(signature) {
             return this.typeHierarchy().includes(signature);
+        }
+        /**
+         * Returns the size of this atom. Atoms always have size 1.
+         */
+        size() {
+            return 1;
         }
         /**
          * Returns a printable string.
@@ -147,6 +180,13 @@
          */
         id() {
             return this._id;
+        }
+        /**
+         * Returns the size of this tuple. Tuples always have size 1, as they are
+         * considered a single 'row' in a field.
+         */
+        size() {
+            return 1;
         }
         /**
          * Returns a printable string.
@@ -377,75 +417,75 @@
         }
     }
 
-    /**
-     * Build a function that can be used to filter an array of Elements by
-     * removing those with a specific "label" attribute value.
-     *
-     * @remarks
-     * If the Element does not have a "label" attribute, it will be excluded.
-     *
-     * @param exclude The labels to exclude
-     */
-    function filter_exclude_labels(...exclude) {
-        return (element) => {
-            let label = element.getAttribute('label');
-            if (!label)
-                return false;
-            return !exclude.includes(label);
-        };
-    }
-    /**
-     * Build a function that can be used to filter an array of Elements by
-     * removing those that have any of the given attributes.
-     * @param exclude
-     */
-    function filter_exclude_attr(...exclude) {
-        return (element) => {
-            return !exclude.find(attr => !!element.getAttribute(attr));
-        };
-    }
-    /**
-     * Determine if the given element is a subset signature.
-     *
-     * @remarks
-     * In an Alloy XML file, a subset signature will have a "type" element that
-     * defines which signature it is a subset of.
-     *
-     * @param element The element to test
-     */
-    function is_subset(element) {
-        return element.tagName === 'sig' && !!element.querySelector('type');
-    }
-    /**
-     * Comparison function that can be used to sort an array of subset sig elements
-     * based on type hierarchy. Guarantees that parents will appear before children.
-     * @param a A subset sig element from an Alloy XML file
-     * @param b A subset sig element from an Alloy XML file
-     */
-    function subset_sort(a, b) {
-        let aID = a.getAttribute('ID'), bID = b.getAttribute('ID'), aT = subset_type_id(a), bT = subset_type_id(b);
-        if (!aID || !bID)
-            throw Error('Element has no ID');
-        if (bT === parseInt(aID))
-            return -1;
-        if (aT === parseInt(bID))
-            return 1;
-        return 0;
-    }
-    /**
-     * Get the parent ID of a subset signature
-     * @param element The subset signature element
-     */
-    function subset_type_id(element) {
-        let t = element.querySelector('type');
-        if (!t)
-            throw Error('Element is not a subset signature');
-        let id = t.getAttribute('ID');
-        if (!id)
-            throw Error('Element is not a subset signature');
-        return parseInt(id);
-    }
+    (function (xml) {
+        /**
+         * Return a function that can be used to filter an array of Elements by
+         * removing those with a specific "label" attribute value.
+         *
+         * @remarks
+         * If the Element does not have a "label" attribute, it will be excluded.
+         *
+         * @param exclude The labels to exclude
+         */
+        function filterExcludeLabels(...exclude) {
+            return (element) => {
+                let label = element.getAttribute('label');
+                if (!label)
+                    return false;
+                return !exclude.includes(label);
+            };
+        }
+        xml.filterExcludeLabels = filterExcludeLabels;
+        /**
+         * Determine if the given element is a subset signature.
+         *
+         * @remarks
+         * In an Alloy XML file, a subset signature will have a "type" element that
+         * defines which signature it is a subset of.
+         *
+         * @param element The element to test
+         */
+        function isSubset(element) {
+            return element.tagName === 'sig' && !!element.querySelector('type');
+        }
+        xml.isSubset = isSubset;
+        /**
+         * Comparison function that can be used to sort an array of subset sig elements
+         * based on type hierarchy. Guarantees that parents will appear before children.
+         * @param a A subset sig element from an Alloy XML file
+         * @param b A subset sig element from an Alloy XML file
+         */
+        function sortSubset(a, b) {
+            let aID = a.getAttribute('ID'), bID = b.getAttribute('ID'), aT = subsetTypeID(a), bT = subsetTypeID(b);
+            if (!aID || !bID)
+                throw Error('Element has no ID');
+            if (bT === parseInt(aID))
+                return -1;
+            if (aT === parseInt(bID))
+                return 1;
+            return 0;
+        }
+        xml.sortSubset = sortSubset;
+        /**
+         * Get the parent ID of a subset signature
+         * @param element The subset signature element
+         */
+        function subsetTypeID(element) {
+            let t = element.querySelector('type');
+            if (!t)
+                throw Error('Element is not a subset signature');
+            let id = t.getAttribute('ID');
+            if (!id)
+                throw Error('Element is not a subset signature');
+            return parseInt(id);
+        }
+        xml.subsetTypeID = subsetTypeID;
+    })(exports.xml || (exports.xml = {}));
 
+    var filterExcludeLabels = exports.xml.filterExcludeLabels;
+    var isSubset = exports.xml.isSubset;
+    var sortSubset = exports.xml.sortSubset;
+    var subsetTypeID = exports.xml.subsetTypeID;
     /**
      * A signature in an Alloy instance.
      *
@@ -656,6 +696,12 @@
             return this._is_subset;
         }
         /**
+         * Returns the number of (non-nested) atoms defined by this signature.
+         */
+        size() {
+            return this.atoms().length;
+        }
+        /**
          * Returns an array of signatures that are subtypes of this signature.
          *
          * @remarks
@@ -726,8 +772,8 @@
             ids.set(seq.id, seq.sig);
             // Parse the non-subset signatures
             sigs
-                .filter(filter_exclude_labels('Int', 'seq/Int'))
-                .filter(el => !is_subset(el))
+                .filter(filterExcludeLabels('Int', 'seq/Int'))
+                .filter(el => !isSubset(el))
                 .forEach(el => {
                 let sig = AlloySignature._buildSig(el);
                 ids.set(sig.id, sig.sig);
@@ -735,8 +781,8 @@
                     parents.set(sig.id, sig.parentID);
             });
             sigs
-                .filter(el => is_subset(el))
-                .sort(subset_sort)
+                .filter(el => isSubset(el))
+                .sort(sortSubset)
                 .forEach(el => {
                 let sig = AlloySignature._buildSub(el, ids);
                 ids.set(sig.id, sig.sig);
@@ -834,7 +880,7 @@
             let meta = element.getAttribute('meta') === 'yes';
             let one = element.getAttribute('one') === 'yes';
             let priv = element.getAttribute('private') === 'yes';
-            let subset = is_subset(element);
+            let subset = isSubset(element);
             if (subset)
                 throw Error('Subset signature must be built using AlloySignature._buildSub()');
             let sig = new AlloySignature(label, builtin, meta, one, priv, subset);
@@ -881,12 +927,12 @@
             let label = element.getAttribute('label');
             if (!label)
                 throw Error('Signature element has no label attribute');
-            let parentID = subset_type_id(element);
+            let parentID = subsetTypeID(element);
             let builtin = element.getAttribute('builtin') === 'yes';
             let meta = element.getAttribute('meta') === 'yes';
             let one = element.getAttribute('one') === 'yes';
             let priv = element.getAttribute('private') === 'yes';
-            let subset = is_subset(element);
+            let subset = isSubset(element);
             if (!subset)
                 throw Error('Signatures must be built using AlloySignature._buildSig()');
             let parent = sigs.get(parentID);
@@ -1308,6 +1354,172 @@
         }
     }
 
+    (function (filtering) {
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloyAtom|atoms]]
+         * @param item The current item being tested.
+         */
+        function keepAtoms(item) {
+            return item.expressionType() === AlloyType.Atom;
+        }
+        filtering.keepAtoms = keepAtoms;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloyField|fields]]
+         * @param item The current item being tested.
+         */
+        function keepFields(item) {
+            return item.expressionType() === AlloyType.Field;
+        }
+        filtering.keepFields = keepFields;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloySignature|signatures]]
+         * @param item The current item being tested.
+         */
+        function keepSignatures(item) {
+            return item.expressionType() === AlloyType.Signature;
+        }
+        filtering.keepSignatures = keepSignatures;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloySkolem|skolems]]
+         * @param item The current item being tested.
+         */
+        function keepSkolems(item) {
+            return item.expressionType() === AlloyType.Skolem;
+        }
+        filtering.keepSkolems = keepSkolems;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloyTuple|tuples]]
+         * @param item The current item being tested.
+         */
+        function keepTuples(item) {
+            return item.expressionType() === AlloyType.Tuple;
+        }
+        filtering.keepTuples = keepTuples;
+    })(exports.filtering || (exports.filtering = {}));
+
+    (function (sorting) {
+        /**
+         * Return a function that can be used in Array.sort() to sort alphabetically.
+         * @param name The function that will be used to retrieve the name of each item.
+         * If no function is provided, AlloyElement.name() will be used.
+         * @param ascending True (default) to sort in ascending order, false to sort in
+         * descending order.
+         */
+        function alphabeticalSort(name, ascending = true) {
+            const one = ascending ? 1 : -1;
+            name = name ? name : (item) => item.name();
+            return (a, b) => {
+                const aname = name(a);
+                const bname = name(b);
+                if (aname < bname)
+                    return -one;
+                if (bname < aname)
+                    return one;
+                return 0;
+            };
+        }
+        sorting.alphabeticalSort = alphabeticalSort;
+        /**
+         * Return a function that can be used in Array.sort() to sort Alloy items
+         * based on whether or not they are builtins. Only signatures can be "builtins"
+         * so only signatures are affected by this sort function.
+         * @param builtinLast Sort so that builtins are moved to the end of the array
+         */
+        function builtinSort(builtinLast = true) {
+            const one = builtinLast ? 1 : -1;
+            return (a, b) => {
+                const aSig = a.expressionType() === 'signature';
+                const bSig = b.expressionType() === 'signature';
+                if (aSig === bSig) {
+                    if (!aSig)
+                        return 0;
+                    const aB = a.isBuiltin();
+                    const bB = b.isBuiltin();
+                    return aB === bB ? 0 : aB ? one : -one;
+                }
+                else {
+                    const aB = aSig && a.isBuiltin();
+                    const bB = bSig && b.isBuiltin();
+                    return aB ? one : bB ? -one : 0;
+                }
+            };
+        }
+        sorting.builtinSort = builtinSort;
+        /**
+         * Return a function that can be used in Array.sort() to group Alloy items by
+         * type. The default order is as follows:
+         *  - Signatures
+         *  - Atoms
+         *  - Fields
+         *  - Tuples
+         *  - Skolems
+         * @param groups The grouping order of types.
+         */
+        function groupSort(groups) {
+            groups = groups || [
+                AlloyType.Signature,
+                AlloyType.Atom,
+                AlloyType.Field,
+                AlloyType.Tuple,
+                AlloyType.Skolem
+            ];
+            return (a, b) => {
+                return groups.indexOf(a.expressionType()) - groups.indexOf(b.expressionType());
+            };
+        }
+        sorting.groupSort = groupSort;
+        /**
+         * Return a function that can be used in Array.sort() to sort Alloy items by
+         * size. Sizes of items are as follows:
+         *  - Atom: 1
+         *  - Field: Number of tuples
+         *  - Signature: Number of Atoms (not nested)
+         *  - Skolem: Number of tuples
+         *  - Tuple: 1
+         * @param ascending Sort by size in ascending order (true) or descending
+         * order (false).
+         */
+        function sizeSort(ascending = true) {
+            const one = ascending ? 1 : -1;
+            return (a, b) => {
+                const asize = getSize(a);
+                const bsize = getSize(b);
+                return (asize - bsize) * one;
+            };
+        }
+        sorting.sizeSort = sizeSort;
+        /**
+         * Retrieve the size of an item. Sizes of items are as follows:
+         *  - Atom: 1
+         *  - Field: Number of tuples
+         *  - Signature: Number of Atoms (not nested)
+         *  - Skolem: Number of tuples
+         *  - Tuple: 1
+         * @param item
+         */
+        function getSize(item) {
+            switch (item.expressionType()) {
+                case AlloyType.Atom:
+                    return 1;
+                case AlloyType.Field:
+                    return item.tuples().length;
+                case AlloyType.Signature:
+                    return item.atoms().length;
+                case AlloyType.Skolem:
+                    return item.tuples().length;
+                case AlloyType.Tuple:
+                    return 1;
+                default:
+                    return 0;
+            }
+        }
+    })(exports.sorting || (exports.sorting = {}));
+
     exports.AlloyAtom = AlloyAtom;
     exports.AlloyElement = AlloyElement;
     exports.AlloyField = AlloyField;
@@ -1316,11 +1528,6 @@
     exports.AlloySkolem = AlloySkolem;
     exports.AlloySource = AlloySource;
     exports.AlloyTuple = AlloyTuple;
-    exports.filter_exclude_attr = filter_exclude_attr;
-    exports.filter_exclude_labels = filter_exclude_labels;
-    exports.is_subset = is_subset;
-    exports.subset_sort = subset_sort;
-    exports.subset_type_id = subset_type_id;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

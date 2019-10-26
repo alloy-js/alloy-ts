@@ -1,8 +1,8 @@
+import { AlloyType } from '../AlloyTypes';
+
 /**
  * The abstract superclass for all elements of an Alloy instance.
  */
-import { AlloyType } from './AlloyType';
-
 export abstract class AlloyElement {
 
     /**
@@ -51,5 +51,10 @@ export abstract class AlloyElement {
         return this._name;
 
     }
+
+    /**
+     * Returns the size of this element.
+     */
+    abstract size (): number;
 
 }

@@ -15,14 +15,18 @@
     "alloy"
   ],
   "scripts": {
-    "build-bundle": "npm run build-ts; rollup dist/Alloy.js --file alloy-$npm_package_version.js --format umd --name 'Alloy'",
+    "build-bundle": "npm run build-ts; npm run rollup; npm run uglify",
     "build-docs": "typedoc src/ && touch docs/.nojekyll",
     "build-ts": "tsc -p tsconfig.json",
     "preversion": "rm -f alloy-*.*.*.js",
+    "rollup": "rollup -c --environment VERSION:$npm_package_version",
+    "uglify": "terser bundle/alloy-$npm_package_version.js --compress --mangle -o bundle/alloy-$npm_package_version.min.js",
     "version": "npm run build-bundle; npm run build-docs; git add alloy-$npm_package_version.js docs/"
   },
   "devDependencies": {
     "rollup": "1.25.2",
+    "rollup-plugin-license": "^0.12.1",
+    "terser": "^4.3.9",
     "typedoc": "0.15.0",
     "typescript": "3.6.4"
   }

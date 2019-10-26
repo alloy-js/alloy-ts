@@ -3,6 +3,11 @@
 A TypeScript (and JavaScript) library for working with 
 [Alloy](http://alloytools.org/) instances in the browser.
 
+## API
+
+The complete API documentation can be found [here](https://alloy-js.github.io
+/alloy-ts/index.html).
+
 ## Installing
 
 To install using npm:
@@ -11,8 +16,8 @@ To install using npm:
 npm install alloy-ts
 ```
 
-To use directly in the browser, download the `alloy-*.*.*.js` bundle and include
-in your HTML directly:
+To use directly in the browser, download `alloy-*.*.*.js` from the `bundle/`
+directory and include in your HTML directly:
 
 ```html
 <script src='alloy-*.*.*.js'></script>
@@ -31,10 +36,10 @@ import { AlloyInstance, ...} from 'alloy-ts';
 ```
 
 If you're including the bundle in a web page, the library is exposed globally
-as `Alloy`:
+as `alloy`:
 
 ```html
 <script>
-  const instance = new Alloy.AlloyInstance(...);
+  const instance = new alloy.AlloyInstance(...);
 </script>
 ```

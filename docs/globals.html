@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -68,6 +66,14 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Modules</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-module"><a href="modules/filtering.html" class="tsd-kind-icon">filtering</a></li>
+								<li class="tsd-kind-module"><a href="modules/sorting.html" class="tsd-kind-icon">sorting</a></li>
+								<li class="tsd-kind-module"><a href="modules/xml.html" class="tsd-kind-icon">xml</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Enumerations</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum"><a href="enums/alloytype.html" class="tsd-kind-icon">Alloy<wbr>Type</a></li>
@@ -87,242 +93,81 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
+							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface"><a href="interfaces/idfield.html" class="tsd-kind-icon">IDField</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/idsig.html" class="tsd-kind-icon">IDSig</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/idskolem.html" class="tsd-kind-icon">IDSkolem</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#filter_exclude_attr" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>attr</a></li>
-								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#filter_exclude_labels" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>labels</a></li>
-								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#is_subset" class="tsd-kind-icon">is_<wbr>subset</a></li>
-								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#subset_sort" class="tsd-kind-icon">subset_<wbr>sort</a></li>
-								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#subset_type_id" class="tsd-kind-icon">subset_<wbr>type_<wbr>id</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#alloysortfn" class="tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-					<a name="filter_exclude_attr" class="tsd-anchor"></a>
-					<h3>filter_<wbr>exclude_<wbr>attr</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">filter_<wbr>exclude_<wbr>attr<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>exclude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyXML.ts#L82">AlloyXML.ts:82</a></li>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="alloynamefn" class="tsd-anchor"></a>
+					<h3>Alloy<wbr>Name<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Alloy<wbr>Name<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/AlloyTypes.ts#L3">AlloyTypes.ts:3</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Build a function that can be used to filter an array of Elements by
-									removing those that have any of the given attributes.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>exclude: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter-siganture">
-									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>element: <span class="tsd-signature-type">Element</span></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>item: <a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-					<a name="filter_exclude_labels" class="tsd-anchor"></a>
-					<h3>filter_<wbr>exclude_<wbr>labels</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">filter_<wbr>exclude_<wbr>labels<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>exclude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyXML.ts#L67">AlloyXML.ts:67</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="alloysortfn" class="tsd-anchor"></a>
+					<h3>Alloy<wbr>Sort<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/AlloyTypes.ts#L4">AlloyTypes.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a>, b<span class="tsd-signature-symbol">: </span><a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Build a function that can be used to filter an array of Elements by
-									removing those with a specific &quot;label&quot; attribute value.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>If the Element does not have a &quot;label&quot; attribute, it will be excluded.</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>exclude: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The labels to exclude</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter-siganture">
-									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>element: <span class="tsd-signature-type">Element</span></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-					<a name="is_subset" class="tsd-anchor"></a>
-					<h3>is_<wbr>subset</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is_<wbr>subset<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyXML.ts#L99">AlloyXML.ts:99</a></li>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>a: <a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+											</li>
+											<li>
+												<h5>b: <a href="classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
 								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Determine if the given element is a subset signature.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>In an Alloy XML file, a subset signature will have a &quot;type&quot; element that
-										defines which signature it is a subset of.</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>element: <span class="tsd-signature-type">Element</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The element to test</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-					<a name="subset_sort" class="tsd-anchor"></a>
-					<h3>subset_<wbr>sort</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">subset_<wbr>sort<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">0</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyXML.ts#L111">AlloyXML.ts:111</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Comparison function that can be used to sort an array of subset sig elements
-									based on type hierarchy. Guarantees that parents will appear before children.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>a: <span class="tsd-signature-type">Element</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A subset sig element from an Alloy XML file</p>
-									</div>
-								</li>
-								<li>
-									<h5>b: <span class="tsd-signature-type">Element</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A subset sig element from an Alloy XML file</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">1</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">-1</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">0</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-					<a name="subset_type_id" class="tsd-anchor"></a>
-					<h3>subset_<wbr>type_<wbr>id</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">subset_<wbr>type_<wbr>id<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/06f8b30/src/AlloyXML.ts#L126">AlloyXML.ts:126</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the parent ID of a subset signature</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>element: <span class="tsd-signature-type">Element</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The subset signature element</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -331,6 +176,15 @@
 				<ul>
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/filtering.html">filtering</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sorting.html">sorting</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/xml.html">xml</a>
 					</li>
 				</ul>
 			</nav>
@@ -363,29 +217,11 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/alloytuple.html" class="tsd-kind-icon">Alloy<wbr>Tuple</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idfield.html" class="tsd-kind-icon">IDField</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idsig.html" class="tsd-kind-icon">IDSig</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/idskolem.html" class="tsd-kind-icon">IDSkolem</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#filter_exclude_attr" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>attr</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#filter_exclude_labels" class="tsd-kind-icon">filter_<wbr>exclude_<wbr>labels</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#is_subset" class="tsd-kind-icon">is_<wbr>subset</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#subset_sort" class="tsd-kind-icon">subset_<wbr>sort</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#subset_type_id" class="tsd-kind-icon">subset_<wbr>type_<wbr>id</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#alloysortfn" class="tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn</a>
 					</li>
 				</ul>
 			</nav>

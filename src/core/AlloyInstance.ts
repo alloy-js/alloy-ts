@@ -1,8 +1,8 @@
-import { AlloySignature } from './AlloySignature';
+import { AlloyAtom } from './AlloyAtom';
 import { AlloyField } from './AlloyField';
+import { AlloySignature } from './AlloySignature';
 import { AlloySkolem } from './AlloySkolem';
 import { AlloySource } from './AlloySource';
-import { AlloyAtom } from './AlloyAtom';
 import { AlloyTuple } from './AlloyTuple';
 
 export class AlloyInstance {

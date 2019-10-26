@@ -1,8 +1,24 @@
+import { AlloyType } from '../AlloyTypes';
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
 import { AlloyTuple } from './AlloyTuple';
-import { AlloyType } from './AlloyType';
-import { IDField } from './AlloyXML';
+
+/**
+ * An Alloy field paired with the ID assigned to it in the instance XML file
+ */
+interface IDField {
+
+    /**
+     * The ID assigned to the field in the instance XML file
+     */
+    id: number,
+
+    /**
+     * The field
+     */
+    field: AlloyField
+
+}
 
 export class AlloyField extends AlloyElement {
 

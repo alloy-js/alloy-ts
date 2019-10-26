@@ -1,7 +1,7 @@
+import { AlloyType } from '../AlloyTypes';
 import { AlloyAtom } from './AlloyAtom';
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
-import { AlloyType } from './AlloyType';
 
 /**
  * # AlloyTuple
@@ -73,6 +73,16 @@ export class AlloyTuple extends AlloyElement {
     id (): string {
 
         return this._id;
+
+    }
+
+    /**
+     * Returns the size of this tuple. Tuples always have size 1, as they are
+     * considered a single 'row' in a field.
+     */
+    size (): number {
+
+        return 1;
 
     }
 

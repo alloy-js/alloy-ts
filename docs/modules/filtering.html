@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AlloySource | alloy-ts</title>
+	<title>filtering | alloy-ts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,196 +54,192 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="alloysource.html">AlloySource</a>
+					<a href="filtering.html">filtering</a>
 				</li>
 			</ul>
-			<h1>Class AlloySource</h1>
+			<h1>Module filtering</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">AlloySource</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="alloysource.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="alloysource.html#_filename" class="tsd-kind-icon">_filename</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="alloysource.html#_source" class="tsd-kind-icon">_source</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloysource.html#filename" class="tsd-kind-icon">filename</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloysource.html#source" class="tsd-kind-icon">source</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="alloysource.html#fromelement" class="tsd-kind-icon">from<wbr>Element</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepatoms" class="tsd-kind-icon">keep<wbr>Atoms</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepfields" class="tsd-kind-icon">keep<wbr>Fields</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepsignatures" class="tsd-kind-icon">keep<wbr>Signatures</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepskolems" class="tsd-kind-icon">keep<wbr>Skolems</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keeptuples" class="tsd-kind-icon">keep<wbr>Tuples</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Alloy<wbr>Source<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloysource.html" class="tsd-signature-type">AlloySource</a></li>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepatoms" class="tsd-anchor"></a>
+					<h3>keep<wbr>Atoms</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Atoms<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L4">core/AlloySource.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/filtering/AlloyFiltering.ts#L11">filtering/AlloyFiltering.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create a new source by extracting the Alloy source code from an XML
-									element.</p>
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only <a href="../classes/alloyatom.html">atoms</a></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>filename: <span class="tsd-signature-type">string</span></h5>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The source filename</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>source: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The source code</p>
-										</div>
+										<p>The current item being tested.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="alloysource.html" class="tsd-signature-type">AlloySource</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_filename" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _filename</h3>
-					<div class="tsd-signature tsd-kind-icon">_filename<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L3">core/AlloySource.ts:3</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_source" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _source</h3>
-					<div class="tsd-signature tsd-kind-icon">_source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L4">core/AlloySource.ts:4</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="filename" class="tsd-anchor"></a>
-					<h3>filename</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">filename<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepfields" class="tsd-anchor"></a>
+					<h3>keep<wbr>Fields</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Fields<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L23">core/AlloySource.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/filtering/AlloyFiltering.ts#L20">filtering/AlloyFiltering.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return the full file path this source comes from.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="source" class="tsd-anchor"></a>
-					<h3>source</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L32">core/AlloySource.ts:32</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return the Alloy source code.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="fromelement" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Element<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloysource.html" class="tsd-signature-type">AlloySource</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/core/AlloySource.ts#L45">core/AlloySource.ts:45</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create a new source by extracting the Alloy source code from an XML
-									element.</p>
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only <a href="../classes/alloyfield.html">fields</a></p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>element: <span class="tsd-signature-type">Element</span></h5>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The XML element containing a &quot;filename&quot; attribute and a
-										&quot;content&quot; attribute.</p>
+										<p>The current item being tested.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="alloysource.html" class="tsd-signature-type">AlloySource</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepsignatures" class="tsd-anchor"></a>
+					<h3>keep<wbr>Signatures</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Signatures<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/filtering/AlloyFiltering.ts#L29">filtering/AlloyFiltering.ts:29</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only <a href="../classes/alloysignature.html">signatures</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The current item being tested.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepskolems" class="tsd-anchor"></a>
+					<h3>keep<wbr>Skolems</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Skolems<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/filtering/AlloyFiltering.ts#L38">filtering/AlloyFiltering.ts:38</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only <a href="../classes/alloyskolem.html">skolems</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The current item being tested.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keeptuples" class="tsd-anchor"></a>
+					<h3>keep<wbr>Tuples</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Tuples<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/07ecf6b/src/filtering/AlloyFiltering.ts#L47">filtering/AlloyFiltering.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only <a href="../classes/alloytuple.html">tuples</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The current item being tested.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,66 +251,33 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class="current tsd-kind-module">
+						<a href="filtering.html">filtering</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="sorting.html">sorting</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="xml.html">xml</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/alloytype.html" class="tsd-kind-icon">Alloy<wbr>Type</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepatoms" class="tsd-kind-icon">keep<wbr>Atoms</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloyatom.html" class="tsd-kind-icon">Alloy<wbr>Atom</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepfields" class="tsd-kind-icon">keep<wbr>Fields</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloyelement.html" class="tsd-kind-icon">Alloy<wbr>Element</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepsignatures" class="tsd-kind-icon">keep<wbr>Signatures</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloyfield.html" class="tsd-kind-icon">Alloy<wbr>Field</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepskolems" class="tsd-kind-icon">keep<wbr>Skolems</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloyinstance.html" class="tsd-kind-icon">Alloy<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloysignature.html" class="tsd-kind-icon">Alloy<wbr>Signature</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="alloyskolem.html" class="tsd-kind-icon">Alloy<wbr>Skolem</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="alloysource.html" class="tsd-kind-icon">Alloy<wbr>Source</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="alloysource.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="alloysource.html#_filename" class="tsd-kind-icon">_filename</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="alloysource.html#_source" class="tsd-kind-icon">_source</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloysource.html#filename" class="tsd-kind-icon">filename</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloysource.html#source" class="tsd-kind-icon">source</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="alloysource.html#fromelement" class="tsd-kind-icon">from<wbr>Element</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="alloytuple.html" class="tsd-kind-icon">Alloy<wbr>Tuple</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#alloysortfn" class="tsd-kind-icon">Alloy<wbr>Sort<wbr>Fn</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keeptuples" class="tsd-kind-icon">keep<wbr>Tuples</a>
 					</li>
 				</ul>
 			</nav>

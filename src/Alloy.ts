@@ -1,9 +1,14 @@
-export * from './AlloyAtom';
-export * from './AlloyElement';
-export * from './AlloyField';
-export * from './AlloyInstance';
-export * from './AlloySignature';
-export * from './AlloySkolem';
-export * from './AlloySource';
-export * from './AlloyTuple';
-export * from './AlloyXML';
+export * from './core/AlloyAtom';
+export * from './core/AlloyElement';
+export * from './core/AlloyField';
+export * from './core/AlloyInstance';
+export * from './core/AlloySignature';
+export * from './core/AlloySkolem';
+export * from './core/AlloySource';
+export * from './core/AlloyTuple';
+
+export * from './filtering/AlloyFiltering';
+
+export * from './sorting/AlloySorting';
+
+export * from './xml/AlloyXML';

@@ -1,14 +1,34 @@
+import { AlloyType } from '../AlloyTypes';
+import { xml } from '../xml/AlloyXML';
 import { AlloyAtom } from './AlloyAtom';
 import { AlloyElement } from './AlloyElement';
 import { AlloyField } from './AlloyField';
-import { AlloyType } from './AlloyType';
-import {
-    filter_exclude_labels,
-    IDSig,
-    is_subset,
-    subset_sort,
-    subset_type_id
-} from './AlloyXML';
+import filterExcludeLabels = xml.filterExcludeLabels;
+import isSubset = xml.isSubset;
+import sortSubset = xml.sortSubset;
+import subsetTypeID = xml.subsetTypeID;
+
+/**
+ * An Alloy signature paired with the IDs assigned to it in the instance XML file
+ */
+interface IDSig {
+
+    /**
+     * The ID assigned to the signature in the instance XML file
+     */
+    id: number,
+
+    /**
+     * The ID of the signature's parent
+     */
+    parentID?: number,
+
+    /**
+     * The signature
+     */
+    sig: AlloySignature
+
+}
 
 /**
  * A signature in an Alloy instance.
@@ -315,6 +335,15 @@ export class AlloySignature extends AlloyElement {
     }
 
     /**
+     * Returns the number of (non-nested) atoms defined by this signature.
+     */
+    size(): number {
+
+        return this.atoms().length;
+
+    }
+
+    /**
      * Returns an array of signatures that are subtypes of this signature.
      *
      * @remarks
@@ -404,8 +433,8 @@ export class AlloySignature extends AlloyElement {
 
         // Parse the non-subset signatures
         sigs
-            .filter(filter_exclude_labels('Int', 'seq/Int'))
-            .filter(el => !is_subset(el))
+            .filter(filterExcludeLabels('Int', 'seq/Int'))
+            .filter(el => !isSubset(el))
             .forEach(el => {
                 let sig = AlloySignature._buildSig(el);
                 ids.set(sig.id, sig.sig);
@@ -413,8 +442,8 @@ export class AlloySignature extends AlloyElement {
             });
 
         sigs
-            .filter(el => is_subset(el))
-            .sort(subset_sort)
+            .filter(el => isSubset(el))
+            .sort(sortSubset)
             .forEach(el => {
                 let sig = AlloySignature._buildSub(el, ids);
                 ids.set(sig.id, sig.sig);
@@ -527,7 +556,7 @@ export class AlloySignature extends AlloyElement {
         let meta = element.getAttribute('meta') === 'yes';
         let one = element.getAttribute('one') === 'yes';
         let priv = element.getAttribute('private') === 'yes';
-        let subset = is_subset(element);
+        let subset = isSubset(element);
 
         if (subset)
             throw Error('Subset signature must be built using AlloySignature._buildSub()');
@@ -581,12 +610,12 @@ export class AlloySignature extends AlloyElement {
         let label = element.getAttribute('label');
         if (!label) throw Error('Signature element has no label attribute');
 
-        let parentID = subset_type_id(element);
+        let parentID = subsetTypeID(element);
         let builtin = element.getAttribute('builtin') === 'yes';
         let meta = element.getAttribute('meta') === 'yes';
         let one = element.getAttribute('one') === 'yes';
         let priv = element.getAttribute('private') === 'yes';
-        let subset = is_subset(element);
+        let subset = isSubset(element);
 
         if (!subset)
             throw Error('Signatures must be built using AlloySignature._buildSig()');
