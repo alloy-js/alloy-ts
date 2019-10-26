@@ -5,8 +5,7 @@ A TypeScript (and JavaScript) library for working with
 
 ## API
 
-The complete API documentation can be found [here](https://alloy-js.github.io
-/alloy-ts/index.html).
+The complete API documentation can be found [here](https://alloy-js.github.io/alloy-ts/index.html).
 
 ## Installing
 
