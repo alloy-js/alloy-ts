@@ -1400,6 +1400,51 @@
             return item.expressionType() === AlloyType.Tuple;
         }
         filtering.keepTuples = keepTuples;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloyAtom|atoms]]
+         * @param item The current item being tested.
+         */
+        function removeAtoms(item) {
+            return item.expressionType() !== AlloyType.Atom;
+        }
+        filtering.removeAtoms = removeAtoms;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloyField|fields]]
+         * @param item The current item being tested.
+         */
+        function removeFields(item) {
+            return item.expressionType() !== AlloyType.Field;
+        }
+        filtering.removeFields = removeFields;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloySignature|signatures]]
+         * @param item The current item being tested.
+         */
+        function removeSignatures(item) {
+            return item.expressionType() !== AlloyType.Signature;
+        }
+        filtering.removeSignatures = removeSignatures;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloySkolem|skolems]]
+         * @param item The current item being tested.
+         */
+        function removeSkolems(item) {
+            return item.expressionType() !== AlloyType.Skolem;
+        }
+        filtering.removeSkolems = removeSkolems;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloyTuple|tuples]]
+         * @param item The current item being tested.
+         */
+        function removeTuples(item) {
+            return item.expressionType() !== AlloyType.Tuple;
+        }
+        filtering.removeTuples = removeTuples;
     })(exports.filtering || (exports.filtering = {}));
 
     (function (sorting) {
