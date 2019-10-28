@@ -72,11 +72,15 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepatoms" class="tsd-kind-icon">keep<wbr>Atoms</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepbuiltins" class="tsd-kind-icon">keep<wbr>Builtins</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepemptys" class="tsd-kind-icon">keep<wbr>Emptys</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepfields" class="tsd-kind-icon">keep<wbr>Fields</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepsignatures" class="tsd-kind-icon">keep<wbr>Signatures</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keepskolems" class="tsd-kind-icon">keep<wbr>Skolems</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#keeptuples" class="tsd-kind-icon">keep<wbr>Tuples</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removeatoms" class="tsd-kind-icon">remove<wbr>Atoms</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removebuiltins" class="tsd-kind-icon">remove<wbr>Builtins</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removeemptys" class="tsd-kind-icon">remove<wbr>Emptys</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removefields" class="tsd-kind-icon">remove<wbr>Fields</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removesignatures" class="tsd-kind-icon">remove<wbr>Signatures</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="filtering.html#removeskolems" class="tsd-kind-icon">remove<wbr>Skolems</a></li>
@@ -98,13 +102,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L11">filtering/AlloyFiltering.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L12">filtering/AlloyFiltering.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by keeping only <a href="../classes/alloyatom.html">atoms</a></p>
+									by keeping only <a href="../classes/alloyatom.html">atoms</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -113,6 +117,69 @@
 									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The current item being tested.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepbuiltins" class="tsd-anchor"></a>
+					<h3>keep<wbr>Builtins</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Builtins<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L21">filtering/AlloyFiltering.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only builtin <a href="../classes/alloysignature.html">signatures</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The current item being tested</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="keepemptys" class="tsd-anchor"></a>
+					<h3>keep<wbr>Emptys</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">keep<wbr>Emptys<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L30">filtering/AlloyFiltering.ts:30</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by keeping only items that are considered empty (i.e. their size is zero).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
 							</ul>
@@ -130,13 +197,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L20">filtering/AlloyFiltering.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L39">filtering/AlloyFiltering.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by keeping only <a href="../classes/alloyfield.html">fields</a></p>
+									by keeping only <a href="../classes/alloyfield.html">fields</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -162,13 +229,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L29">filtering/AlloyFiltering.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L48">filtering/AlloyFiltering.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by keeping only <a href="../classes/alloysignature.html">signatures</a></p>
+									by keeping only <a href="../classes/alloysignature.html">signatures</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -194,13 +261,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L38">filtering/AlloyFiltering.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L57">filtering/AlloyFiltering.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by keeping only <a href="../classes/alloyskolem.html">skolems</a></p>
+									by keeping only <a href="../classes/alloyskolem.html">skolems</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -226,13 +293,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L47">filtering/AlloyFiltering.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L66">filtering/AlloyFiltering.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by keeping only <a href="../classes/alloytuple.html">tuples</a></p>
+									by keeping only <a href="../classes/alloytuple.html">tuples</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -258,13 +325,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L56">filtering/AlloyFiltering.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L75">filtering/AlloyFiltering.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by removing only <a href="../classes/alloyatom.html">atoms</a></p>
+									by removing only <a href="../classes/alloyatom.html">atoms</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -273,6 +340,69 @@
 									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The current item being tested.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="removebuiltins" class="tsd-anchor"></a>
+					<h3>remove<wbr>Builtins</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Builtins<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L84">filtering/AlloyFiltering.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by removing only builtin <a href="../classes/alloysignature.html">signatures</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The current item being tested</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="removeemptys" class="tsd-anchor"></a>
+					<h3>remove<wbr>Emptys</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Emptys<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L93">filtering/AlloyFiltering.ts:93</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
+									by removing only items that are considered empty (i.e. their size is zero).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="../classes/alloyelement.html" class="tsd-signature-type">AlloyElement</a></h5>
+									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
 							</ul>
@@ -290,13 +420,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L65">filtering/AlloyFiltering.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L102">filtering/AlloyFiltering.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by removing only <a href="../classes/alloyfield.html">fields</a></p>
+									by removing only <a href="../classes/alloyfield.html">fields</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -322,13 +452,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L74">filtering/AlloyFiltering.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L111">filtering/AlloyFiltering.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by removing only <a href="../classes/alloysignature.html">signatures</a></p>
+									by removing only <a href="../classes/alloysignature.html">signatures</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -354,13 +484,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L83">filtering/AlloyFiltering.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L120">filtering/AlloyFiltering.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by removing only <a href="../classes/alloyskolem.html">skolems</a></p>
+									by removing only <a href="../classes/alloyskolem.html">skolems</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -386,13 +516,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/4a4ab15/src/filtering/AlloyFiltering.ts#L92">filtering/AlloyFiltering.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/c9ea485/src/filtering/AlloyFiltering.ts#L129">filtering/AlloyFiltering.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Function that can be used to filter an array of <a href="../classes/alloyelement.html">elements</a>
-									by removing only <a href="../classes/alloytuple.html">tuples</a></p>
+									by removing only <a href="../classes/alloytuple.html">tuples</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -433,6 +563,12 @@
 						<a href="filtering.html#keepatoms" class="tsd-kind-icon">keep<wbr>Atoms</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepbuiltins" class="tsd-kind-icon">keep<wbr>Builtins</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#keepemptys" class="tsd-kind-icon">keep<wbr>Emptys</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="filtering.html#keepfields" class="tsd-kind-icon">keep<wbr>Fields</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -446,6 +582,12 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="filtering.html#removeatoms" class="tsd-kind-icon">remove<wbr>Atoms</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#removebuiltins" class="tsd-kind-icon">remove<wbr>Builtins</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="filtering.html#removeemptys" class="tsd-kind-icon">remove<wbr>Emptys</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="filtering.html#removefields" class="tsd-kind-icon">remove<wbr>Fields</a>

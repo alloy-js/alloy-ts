@@ -18,7 +18,7 @@
     "build-bundle": "npm run build-ts; npm run rollup; npm run uglify",
     "build-docs": "typedoc src/ && touch docs/.nojekyll",
     "build-ts": "tsc -p tsconfig.json",
-    "preversion": "rm -f bundle/alloy-*.*.*.*.js",
+    "preversion": "rm -f bundle/alloy-*.js",
     "rollup": "rollup -c --environment VERSION:$npm_package_version",
     "uglify": "terser bundle/alloy-$npm_package_version.js --compress --mangle -o bundle/alloy-$npm_package_version.min.js",
     "version": "npm run build-bundle; npm run build-docs; git add bundle/ docs/"

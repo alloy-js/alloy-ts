@@ -1357,7 +1357,7 @@
     (function (filtering) {
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by keeping only [[AlloyAtom|atoms]]
+         * by keeping only [[AlloyAtom|atoms]].
          * @param item The current item being tested.
          */
         function keepAtoms(item) {
@@ -1366,7 +1366,25 @@
         filtering.keepAtoms = keepAtoms;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by keeping only [[AlloyField|fields]]
+         * by keeping only builtin [[AlloySignature|signatures]].
+         * @param item The current item being tested
+         */
+        function keepBuiltins(item) {
+            return item.expressionType() === AlloyType.Signature && item.isBuiltin();
+        }
+        filtering.keepBuiltins = keepBuiltins;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only items that are considered empty (i.e. their size is zero).
+         * @param item
+         */
+        function keepEmptys(item) {
+            return item.size() === 0;
+        }
+        filtering.keepEmptys = keepEmptys;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by keeping only [[AlloyField|fields]].
          * @param item The current item being tested.
          */
         function keepFields(item) {
@@ -1375,7 +1393,7 @@
         filtering.keepFields = keepFields;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by keeping only [[AlloySignature|signatures]]
+         * by keeping only [[AlloySignature|signatures]].
          * @param item The current item being tested.
          */
         function keepSignatures(item) {
@@ -1384,7 +1402,7 @@
         filtering.keepSignatures = keepSignatures;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by keeping only [[AlloySkolem|skolems]]
+         * by keeping only [[AlloySkolem|skolems]].
          * @param item The current item being tested.
          */
         function keepSkolems(item) {
@@ -1393,7 +1411,7 @@
         filtering.keepSkolems = keepSkolems;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by keeping only [[AlloyTuple|tuples]]
+         * by keeping only [[AlloyTuple|tuples]].
          * @param item The current item being tested.
          */
         function keepTuples(item) {
@@ -1402,7 +1420,7 @@
         filtering.keepTuples = keepTuples;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by removing only [[AlloyAtom|atoms]]
+         * by removing only [[AlloyAtom|atoms]].
          * @param item The current item being tested.
          */
         function removeAtoms(item) {
@@ -1411,7 +1429,25 @@
         filtering.removeAtoms = removeAtoms;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by removing only [[AlloyField|fields]]
+         * by removing only builtin [[AlloySignature|signatures]].
+         * @param item The current item being tested
+         */
+        function removeBuiltins(item) {
+            return !(item.expressionType() === AlloyType.Signature && item.isBuiltin());
+        }
+        filtering.removeBuiltins = removeBuiltins;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only items that are considered empty (i.e. their size is zero).
+         * @param item
+         */
+        function removeEmptys(item) {
+            return item.size() > 0;
+        }
+        filtering.removeEmptys = removeEmptys;
+        /**
+         * Function that can be used to filter an array of [[AlloyElement|elements]]
+         * by removing only [[AlloyField|fields]].
          * @param item The current item being tested.
          */
         function removeFields(item) {
@@ -1420,7 +1456,7 @@
         filtering.removeFields = removeFields;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by removing only [[AlloySignature|signatures]]
+         * by removing only [[AlloySignature|signatures]].
          * @param item The current item being tested.
          */
         function removeSignatures(item) {
@@ -1429,7 +1465,7 @@
         filtering.removeSignatures = removeSignatures;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by removing only [[AlloySkolem|skolems]]
+         * by removing only [[AlloySkolem|skolems]].
          * @param item The current item being tested.
          */
         function removeSkolems(item) {
@@ -1438,7 +1474,7 @@
         filtering.removeSkolems = removeSkolems;
         /**
          * Function that can be used to filter an array of [[AlloyElement|elements]]
-         * by removing only [[AlloyTuple|tuples]]
+         * by removing only [[AlloyTuple|tuples]].
          * @param item The current item being tested.
          */
         function removeTuples(item) {
@@ -1532,37 +1568,10 @@
         function sizeSort(ascending = true) {
             const one = ascending ? 1 : -1;
             return (a, b) => {
-                const asize = getSize(a);
-                const bsize = getSize(b);
-                return (asize - bsize) * one;
+                return (a.size() - b.size()) * one;
             };
         }
         sorting.sizeSort = sizeSort;
-        /**
-         * Retrieve the size of an item. Sizes of items are as follows:
-         *  - Atom: 1
-         *  - Field: Number of tuples
-         *  - Signature: Number of Atoms (not nested)
-         *  - Skolem: Number of tuples
-         *  - Tuple: 1
-         * @param item
-         */
-        function getSize(item) {
-            switch (item.expressionType()) {
-                case AlloyType.Atom:
-                    return 1;
-                case AlloyType.Field:
-                    return item.tuples().length;
-                case AlloyType.Signature:
-                    return item.atoms().length;
-                case AlloyType.Skolem:
-                    return item.tuples().length;
-                case AlloyType.Tuple:
-                    return 1;
-                default:
-                    return 0;
-            }
-        }
     })(exports.sorting || (exports.sorting = {}));
 
     exports.AlloyAtom = AlloyAtom;

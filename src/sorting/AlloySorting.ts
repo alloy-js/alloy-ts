@@ -1,8 +1,6 @@
 import { AlloyNameFn, AlloySortFn, AlloyType } from '../AlloyTypes';
 import { AlloyElement } from '../core/AlloyElement';
-import { AlloyField } from '../core/AlloyField';
 import { AlloySignature } from '../core/AlloySignature';
-import { AlloySkolem } from '../core/AlloySkolem';
 
 export namespace sorting {
 
@@ -86,35 +84,7 @@ export namespace sorting {
     export function sizeSort (ascending: boolean = true): AlloySortFn {
         const one = ascending ? 1 : -1;
         return (a: AlloyElement, b: AlloyElement) => {
-            const asize = getSize(a);
-            const bsize = getSize(b);
-            return (asize - bsize) * one;
-        }
-    }
-
-    /**
-     * Retrieve the size of an item. Sizes of items are as follows:
-     *  - Atom: 1
-     *  - Field: Number of tuples
-     *  - Signature: Number of Atoms (not nested)
-     *  - Skolem: Number of tuples
-     *  - Tuple: 1
-     * @param item
-     */
-    function getSize (item: AlloyElement) {
-        switch (item.expressionType()) {
-            case AlloyType.Atom:
-                return 1;
-            case AlloyType.Field:
-                return (item as AlloyField).tuples().length;
-            case AlloyType.Signature:
-                return (item as AlloySignature).atoms().length;
-            case AlloyType.Skolem:
-                return (item as AlloySkolem).tuples().length;
-            case AlloyType.Tuple:
-                return 1;
-            default:
-                return 0;
+            return (a.size() - b.size()) * one;
         }
     }
 
