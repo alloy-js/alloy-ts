@@ -56,6 +56,19 @@
         }
     }
 
+    class AlloyWitness extends AlloyElement {
+        constructor(name) {
+            super(name);
+            this._skolems = [];
+        }
+        skolems() {
+            return this._skolems.slice();
+        }
+        static addSkolem(witness, skolem) {
+            witness._skolems.push(skolem);
+        }
+    }
+
     /**
      * An atom in an Alloy instance.
      *
@@ -63,7 +76,7 @@
      * In Alloy, an atom is a primitive entity that is *indivisible*, *immutable*,
      * and *uninterpreted*.
      */
-    class AlloyAtom extends AlloyElement {
+    class AlloyAtom extends AlloyWitness {
         /**
          * Create a new Alloy atom.
          *
@@ -136,7 +149,7 @@
      * free variable that makes an existentially quantified formula true, known as a
      * [[AlloySkolem|skolemization]].
      */
-    class AlloyTuple extends AlloyElement {
+    class AlloyTuple extends AlloyWitness {
         /**
          * Create a new Alloy tuple.
          *
@@ -164,6 +177,20 @@
          */
         atoms() {
             return this._atoms.slice();
+        }
+        /**
+         * Returns true if this tuple is equivalent to the provided tuple. Tuples
+         * are equivalent if they contain the same set of atoms in the same order.
+         * @param tuple
+         */
+        equals(tuple) {
+            const atoms = tuple.atoms();
+            return this.arity() === tuple.arity() &&
+                this.atoms()
+                    .map((atom, i) => {
+                    return atoms[i] === atom;
+                })
+                    .reduce((prev, curr) => prev && curr, true);
         }
         /**
          * Returns [[AlloyType.Tuple]]
@@ -1038,11 +1065,12 @@
          * Build all skolems in an XML Alloy instance
          * @param elements An array of "skolem" elements from the XML file
          * @param sigs A map of signature IDs (as assigned in the XML file) to signatures
+         * @param flds A map of field IDs (as assigned in the XML file) to fields
          */
-        static buildSkolem(elements, sigs) {
+        static buildSkolem(elements, sigs, flds) {
             let skolems = new Map();
             elements
-                .map(element => AlloySkolem._buildSkolem(element, sigs))
+                .map(element => AlloySkolem._buildSkolem(element, sigs, flds))
                 .forEach(skolem => skolems.set(skolem.id, skolem.skolem));
             return skolems;
         }
@@ -1051,9 +1079,10 @@
          *
          * @param element The XML "skolem" element
          * @param sigs A map of signature IDs (as assigned in the XML file) to signatures
+         * @param flds A map of field IDs (as assigned in the XML file) to fields
          * @private
          */
-        static _buildSkolem(element, sigs) {
+        static _buildSkolem(element, sigs, flds) {
             // Get and check skolem attributes
             let id = element.getAttribute('ID');
             let label = element.getAttribute('label');
@@ -1077,7 +1106,29 @@
             let tuples = Array
                 .from(element.querySelectorAll('tuple'))
                 .map(el => AlloyTuple.buildSkolemTuple(label, el, types));
+            // Create the skolem
             let skolem = new AlloySkolem(label, types, tuples);
+            // Inject the skolem into witnesses
+            if (types.length === 1) {
+                // A set of atoms, so tell each atom that it's part of this skolem
+                tuples.forEach((tuple) => {
+                    tuple.atoms().forEach((atom) => {
+                        AlloyAtom.addSkolem(atom, skolem);
+                    });
+                });
+            }
+            else if (types.length > 1) {
+                // A set of tuples, so tell each tuple that it's part of this skolem
+                Array.from(flds.values())
+                    .forEach((field) => {
+                    field.tuples().forEach((tuple) => {
+                        let eqv = tuples.find((value) => tuple.equals(value));
+                        if (eqv) {
+                            AlloyTuple.addSkolem(tuple, skolem);
+                        }
+                    });
+                });
+            }
             return {
                 id: parseInt(id),
                 skolem: skolem
@@ -1158,7 +1209,7 @@
             let fields = AlloyField
                 .buildFields(fldElements, sigs);
             let skolems = AlloySkolem
-                .buildSkolem(skoElements, sigs);
+                .buildSkolem(skoElements, sigs, fields);
             AlloySignature.assignFields(Array.from(fields.values()));
             this._signatures = Array.from(sigs.values());
             this._fields = Array.from(fields.values());

@@ -1,5 +1,7 @@
 import { AlloyType } from '../AlloyTypes';
+import { AlloyAtom } from './AlloyAtom';
 import { AlloyElement } from './AlloyElement';
+import { AlloyField } from './AlloyField';
 import { AlloySignature } from './AlloySignature';
 import { AlloyTuple } from './AlloyTuple';
 
@@ -132,13 +134,18 @@ export class AlloySkolem extends AlloyElement {
      * Build all skolems in an XML Alloy instance
      * @param elements An array of "skolem" elements from the XML file
      * @param sigs A map of signature IDs (as assigned in the XML file) to signatures
+     * @param flds A map of field IDs (as assigned in the XML file) to fields
      */
-    static buildSkolem (elements: Array<Element>, sigs: Map<number, AlloySignature>): Map<number, AlloySkolem> {
+    static buildSkolem (
+        elements: Array<Element>,
+        sigs: Map<number, AlloySignature>,
+        flds: Map<number, AlloyField>
+    ): Map<number, AlloySkolem> {
 
         let skolems: Map<number, AlloySkolem> = new Map();
 
         elements
-            .map(element => AlloySkolem._buildSkolem(element, sigs))
+            .map(element => AlloySkolem._buildSkolem(element, sigs, flds))
             .forEach(skolem => skolems.set(skolem.id, skolem.skolem));
 
         return skolems;
@@ -150,9 +157,14 @@ export class AlloySkolem extends AlloyElement {
      *
      * @param element The XML "skolem" element
      * @param sigs A map of signature IDs (as assigned in the XML file) to signatures
+     * @param flds A map of field IDs (as assigned in the XML file) to fields
      * @private
      */
-    private static _buildSkolem (element: Element, sigs: Map<number, AlloySignature>): IDSkolem {
+    private static _buildSkolem (
+        element: Element,
+        sigs: Map<number, AlloySignature>,
+        flds: Map<number, AlloyField>
+    ): IDSkolem {
 
         // Get and check skolem attributes
         let id = element.getAttribute('ID');
@@ -177,7 +189,33 @@ export class AlloySkolem extends AlloyElement {
             .from(element.querySelectorAll('tuple'))
             .map(el => AlloyTuple.buildSkolemTuple(label!, el, types as Array<AlloySignature>));
 
+        // Create the skolem
         let skolem = new AlloySkolem(label, types as Array<AlloySignature>, tuples);
+
+        // Inject the skolem into witnesses
+        if (types.length === 1) {
+
+            // A set of atoms, so tell each atom that it's part of this skolem
+            tuples.forEach((tuple: AlloyTuple) => {
+                tuple.atoms().forEach((atom: AlloyAtom) => {
+                    AlloyAtom.addSkolem(atom, skolem);
+                });
+            });
+
+        } else if (types.length > 1) {
+
+            // A set of tuples, so tell each tuple that it's part of this skolem
+            Array.from(flds.values())
+                .forEach((field: AlloyField) => {
+                    field.tuples().forEach((tuple: AlloyTuple) => {
+                        let eqv = tuples.find((value: AlloyTuple) => tuple.equals(value));
+                        if (eqv) {
+                            AlloyTuple.addSkolem(tuple, skolem);
+                        }
+                    })
+                });
+
+        }
 
         return {
             id: parseInt(id),

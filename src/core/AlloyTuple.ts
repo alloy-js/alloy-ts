@@ -1,7 +1,7 @@
 import { AlloyType } from '../AlloyTypes';
 import { AlloyAtom } from './AlloyAtom';
-import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
+import { AlloyWitness } from './AlloyWitness';
 
 /**
  * # AlloyTuple
@@ -11,7 +11,7 @@ import { AlloySignature } from './AlloySignature';
  * free variable that makes an existentially quantified formula true, known as a
  * [[AlloySkolem|skolemization]].
  */
-export class AlloyTuple extends AlloyElement {
+export class AlloyTuple extends AlloyWitness {
 
     private readonly _id: string;
     private readonly _atoms: Array<AlloyAtom>;
@@ -51,6 +51,24 @@ export class AlloyTuple extends AlloyElement {
     atoms (): Array<AlloyAtom> {
 
         return this._atoms.slice();
+
+    }
+
+    /**
+     * Returns true if this tuple is equivalent to the provided tuple. Tuples
+     * are equivalent if they contain the same set of atoms in the same order.
+     * @param tuple
+     */
+    equals (tuple: AlloyTuple) {
+
+        const atoms = tuple.atoms();
+
+        return this.arity() === tuple.arity() &&
+            this.atoms()
+                .map((atom: AlloyAtom, i: number) => {
+                    return atoms[i] === atom
+                })
+                .reduce((prev: boolean, curr: boolean) => prev && curr, true);
 
     }
 

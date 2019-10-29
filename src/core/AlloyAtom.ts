@@ -1,6 +1,6 @@
 import { AlloyType } from '../AlloyTypes';
-import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
+import { AlloyWitness } from './AlloyWitness';
 
 /**
  * An atom in an Alloy instance.
@@ -9,7 +9,7 @@ import { AlloySignature } from './AlloySignature';
  * In Alloy, an atom is a primitive entity that is *indivisible*, *immutable*,
  * and *uninterpreted*.
  */
-export class AlloyAtom extends AlloyElement {
+export class AlloyAtom extends AlloyWitness {
 
     /**
      * This atom's type

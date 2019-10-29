@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AlloyElement | alloy-ts</title>
+	<title>AlloyWitness | alloy-ts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="alloyelement.html">AlloyElement</a>
+					<a href="alloywitness.html">AlloyWitness</a>
 				</li>
 			</ul>
-			<h1>Class AlloyElement</h1>
+			<h1>Class AlloyWitness</h1>
 		</div>
 	</div>
 </header>
@@ -67,27 +67,37 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The abstract superclass for all elements of an Alloy instance.</p>
+						<a href="#alloywitness" id="alloywitness" style="color: inherit; text-decoration: none;">
+							<h1>AlloyWitness</h1>
+						</a>
 					</div>
+					<p>An AlloyWitness is an <a href="alloyelement.html">AlloyElement</a> that can appear in a
+						<a href="alloyskolem.html">skolem</a>.  These include <a href="alloyatom.html">atoms</a> and
+						<a href="alloytuple.html">tuples</a>.  This class gives access to the skolems that
+						contain an equivalent element.  For example, if this is an atom, any skolems
+						returned by the <code>.skolems()</code> method are skolem sets that contain this atom.
+						Similarly, if this is a tuple, any skolems returned by the <code>.skolems()</code>
+						method are skolem sets that contain a tuple equivalent to this one (note that
+						the skolem will not include this tuple object because skolemized tuples may
+					appear in more than one relation).</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AlloyElement</span>
+						<a href="alloyelement.html" class="tsd-signature-type">AlloyElement</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a>
-							</li>
-							<li>
-								<a href="alloywitness.html" class="tsd-signature-type">AlloyWitness</a>
-							</li>
-							<li>
-								<a href="alloyfield.html" class="tsd-signature-type">AlloyField</a>
-							</li>
-							<li>
-								<a href="alloysignature.html" class="tsd-signature-type">AlloySignature</a>
+								<span class="target">AlloyWitness</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="alloytuple.html" class="tsd-signature-type">AlloyTuple</a>
+									</li>
+									<li>
+										<a href="alloyatom.html" class="tsd-signature-type">AlloyAtom</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -100,22 +110,24 @@
 						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-protected"><a href="alloyelement.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="alloywitness.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="alloyelement.html#_name" class="tsd-kind-icon">_name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="alloywitness.html#_skolems" class="tsd-kind-icon">_skolems</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#expressiontype" class="tsd-kind-icon">expression<wbr>Type</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloyelement.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="alloywitness.html#expressiontype" class="tsd-kind-icon">expression<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="alloywitness.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="alloywitness.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="alloywitness.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="alloywitness.html#skolems" class="tsd-kind-icon">skolems</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="alloywitness.html#addskolem" class="tsd-kind-icon">add<wbr>Skolem</a></li>
 							</ul>
 						</section>
 					</div>
@@ -123,22 +135,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Alloy<wbr>Element<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloyelement.html" class="tsd-signature-type">AlloyElement</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Alloy<wbr>Witness<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloywitness.html" class="tsd-signature-type">AlloyWitness</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="alloyelement.html">AlloyElement</a>.<a href="alloyelement.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L11">core/AlloyElement.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyWitness.ts#L20">core/AlloyWitness.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create a new named Element.</p>
+									<p>Create a new Alloy Witness</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -147,12 +160,12 @@
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The name of the element</p>
+											<p>The name of this witness</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="alloyelement.html" class="tsd-signature-type">AlloyElement</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="alloywitness.html" class="tsd-signature-type">AlloyWitness</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -160,32 +173,28 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _name</h3>
-					<div class="tsd-signature tsd-kind-icon">_name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="_skolems" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _skolems</h3>
+					<div class="tsd-signature tsd-kind-icon">_skolems<span class="tsd-signature-symbol">:</span> <a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L11">core/AlloyElement.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyWitness.ts#L20">core/AlloyWitness.ts:20</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The name of this element.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="expressiontype" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> expression<wbr>Type</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">expression<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/alloytype.html" class="tsd-signature-type">AlloyType</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="alloyelement.html">AlloyElement</a>.<a href="alloyelement.html#expressiontype">expressionType</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L32">core/AlloyElement.ts:32</a></li>
 								</ul>
@@ -206,15 +215,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="id" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> id</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="alloyelement.html">AlloyElement</a>.<a href="alloyelement.html#id">id</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L44">core/AlloyElement.ts:44</a></li>
 								</ul>
@@ -236,15 +246,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="name" class="tsd-anchor"></a>
 					<h3>name</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="alloyelement.html">AlloyElement</a>.<a href="alloyelement.html#name">name</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L49">core/AlloyElement.ts:49</a></li>
 								</ul>
@@ -258,15 +269,16 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="size" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> size</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="alloyelement.html">AlloyElement</a>.<a href="alloyelement.html#size">size</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyElement.ts#L58">core/AlloyElement.ts:58</a></li>
 								</ul>
@@ -277,6 +289,66 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="skolems" class="tsd-anchor"></a>
+					<h3>skolems</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">skolems<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyWitness.ts#L37">core/AlloyWitness.ts:37</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return an array of skolems that include an element equivalent to this
+									element.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="addskolem" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> add<wbr>Skolem</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Skolem<span class="tsd-signature-symbol">(</span>witness<span class="tsd-signature-symbol">: </span><a href="alloywitness.html" class="tsd-signature-type">AlloyWitness</a>, skolem<span class="tsd-signature-symbol">: </span><a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alloy-js/alloy-ts/blob/8aefe59/src/core/AlloyWitness.ts#L48">core/AlloyWitness.ts:48</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a skolem to the provided witness.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>witness: <a href="alloywitness.html" class="tsd-signature-type">AlloyWitness</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The witness</p>
+									</div>
+								</li>
+								<li>
+									<h5>skolem: <a href="alloyskolem.html" class="tsd-signature-type">AlloySkolem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The skolem</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -298,33 +370,9 @@
 					<li class=" tsd-kind-class">
 						<a href="alloyatom.html" class="tsd-kind-icon">Alloy<wbr>Atom</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="alloyelement.html" class="tsd-kind-icon">Alloy<wbr>Element</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
-								<a href="alloyelement.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="alloyelement.html#_name" class="tsd-kind-icon">_name</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloyelement.html#expressiontype" class="tsd-kind-icon">expression<wbr>Type</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloyelement.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloyelement.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="alloyelement.html#size" class="tsd-kind-icon">size</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="alloyfield.html" class="tsd-kind-icon">Alloy<wbr>Field</a>
 					</li>
@@ -343,9 +391,39 @@
 					<li class=" tsd-kind-class">
 						<a href="alloytuple.html" class="tsd-kind-icon">Alloy<wbr>Tuple</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="alloywitness.html" class="tsd-kind-icon">Alloy<wbr>Witness</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="alloywitness.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="alloywitness.html#_skolems" class="tsd-kind-icon">_skolems</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="alloywitness.html#expressiontype" class="tsd-kind-icon">expression<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="alloywitness.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="alloywitness.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="alloywitness.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="alloywitness.html#skolems" class="tsd-kind-icon">skolems</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="alloywitness.html#addskolem" class="tsd-kind-icon">add<wbr>Skolem</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#alloynamefn" class="tsd-kind-icon">Alloy<wbr>Name<wbr>Fn</a>
 					</li>

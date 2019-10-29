@@ -50,7 +50,7 @@ export class AlloyInstance {
             .buildFields(fldElements, sigs);
 
         let skolems: Map<number, AlloySkolem> = AlloySkolem
-            .buildSkolem(skoElements, sigs);
+            .buildSkolem(skoElements, sigs, fields);
 
         AlloySignature.assignFields(Array.from(fields.values()));
 

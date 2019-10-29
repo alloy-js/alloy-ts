@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Test</title>
+        <script src='../bundle/alloy-1.3.0.js'></script>
+    </head>
+    <body>
+        <input type='file' id='file'>
+        <script>
+            let input = document.getElementById('file');
+            input.onchange = (event) => {
+                const f = event.target.files[0];
+                const r = new FileReader();
+                r.onload = e => {
+                    const t = e.target.result;
+                    const i = new alloy.AlloyInstance(t);
+                    i.signatures().forEach(sig => {
+                        sig.atoms().forEach(atom => {
+                            atom.skolems().forEach(skolem => {
+                                console.log(skolem.name() + ': ' + atom.name());
+                            });
+                        });
+                    });
+                    i.fields().forEach(fld => {
+                        fld.tuples().forEach(tuple => {
+                            tuple.skolems().forEach(skolem => {
+                                console.log(skolem.name() + ': ' + tuple.name());
+                            })
+                        })
+                    })
+                };
+                r.readAsText(f);
+            }
+        </script>
+    </body>
+</html>
