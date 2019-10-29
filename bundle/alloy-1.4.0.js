@@ -56,14 +56,41 @@
         }
     }
 
+    /**
+     * # AlloyWitness
+     *
+     * An AlloyWitness is an [[AlloyElement]] that can appear in a
+     * [[AlloySkolem|skolem]].  These include [[AlloyAtom|atoms]] and
+     * [[AlloyTuple|tuples]].  This class gives access to the skolems that
+     * contain an equivalent element.  For example, if this is an atom, any skolems
+     * returned by the `.skolems()` method are skolem sets that contain this atom.
+     * Similarly, if this is a tuple, any skolems returned by the `.skolems()`
+     * method are skolem sets that contain a tuple equivalent to this one (note that
+     * the skolem will not include this tuple object because skolemized tuples may
+     * appear in more than one relation).
+     *
+     */
     class AlloyWitness extends AlloyElement {
+        /**
+         * Create a new Alloy Witness
+         * @param name The name of this witness
+         */
         constructor(name) {
             super(name);
             this._skolems = [];
         }
+        /**
+         * Return an array of skolems that include an element equivalent to this
+         * element.
+         */
         skolems() {
             return this._skolems.slice();
         }
+        /**
+         * Add a skolem to the provided witness.
+         * @param witness The witness
+         * @param skolem The skolem
+         */
         static addSkolem(witness, skolem) {
             witness._skolems.push(skolem);
         }
