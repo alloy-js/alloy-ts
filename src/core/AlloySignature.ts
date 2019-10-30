@@ -430,6 +430,7 @@ export class AlloySignature extends AlloyElement {
 
         ids.set(int.id, int.sig);
         ids.set(seq.id, seq.sig);
+        parents.set(int.id, int.parentID!);
 
         // Parse the non-subset signatures
         sigs
@@ -484,7 +485,9 @@ export class AlloySignature extends AlloyElement {
         if (bitwidth < 1) throw Error(`Invalid bitwidth ${bitwidth}`);
 
         let id = element.getAttribute('ID');
+        let parentID = element.getAttribute('parentID');
         if (!id) throw Error('Invalid Int element');
+        if (!parentID) throw Error('Int is not part of the universe');
 
         let int = new AlloySignature('Int', true);
 
@@ -495,6 +498,7 @@ export class AlloySignature extends AlloyElement {
 
         return {
             id: parseInt(id),
+            parentID: parseInt(parentID),
             sig: int
         }
 

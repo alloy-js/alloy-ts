@@ -3,7 +3,7 @@
     <head>
         <meta charset='UTF-8'>
         <title>Test</title>
-        <script src='../bundle/alloy-1.3.0.js'></script>
+        <script src='../bundle/alloy-1.4.0.js'></script>
     </head>
     <body>
         <input type='file' id='file'>
@@ -16,18 +16,7 @@
                     const t = e.target.result;
                     const i = new alloy.AlloyInstance(t);
                     i.signatures().forEach(sig => {
-                        sig.atoms().forEach(atom => {
-                            atom.skolems().forEach(skolem => {
-                                console.log(skolem.name() + ': ' + atom.name());
-                            });
-                        });
-                    });
-                    i.fields().forEach(fld => {
-                        fld.tuples().forEach(tuple => {
-                            tuple.skolems().forEach(skolem => {
-                                console.log(skolem.name() + ': ' + tuple.name());
-                            })
-                        })
+                        console.log(sig.typeHierarchy().map(t => t.id()));
                     })
                 };
                 r.readAsText(f);

@@ -824,6 +824,7 @@
             let seq = AlloySignature._buildSeq(maxseq, seqElement, int.sig);
             ids.set(int.id, int.sig);
             ids.set(seq.id, seq.sig);
+            parents.set(int.id, int.parentID);
             // Parse the non-subset signatures
             sigs
                 .filter(filterExcludeLabels('Int', 'seq/Int'))
@@ -871,8 +872,11 @@
             if (bitwidth < 1)
                 throw Error(`Invalid bitwidth ${bitwidth}`);
             let id = element.getAttribute('ID');
+            let parentID = element.getAttribute('parentID');
             if (!id)
                 throw Error('Invalid Int element');
+            if (!parentID)
+                throw Error('Int is not part of the universe');
             let int = new AlloySignature('Int', true);
             let n = 2 ** bitwidth;
             for (let i = -n / 2; i < n / 2; ++i) {
@@ -880,6 +884,7 @@
             }
             return {
                 id: parseInt(id),
+                parentID: parseInt(parentID),
                 sig: int
             };
         }
