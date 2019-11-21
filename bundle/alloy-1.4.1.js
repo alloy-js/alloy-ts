@@ -97,78 +97,6 @@
     }
 
     /**
-     * An atom in an Alloy instance.
-     *
-     * @remarks
-     * In Alloy, an atom is a primitive entity that is *indivisible*, *immutable*,
-     * and *uninterpreted*.
-     */
-    class AlloyAtom extends AlloyWitness {
-        /**
-         * Create a new Alloy atom.
-         *
-         * @param signature The type of this atom
-         * @param name The name of this atom
-         */
-        constructor(signature, name) {
-            super(name);
-            this._type = signature;
-        }
-        /**
-         * Returns [[AlloyType.Atom]]
-         */
-        expressionType() {
-            return AlloyType.Atom;
-        }
-        /**
-         * Returns the unique ID of this atom.
-         *
-         * @remarks
-         * The unique ID of an atom is a combination of the ID of the atom's type,
-         * an [[AlloySignature]], and the atom's name, separated by a colon.
-         */
-        id() {
-            return this._type.id() + ':' + this.name();
-        }
-        /**
-         * Returns true if this atom is of type **signature**, false otherwise.
-         * @param signature The signature to check against
-         */
-        isType(signature) {
-            return this.typeHierarchy().includes(signature);
-        }
-        /**
-         * Returns the size of this atom. Atoms always have size 1.
-         */
-        size() {
-            return 1;
-        }
-        /**
-         * Returns a printable string.
-         */
-        toString() {
-            return this.name();
-        }
-        /**
-         * Returns the type of this atom.
-         *
-         * @remarks
-         * Due to the hierarchical nature of Alloy signatures, it is possible for
-         * atoms to have multiple types. This method returns the atom's immediate
-         * type, i.e., the "lowest" level signature of which it is a child.
-         */
-        type() {
-            return this._type;
-        }
-        /**
-         * Return an array, in order from highest to lowest, of this atom's types.
-         */
-        typeHierarchy() {
-            return this._type.typeHierarchy();
-        }
-    }
-
-    /**
      * # AlloyTuple
      *
      * In Alloy, a tuple is a sequence of one or more atoms. As part of an Alloy
@@ -305,6 +233,89 @@
         }
     }
 
+    /**
+     * An atom in an Alloy instance.
+     *
+     * @remarks
+     * In Alloy, an atom is a primitive entity that is *indivisible*, *immutable*,
+     * and *uninterpreted*.
+     */
+    class AlloyAtom extends AlloyWitness {
+        /**
+         * Create a new Alloy atom.
+         *
+         * @param signature The type of this atom
+         * @param name The name of this atom
+         */
+        constructor(signature, name) {
+            super(name);
+            this._type = signature;
+        }
+        /**
+         * Returns [[AlloyType.Atom]]
+         */
+        expressionType() {
+            return AlloyType.Atom;
+        }
+        /**
+         * Returns the unique ID of this atom.
+         *
+         * @remarks
+         * The unique ID of an atom is a combination of the ID of the atom's type,
+         * an [[AlloySignature]], and the atom's name, separated by a colon.
+         */
+        id() {
+            return this._type.id() + ':' + this.name();
+        }
+        /**
+         * Returns true if this atom is of type **signature**, false otherwise.
+         * @param signature The signature to check against
+         */
+        isType(signature) {
+            return this.typeHierarchy().includes(signature);
+        }
+        join(field) {
+            const tuples = field.tuples()
+                .filter(tuple => tuple.atoms()[0] === this)
+                .map(tuple => new AlloyTuple('', tuple.atoms().slice(1)));
+            const seen = {};
+            return tuples.filter(tuple => {
+                return seen.hasOwnProperty(tuple.name())
+                    ? false
+                    : (seen[tuple.name()] = true);
+            });
+        }
+        /**
+         * Returns the size of this atom. Atoms always have size 1.
+         */
+        size() {
+            return 1;
+        }
+        /**
+         * Returns a printable string.
+         */
+        toString() {
+            return this.name();
+        }
+        /**
+         * Returns the type of this atom.
+         *
+         * @remarks
+         * Due to the hierarchical nature of Alloy signatures, it is possible for
+         * atoms to have multiple types. This method returns the atom's immediate
+         * type, i.e., the "lowest" level signature of which it is a child.
+         */
+        type() {
+            return this._type;
+        }
+        /**
+         * Return an array, in order from highest to lowest, of this atom's types.
+         */
+        typeHierarchy() {
+            return this._type.typeHierarchy();
+        }
+    }
+
     class AlloyField extends AlloyElement {
         /**
          * Create a new Alloy field.
@@ -379,6 +390,50 @@
          */
         is_private() {
             return this._is_private;
+        }
+        join(item) {
+            let arity = this.arity();
+            let lastType = this.types()[arity - 1];
+            if (typeof item === 'string') {
+                if (lastType.name() === item || lastType.name() === 'this/' + item) {
+                    item = lastType;
+                }
+                else {
+                    let atoms = lastType.atoms(true);
+                    let atom = atoms.find(atom => atom.name() === item);
+                    if (atom)
+                        item = atom;
+                }
+            }
+            if (typeof item === 'string') {
+                return [];
+            }
+            if (item.expressionType() === 'signature') {
+                if (lastType !== item)
+                    return [];
+                const tuples = this.tuples()
+                    .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
+                const seen = {};
+                return tuples.filter(tuple => {
+                    return seen.hasOwnProperty(tuple.name())
+                        ? false
+                        : (seen[tuple.name()] = true);
+                });
+            }
+            else {
+                const tuples = this.tuples()
+                    .filter(tuple => {
+                    let atoms = tuple.atoms();
+                    return atoms[atoms.length - 1] === item;
+                })
+                    .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
+                const seen = {};
+                return tuples.filter(tuple => {
+                    return seen.hasOwnProperty(tuple.name())
+                        ? false
+                        : (seen[tuple.name()] = true);
+                });
+            }
         }
         /**
          * Returns the signature that defines this field.
@@ -569,6 +624,13 @@
             this._is_subset = is_subset ? is_subset : false;
         }
         /**
+         * Find an atom by name.
+         * @param name The name of the atom
+         */
+        atom(name) {
+            return this._atoms.find(atom => atom.name() === name) || null;
+        }
+        /**
          * Returns an array of atoms whose type are this signature.
          *
          * @remarks
@@ -748,6 +810,17 @@
          */
         isSubset() {
             return this._is_subset;
+        }
+        join(field) {
+            const tuples = field.tuples()
+                .filter(tuple => tuple.atoms()[0].isType(this))
+                .map(tuple => new AlloyTuple('', tuple.atoms().slice(1)));
+            const seen = {};
+            return tuples.filter(tuple => {
+                return seen.hasOwnProperty(tuple.name())
+                    ? false
+                    : (seen[tuple.name()] = true);
+            });
         }
         /**
          * Returns the number of (non-nested) atoms defined by this signature.
@@ -1276,6 +1349,53 @@
             return this._command;
         }
         /**
+         * Find a field by name.
+         *
+         * @remarks
+         * In Alloy it is possible to have multiple fields with same name that are
+         * defined within different signatures. If there are multiple fields of the
+         * same name, this ambiguity must be removed by providing the signature used
+         * to define the field you require. You may provide this signature by name
+         * or object as the second argument, or you may use the dot syntax in the
+         * first argument (e.g. Signature.fieldname).
+         *
+         * @param name The field name with or without the signature name included using dot syntax
+         * @param sig The [[AlloySignature|signature]] name or object used to determine specific
+         * field to be used when names are ambiguous
+         */
+        field(name, sig) {
+            let tokens = name.split('.');
+            if (tokens.length === 2) {
+                if (arguments.length !== 1)
+                    throw Error('Do not use dot syntax and provide a signature');
+                sig = tokens[0];
+                name = tokens[1];
+            }
+            else if (tokens.length !== 1) {
+                throw Error('Provided dot syntax is invalid');
+            }
+            else {
+                name = tokens[0];
+            }
+            let fields = this.fields().filter(fld => fld.name() === name);
+            if (fields.length === 0)
+                return null;
+            if (fields.length === 1)
+                return fields[0];
+            if (!sig) {
+                let list = fields
+                    .map(fld => fld.types()[0].name() + ' <: ' + name)
+                    .join('\n');
+                throw Error('The name is ambiguous due to multiple matches:\n' + list);
+            }
+            const signature = typeof sig === 'string'
+                ? this.signature(sig)
+                : sig;
+            if (signature === null)
+                return null;
+            return fields.find(fld => fld.types()[0] === signature) || null;
+        }
+        /**
          * Return an array of all fields in this instance.
          */
         fields() {
@@ -1292,6 +1412,16 @@
          */
         maxseq() {
             return this._maxseq;
+        }
+        /**
+         * Find a signature by name. If the signature does not exist, null is returned.
+         * @param name The name of the signature (the "this/" prefix is not required
+         * but may be included)
+         */
+        signature(name) {
+            return this._signatures.find(sig => sig.name() === name) ||
+                this._signatures.find(sig => sig.name() === 'this/' + name) ||
+                null;
         }
         /**
          * Return an array of all signatures in this instance.

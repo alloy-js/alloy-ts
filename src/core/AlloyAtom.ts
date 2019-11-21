@@ -1,5 +1,7 @@
 import { AlloyType } from '../AlloyTypes';
+import { AlloyField } from './AlloyField';
 import { AlloySignature } from './AlloySignature';
+import { AlloyTuple } from './AlloyTuple';
 import { AlloyWitness } from './AlloyWitness';
 
 /**
@@ -59,6 +61,23 @@ export class AlloyAtom extends AlloyWitness {
     isType (signature: AlloySignature): boolean {
 
         return this.typeHierarchy().includes(signature);
+
+    }
+
+
+    join (field: AlloyField): Array<AlloyTuple> {
+
+        const tuples = field.tuples()
+            .filter(tuple => tuple.atoms()[0] === this)
+            .map(tuple => new AlloyTuple('', tuple.atoms().slice(1)));
+
+        const seen: {[index: string]: boolean} = {};
+
+        return tuples.filter(tuple => {
+            return seen.hasOwnProperty(tuple.name())
+                ? false
+                : (seen[tuple.name()] = true);
+        });
 
     }
 

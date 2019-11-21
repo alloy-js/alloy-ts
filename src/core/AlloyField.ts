@@ -1,4 +1,5 @@
 import { AlloyType } from '../AlloyTypes';
+import { AlloyAtom } from './AlloyAtom';
 import { AlloyElement } from './AlloyElement';
 import { AlloySignature } from './AlloySignature';
 import { AlloyTuple } from './AlloyTuple';
@@ -127,6 +128,71 @@ export class AlloyField extends AlloyElement {
 
     }
 
+
+    join (item: AlloySignature | AlloyAtom | string): Array<AlloyTuple> {
+
+        let arity = this.arity();
+        let lastType = this.types()[arity-1];
+
+        if (typeof item === 'string') {
+
+            if (lastType.name() === item || lastType.name() === 'this/' + item) {
+
+                item = lastType;
+
+            } else {
+
+                let atoms = lastType.atoms(true);
+                let atom = atoms.find(atom => atom.name() === item);
+
+                if (atom) item = atom;
+
+            }
+
+        }
+
+        if (typeof item === 'string') {
+
+            return [];
+
+        }
+
+        if (item.expressionType() === 'signature') {
+
+            if (lastType !== item) return [];
+
+            const tuples = this.tuples()
+                .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
+
+            const seen: {[index: string]: boolean} = {};
+
+            return tuples.filter(tuple => {
+                return seen.hasOwnProperty(tuple.name())
+                    ? false
+                    : (seen[tuple.name()] = true);
+            });
+
+        } else {
+
+            const tuples = this.tuples()
+                .filter(tuple => {
+                    let atoms = tuple.atoms();
+                    return atoms[atoms.length-1] === item;
+                })
+                .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
+
+            const seen: {[index: string]: boolean} = {};
+
+            return tuples.filter(tuple => {
+                return seen.hasOwnProperty(tuple.name())
+                    ? false
+                    : (seen[tuple.name()] = true);
+            });
+
+        }
+
+    }
+
     /**
      * Returns the signature that defines this field.
      */
@@ -157,7 +223,7 @@ export class AlloyField extends AlloyElement {
     /**
      * Returns a copy of this field's tuples.
      */
-    tuples (): Array<AlloyTuple> {
+    tuples (): AlloyTuple[] {
 
         return this._tuples.slice();
 

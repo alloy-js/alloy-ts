@@ -102,6 +102,66 @@ export class AlloyInstance {
     }
 
     /**
+     * Find a field by name.
+     *
+     * @remarks
+     * In Alloy it is possible to have multiple fields with same name that are
+     * defined within different signatures. If there are multiple fields of the
+     * same name, this ambiguity must be removed by providing the signature used
+     * to define the field you require. You may provide this signature by name
+     * or object as the second argument, or you may use the dot syntax in the
+     * first argument (e.g. Signature.fieldname).
+     *
+     * @param name The field name with or without the signature name included using dot syntax
+     * @param sig The [[AlloySignature|signature]] name or object used to determine specific
+     * field to be used when names are ambiguous
+     */
+    field (name: string, sig?: string | AlloySignature): AlloyField | null | never {
+
+        let tokens = name.split('.');
+
+        if (tokens.length === 2) {
+
+            if (arguments.length !== 1)
+                throw Error('Do not use dot syntax and provide a signature');
+
+            sig = tokens[0];
+            name = tokens[1];
+
+        } else if (tokens.length !== 1) {
+
+            throw Error('Provided dot syntax is invalid');
+
+        } else {
+
+            name = tokens[0];
+
+        }
+
+        let fields = this.fields().filter(fld => fld.name() === name);
+
+        if (fields.length === 0) return null;
+
+        if (fields.length === 1) return fields[0];
+
+        if (!sig) {
+            let list = fields
+                .map(fld => fld.types()[0].name() + ' <: ' + name)
+                .join('\n');
+            throw Error('The name is ambiguous due to multiple matches:\n' + list);
+        }
+
+        const signature = typeof sig === 'string'
+            ? this.signature(sig)
+            : sig;
+
+        if (signature === null) return null;
+
+        return fields.find(fld => fld.types()[0] === signature) || null;
+
+    }
+
+    /**
      * Return an array of all fields in this instance.
      */
     fields (): Array<AlloyField> {
@@ -125,6 +185,19 @@ export class AlloyInstance {
     maxseq (): number {
 
         return this._maxseq;
+
+    }
+
+    /**
+     * Find a signature by name. If the signature does not exist, null is returned.
+     * @param name The name of the signature (the "this/" prefix is not required
+     * but may be included)
+     */
+    signature (name: string): AlloySignature | null {
+
+        return this._signatures.find(sig => sig.name() === name) ||
+            this._signatures.find(sig => sig.name() === 'this/' + name) ||
+            null;
 
     }
 

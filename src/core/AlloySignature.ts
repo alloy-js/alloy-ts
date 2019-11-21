@@ -3,6 +3,7 @@ import { xml } from '../xml/AlloyXML';
 import { AlloyAtom } from './AlloyAtom';
 import { AlloyElement } from './AlloyElement';
 import { AlloyField } from './AlloyField';
+import { AlloyTuple } from './AlloyTuple';
 import filterExcludeLabels = xml.filterExcludeLabels;
 import isSubset = xml.isSubset;
 import sortSubset = xml.sortSubset;
@@ -46,17 +47,17 @@ export class AlloySignature extends AlloyElement {
     /**
      * An array of signatures for which this is the parent type
      */
-    private _subtypes: Array<AlloySignature>;
+    private _subtypes: AlloySignature[];
 
     /**
      * An array of [[AlloyAtom|atoms]] defined by this signature
      */
-    private _atoms: Array<AlloyAtom>;
+    private _atoms: AlloyAtom[];
 
     /**
      * An array of [[AlloyField|fields]] defined by this signature
      */
-    private _fields: Array<AlloyField>;
+    private _fields: AlloyField[];
 
     private readonly _is_builtin: boolean;
     private readonly _is_meta: boolean;
@@ -92,6 +93,16 @@ export class AlloySignature extends AlloyElement {
         this._is_one = is_one ? is_one : false;
         this._is_private = is_private ? is_private : false;
         this._is_subset = is_subset ? is_subset : false;
+
+    }
+
+    /**
+     * Find an atom by name.
+     * @param name The name of the atom
+     */
+    atom (name: string): AlloyAtom | null {
+
+        return this._atoms.find(atom => atom.name() === name) || null;
 
     }
 
@@ -331,6 +342,23 @@ export class AlloySignature extends AlloyElement {
     isSubset (): boolean {
 
         return this._is_subset;
+
+    }
+
+
+    join (field: AlloyField): Array<AlloyTuple> {
+
+        const tuples = field.tuples()
+            .filter(tuple => tuple.atoms()[0].isType(this))
+            .map(tuple => new AlloyTuple('', tuple.atoms().slice(1)));
+
+        const seen: {[index: string]: boolean} = {};
+
+        return tuples.filter(tuple => {
+            return seen.hasOwnProperty(tuple.name())
+                ? false
+                : (seen[tuple.name()] = true);
+        });
 
     }
 

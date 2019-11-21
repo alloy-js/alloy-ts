@@ -3,7 +3,7 @@
     <head>
         <meta charset='UTF-8'>
         <title>Test</title>
-        <script src='../bundle/alloy-1.4.0.js'></script>
+        <script src='../bundle/alloy-1.4.1.js'></script>
     </head>
     <body>
         <input type='file' id='file'>
@@ -14,10 +14,16 @@
                 const r = new FileReader();
                 r.onload = e => {
                     const t = e.target.result;
-                    const i = new alloy.AlloyInstance(t);
-                    i.signatures().forEach(sig => {
-                        console.log(sig.typeHierarchy().map(t => t.id()));
-                    })
+                    const instance = new alloy.AlloyInstance(t);
+
+                    let Matrix = instance.signature('Matrix');
+                    let Value = instance.signature('Value');
+                    let Value0 = Value.atom('Value$0');
+                    let vals = instance.field('vals');
+
+                    console.log(vals.join('Value$1'));
+                    console.log(Value0.join(vals));
+
                 };
                 r.readAsText(f);
             }
