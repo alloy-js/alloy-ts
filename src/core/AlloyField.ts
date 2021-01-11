@@ -23,7 +23,7 @@ interface IDField {
 
 export class AlloyField extends AlloyElement {
 
-    private readonly _types: Array<AlloySignature>;
+    private readonly _types: AlloySignature[][];
     private readonly _tuples: Array<AlloyTuple>;
 
     private readonly _is_meta: boolean;
@@ -50,7 +50,7 @@ export class AlloyField extends AlloyElement {
      * match the type of the column in which it resides.
      */
     constructor (name: string,
-                 types: Array<AlloySignature>,
+                 types: AlloySignature[][],
                  tuples: Array<AlloyTuple>,
                  is_meta?: boolean,
                  is_private?: boolean) {
@@ -63,18 +63,25 @@ export class AlloyField extends AlloyElement {
         this._is_private = is_private ? is_private : false;
 
         // Check that the field has an arity of at least two
-        if (types.length < 2) {
+        if (types[0].length < 2) {
             throw Error(`Field ${name} has arity less than two.`);
         }
 
         // Check that all tuples are composed of correct types
-        tuples.forEach(tuple => {
-            tuple.atoms().forEach((atom, i) => {
-                if (!atom.isType(types[i])) {
-                    throw Error(`Tuple ${tuple} has incorrect types.`);
-                }
-            });
-        });
+        // tuples.forEach(tuple => {
+        //     tuple.atoms().forEach((atom, i) => {
+        //         if (!types[i].some(type => atom.isType(type))) {
+        //             throw Error(`Tuple ${tuple} has incorrect types.`)
+        //         }
+        //     })
+        // })
+        // tuples.forEach(tuple => {
+        //     tuple.atoms().forEach((atom, i) => {
+        //         if (!atom.isType(types[i])) {
+        //             throw Error(`Tuple ${tuple} has incorrect types.`);
+        //         }
+        //     });
+        // });
 
     }
 
@@ -106,7 +113,7 @@ export class AlloyField extends AlloyElement {
      */
     id (): string {
 
-        return this._types[0].name() + '<:' + this.name();
+        return this._types[0][0].name() + '<:' + this.name();
 
     }
 
@@ -132,22 +139,26 @@ export class AlloyField extends AlloyElement {
     join (item: AlloySignature | AlloyAtom | string): Array<AlloyTuple> {
 
         let arity = this.arity();
-        let lastType = this.types()[arity-1];
+        let lastTypes = this.types()[arity-1];
 
         if (typeof item === 'string') {
 
-            if (lastType.name() === item || lastType.name() === 'this/' + item) {
+            lastTypes.forEach(lastType => {
 
-                item = lastType;
+                if (lastType.name() === item || lastType.name() === 'this/' + item) {
 
-            } else {
+                    item = lastType;
 
-                let atoms = lastType.atoms(true);
-                let atom = atoms.find(atom => atom.name() === item);
+                } else {
 
-                if (atom) item = atom;
+                    let atoms = lastType.atoms(true);
+                    let atom = atoms.find(atom => atom.name() === item);
 
-            }
+                    if (atom) item = atom;
+
+                }
+
+            });
 
         }
 
@@ -159,7 +170,7 @@ export class AlloyField extends AlloyElement {
 
         if (item.expressionType() === 'signature') {
 
-            if (lastType !== item) return [];
+            if (!lastTypes.some(lastType => lastType === item)) return [];
 
             const tuples = this.tuples()
                 .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
@@ -198,7 +209,7 @@ export class AlloyField extends AlloyElement {
      */
     parent (): AlloySignature {
 
-        return this._types[0];
+        return this._types[0][0];
 
     }
 
@@ -232,7 +243,7 @@ export class AlloyField extends AlloyElement {
     /**
      * Returns a copy of the types that define the columns of this relation.
      */
-    types (): Array<AlloySignature> {
+    types (): AlloySignature[][] {
 
         return this._types.slice();
 
@@ -269,34 +280,44 @@ export class AlloyField extends AlloyElement {
         let id = element.getAttribute('ID');
         let parentID = element.getAttribute('parentID');
         let label = element.getAttribute('label');
-        let typesEl = element.querySelector('types');
+        // let typesEl = element.querySelector('types');
+        let typesEls = element.querySelectorAll('types');
         let meta = element.getAttribute('meta') === 'yes';
         let priv = element.getAttribute('private') === 'yes';
 
         if (!id) throw Error('Field has no ID attribute');
         if (!parentID) throw Error('Field has no parentID attribute');
         if (!label) throw Error('Field has no label attribute');
-        if (!typesEl) throw Error('Field has no types');
+        // if (!typesEl) throw Error('Field has no types');
 
         // Get the parent signature of the field
         let parent = sigs.get(parseInt(parentID));
         if (!parent) throw Error('Field parent type has not been created');
 
-        // Get and check the types used in this field
         let typeIDs = Array
-            .from(typesEl.querySelectorAll('type'))
-            .map(el => el.getAttribute('ID'));
-        if (typeIDs.includes(null)) throw Error('Undefined type in field');
+            .from(typesEls)
+            .map(typesel => Array
+                .from(typesel.querySelectorAll('type'))
+                .map(el => el.getAttribute('ID')));
+        if (typeIDs.some(IDs => IDs.includes(null))) throw Error('Undefined type in field');
 
-        let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
-        if (types.includes(undefined)) throw Error('A field type has not been created');
+        // Get and check the types used in this field
+        // let typeIDs = Array
+        //     .from(typesEl.querySelectorAll('type'))
+        //     .map(el => el.getAttribute('ID'));
+        // if (typeIDs.includes(null)) throw Error('Undefined type in field');
+
+        let types: (AlloySignature|undefined)[][] = typeIDs.map(IDs => IDs.map(id => sigs.get(parseInt(id!))));
+        if (types.some(ts => ts.includes(undefined))) throw Error('A field type has not been created');
+        // let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
+        // if (types.includes(undefined)) throw Error('A field type has not been created');
 
         // Get and assemble the tuples
         let tuples = Array
             .from(element.querySelectorAll('tuple'))
-            .map(el => AlloyTuple.buildFieldTuple(el, types as Array<AlloySignature>));
+            .map(el => AlloyTuple.buildFieldTuple(el, types as AlloySignature[][]));
 
-        let field = new AlloyField(label, types as Array<AlloySignature>, tuples, meta, priv);
+        let field = new AlloyField(label, types as AlloySignature[][], tuples, meta, priv);
 
         return {
             id: parseInt(id),

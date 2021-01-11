@@ -1,0 +1,1436 @@
+<alloy builddate="2018-04-08T17:20:06.754Z">
+
+<instance bitwidth="4" maxseq="1" command="Run SubductionTest1 for 1 but 2 NetworkName, 2 NetworkState, 1 Layering, 0 Bridge, 1 Subduction, 6 Name, 2 LinkIdent, 6 Link, 5 SessionIdent, 10 Header, 6 AcquireTable, 6 ForwardTable, 4 ExternalReference" filename="/Users/atdyer/research/alloy/models/zave/viz/net3.als">
+
+<sig label="seq/Int" ID="0" parentID="1" builtin="yes">
+</sig>
+
+<sig label="Int" ID="1" parentID="2" builtin="yes">
+</sig>
+
+<sig label="String" ID="3" parentID="2" builtin="yes">
+</sig>
+
+<sig label="this/Service" ID="4" parentID="5" one="yes">
+   <atom label="Service$0"/>
+</sig>
+
+<sig label="this/NetworkName" ID="5" parentID="2">
+   <atom label="NetworkName$0"/>
+</sig>
+
+<sig label="this/SessionIdent" ID="6" parentID="2">
+   <atom label="SessionIdent$0"/>
+   <atom label="SessionIdent$1"/>
+</sig>
+
+<sig label="this/LinkIdent" ID="7" parentID="2">
+   <atom label="LinkIdent$0"/>
+   <atom label="LinkIdent$1"/>
+</sig>
+
+<sig label="this/M0" ID="8" parentID="9" one="yes">
+   <atom label="M0$0"/>
+</sig>
+
+<sig label="this/M1" ID="10" parentID="9" one="yes">
+   <atom label="M1$0"/>
+</sig>
+
+<sig label="this/M2" ID="11" parentID="9" one="yes">
+   <atom label="M2$0"/>
+</sig>
+
+<sig label="this/M3" ID="12" parentID="9" one="yes">
+   <atom label="M3$0"/>
+</sig>
+
+<sig label="this/M4" ID="13" parentID="9" one="yes">
+   <atom label="M4$0"/>
+</sig>
+
+<sig label="this/M5" ID="14" parentID="9" one="yes">
+   <atom label="M5$0"/>
+</sig>
+
+<sig label="this/Name" ID="9" parentID="2">
+</sig>
+
+<sig label="this/Receive" ID="15" parentID="2" one="yes">
+   <atom label="Receive$0"/>
+</sig>
+
+<sig label="this/Forward" ID="16" parentID="2" one="yes">
+   <atom label="Forward$0"/>
+</sig>
+
+<sig label="this/Self" ID="17" parentID="2" one="yes">
+   <atom label="Self$0"/>
+</sig>
+
+<sig label="this/Primitive" ID="18" parentID="2" one="yes">
+   <atom label="Primitive$0"/>
+</sig>
+
+<sig label="this/Drop" ID="19" parentID="2" one="yes">
+   <atom label="Drop$0"/>
+</sig>
+
+<sig label="this/OneWay" ID="20" parentID="21" one="yes">
+   <atom label="OneWay$0"/>
+</sig>
+
+<sig label="this/TwoWay" ID="22" parentID="21" one="yes">
+   <atom label="TwoWay$0"/>
+</sig>
+
+<sig label="this/AllCast" ID="23" parentID="21" one="yes">
+   <atom label="AllCast$0"/>
+</sig>
+
+<sig label="this/AnyCast" ID="24" parentID="21" one="yes">
+   <atom label="AnyCast$0"/>
+</sig>
+
+<sig label="this/Protocol" ID="21" parentID="2" abstract="yes">
+</sig>
+
+<sig label="this/H12" ID="25" parentID="26" one="yes">
+   <atom label="H12$0"/>
+</sig>
+
+<sig label="this/H21" ID="27" parentID="26" one="yes">
+   <atom label="H21$0"/>
+</sig>
+
+<sig label="this/H23" ID="28" parentID="26" one="yes">
+   <atom label="H23$0"/>
+</sig>
+
+<sig label="this/H32" ID="29" parentID="26" one="yes">
+   <atom label="H32$0"/>
+</sig>
+
+<sig label="this/H05" ID="30" parentID="26" one="yes">
+   <atom label="H05$0"/>
+</sig>
+
+<sig label="this/H50" ID="31" parentID="26" one="yes">
+   <atom label="H50$0"/>
+</sig>
+
+<sig label="this/H24" ID="32" parentID="26" one="yes">
+   <atom label="H24$0"/>
+</sig>
+
+<sig label="this/H42" ID="33" parentID="26" one="yes">
+   <atom label="H42$0"/>
+</sig>
+
+<sig label="this/H04" ID="34" parentID="26" one="yes">
+   <atom label="H04$0"/>
+</sig>
+
+<sig label="this/H40" ID="35" parentID="26" one="yes">
+   <atom label="H40$0"/>
+</sig>
+
+<sig label="this/Header" ID="26" parentID="2">
+</sig>
+
+<field label="src" ID="36" parentID="26">
+   <tuple> <atom label="H12$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="H21$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H23$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H32$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="H05$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="H50$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="H24$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H42$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="H04$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="H40$0"/> <atom label="M4$0"/> </tuple>
+   <types> <type ID="26"/> <type ID="9"/> </types>
+</field>
+
+<field label="dst" ID="37" parentID="26">
+   <tuple> <atom label="H12$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H21$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="H23$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="H32$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H05$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="H50$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="H24$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="H42$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="H04$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="H40$0"/> <atom label="M0$0"/> </tuple>
+   <types> <type ID="26"/> <type ID="9"/> </types>
+</field>
+
+<field label="sessionIdent" ID="38" parentID="26">
+   <tuple> <atom label="H12$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H21$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H23$0"/> <atom label="SessionIdent$1"/> </tuple>
+   <tuple> <atom label="H32$0"/> <atom label="SessionIdent$1"/> </tuple>
+   <tuple> <atom label="H05$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H50$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H24$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H42$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H04$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="H40$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <types> <type ID="26"/> <type ID="6"/> </types>
+</field>
+
+<field label="protocol" ID="39" parentID="26">
+   <tuple> <atom label="H12$0"/> <atom label="TwoWay$0"/> </tuple>
+   <tuple> <atom label="H21$0"/> <atom label="TwoWay$0"/> </tuple>
+   <tuple> <atom label="H23$0"/> <atom label="TwoWay$0"/> </tuple>
+   <tuple> <atom label="H32$0"/> <atom label="TwoWay$0"/> </tuple>
+   <tuple> <atom label="H05$0"/> <atom label="OneWay$0"/> </tuple>
+   <tuple> <atom label="H50$0"/> <atom label="OneWay$0"/> </tuple>
+   <tuple> <atom label="H24$0"/> <atom label="OneWay$0"/> </tuple>
+   <tuple> <atom label="H42$0"/> <atom label="OneWay$0"/> </tuple>
+   <tuple> <atom label="H04$0"/> <atom label="AllCast$0"/> </tuple>
+   <tuple> <atom label="H40$0"/> <atom label="AllCast$0"/> </tuple>
+   <types> <type ID="26"/> <type ID="21"/> </types>
+</field>
+
+<field label="overlay" ID="40" parentID="26">
+   <tuple> <atom label="H12$0"/> <atom label="NetworkName$0"/> </tuple>
+   <tuple> <atom label="H21$0"/> <atom label="NetworkName$0"/> </tuple>
+   <tuple> <atom label="H23$0"/> <atom label="NetworkName$0"/> </tuple>
+   <tuple> <atom label="H32$0"/> <atom label="NetworkName$0"/> </tuple>
+   <types> <type ID="26"/> <type ID="5"/> </types>
+</field>
+
+<sig label="this/GroupLink" ID="41" parentID="42">
+</sig>
+
+<field label="group" ID="43" parentID="41">
+   <types> <type ID="41"/> <type ID="9"/> </types>
+</field>
+
+<sig label="this/K01" ID="44" parentID="42" one="yes">
+   <atom label="K01$0"/>
+</sig>
+
+<sig label="this/K10" ID="45" parentID="42" one="yes">
+   <atom label="K10$0"/>
+</sig>
+
+<sig label="this/K12" ID="46" parentID="42" one="yes">
+   <atom label="K12$0"/>
+</sig>
+
+<sig label="this/K21" ID="47" parentID="42" one="yes">
+   <atom label="K21$0"/>
+</sig>
+
+<sig label="this/K23" ID="48" parentID="42" one="yes">
+   <atom label="K23$0"/>
+</sig>
+
+<sig label="this/K32" ID="49" parentID="42" one="yes">
+   <atom label="K32$0"/>
+</sig>
+
+<sig label="this/K34" ID="50" parentID="42" one="yes">
+   <atom label="K34$0"/>
+</sig>
+
+<sig label="this/K43" ID="51" parentID="42" one="yes">
+   <atom label="K43$0"/>
+</sig>
+
+<sig label="this/K15" ID="52" parentID="42" one="yes">
+   <atom label="K15$0"/>
+</sig>
+
+<sig label="this/K51" ID="53" parentID="42" one="yes">
+   <atom label="K51$0"/>
+</sig>
+
+<sig label="this/K53" ID="54" parentID="42" one="yes">
+   <atom label="K53$0"/>
+</sig>
+
+<sig label="this/K35" ID="55" parentID="42" one="yes">
+   <atom label="K35$0"/>
+</sig>
+
+<sig label="this/Link" ID="42" parentID="2">
+</sig>
+
+<field label="sndr" ID="56" parentID="42">
+   <tuple> <atom label="K01$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="K10$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K12$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K21$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="K23$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="K32$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="K34$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="K43$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="K15$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K51$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="K53$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="K35$0"/> <atom label="M3$0"/> </tuple>
+   <types> <type ID="42"/> <type ID="9"/> </types>
+</field>
+
+<field label="sndrIdent" ID="57" parentID="42">
+   <tuple> <atom label="K01$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K10$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K12$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K21$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K23$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K32$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K34$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K43$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K15$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K51$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K53$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K35$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <types> <type ID="42"/> <type ID="7"/> </types>
+</field>
+
+<field label="rcvrs" ID="58" parentID="42">
+   <tuple> <atom label="K01$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K10$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="K12$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="K21$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K23$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="K32$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="K34$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="K43$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="K15$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="K51$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="K53$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="K35$0"/> <atom label="M5$0"/> </tuple>
+   <types> <type ID="42"/> <type ID="9"/> </types>
+</field>
+
+<field label="rcvrIdents" ID="59" parentID="42">
+   <tuple> <atom label="K01$0"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K10$0"/> <atom label="M0$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K12$0"/> <atom label="M2$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K21$0"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K23$0"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K32$0"/> <atom label="M2$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K34$0"/> <atom label="M4$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K43$0"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K15$0"/> <atom label="M5$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="K51$0"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K53$0"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="K35$0"/> <atom label="M5$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <types> <type ID="42"/> <type ID="9"/> <type ID="7"/> </types>
+</field>
+
+<sig label="this/ExternalLink" ID="60" parentID="61">
+   <atom label="ExternalLink$0"/>
+   <atom label="ExternalLink$1"/>
+</sig>
+
+<field label="exLink" ID="62" parentID="60">
+   <tuple> <atom label="ExternalLink$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ExternalLink$1"/> <atom label="LinkIdent$0"/> </tuple>
+   <types> <type ID="60"/> <type ID="7"/> </types>
+</field>
+
+<sig label="this/ExternalSession" ID="63" parentID="61">
+   <atom label="ExternalSession$0"/>
+   <atom label="ExternalSession$1"/>
+</sig>
+
+<field label="exSession" ID="64" parentID="63">
+   <tuple> <atom label="ExternalSession$0"/> <atom label="SessionIdent$1"/> </tuple>
+   <tuple> <atom label="ExternalSession$1"/> <atom label="SessionIdent$0"/> </tuple>
+   <types> <type ID="63"/> <type ID="6"/> </types>
+</field>
+
+<sig label="this/ExternalReference" ID="61" parentID="2">
+</sig>
+
+<field label="exNet" ID="65" parentID="61">
+   <tuple> <atom label="ExternalSession$0"/> <atom label="Service$0"/> </tuple>
+   <tuple> <atom label="ExternalSession$1"/> <atom label="Service$0"/> </tuple>
+   <tuple> <atom label="ExternalLink$0"/> <atom label="NetworkName$0"/> </tuple>
+   <tuple> <atom label="ExternalLink$1"/> <atom label="NetworkName$0"/> </tuple>
+   <types> <type ID="61"/> <type ID="5"/> </types>
+</field>
+
+<sig label="this/AcquireTable" ID="66" parentID="2">
+   <atom label="AcquireTable$0"/>
+   <atom label="AcquireTable$1"/>
+   <atom label="AcquireTable$2"/>
+</sig>
+
+<field label="arows" ID="67" parentID="66">
+   <tuple> <atom label="AcquireTable$0"/> <atom label="LinkIdent$0"/> <atom label="H50$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$0"/> <atom label="LinkIdent$0"/> <atom label="H24$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$0"/> <atom label="LinkIdent$0"/> <atom label="H04$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$0"/> <atom label="LinkIdent$0"/> <atom label="H40$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$1"/> <atom label="LinkIdent$0"/> <atom label="H21$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$1"/> <atom label="LinkIdent$0"/> <atom label="H23$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$1"/> <atom label="LinkIdent$0"/> <atom label="H40$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$1"/> <atom label="LinkIdent$1"/> <atom label="H04$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$0"/> <atom label="H12$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$0"/> <atom label="H23$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$0"/> <atom label="H50$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$0"/> <atom label="H24$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$0"/> <atom label="H04$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H32$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H05$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H05$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H42$0"/> <atom label="Receive$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H42$0"/> <atom label="Forward$0"/> </tuple>
+   <tuple> <atom label="AcquireTable$2"/> <atom label="LinkIdent$1"/> <atom label="H40$0"/> <atom label="Forward$0"/> </tuple>
+   <types> <type ID="66"/> <type ID="7"/> <type ID="26"/> <type ID="15"/> </types>
+   <types> <type ID="66"/> <type ID="7"/> <type ID="26"/> <type ID="16"/> </types>
+</field>
+
+<sig label="this/ForwardTable" ID="68" parentID="2">
+   <atom label="ForwardTable$0"/>
+   <atom label="ForwardTable$1"/>
+</sig>
+
+<field label="frows" ID="69" parentID="68">
+   <tuple> <atom label="ForwardTable$0"/> <atom label="Self$0"/> <atom label="H05$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$0"/> <atom label="Self$0"/> <atom label="H42$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$0"/> <atom label="Self$0"/> <atom label="H04$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$0"/> <atom label="Self$0"/> <atom label="H40$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$0"/> <atom label="H12$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$0"/> <atom label="H50$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$0"/> <atom label="H24$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$0"/> <atom label="H04$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$0"/> <atom label="H40$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$1"/> <atom label="H05$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$1"/> <atom label="H42$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$1"/> <atom label="H04$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="LinkIdent$1"/> <atom label="H40$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H12$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H21$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H23$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H32$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H50$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="ForwardTable$1"/> <atom label="Self$0"/> <atom label="H24$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <types> <type ID="68"/> <type ID="7"/> <type ID="26"/> <type ID="7"/> </types>
+   <types> <type ID="68"/> <type ID="7"/> <type ID="26"/> <type ID="19"/> </types>
+   <types> <type ID="68"/> <type ID="17"/> <type ID="26"/> <type ID="7"/> </types>
+   <types> <type ID="68"/> <type ID="17"/> <type ID="26"/> <type ID="19"/> </types>
+</field>
+
+<sig label="this/NetworkState" ID="70" parentID="2">
+   <atom label="NetworkState$0"/>
+   <atom label="NetworkState$1"/>
+</sig>
+
+<field label="net" ID="71" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="NetworkName$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="Service$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="5"/> </types>
+</field>
+
+<field label="members" ID="72" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="infras" ID="73" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="users" ID="74" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="groups" ID="75" parentID="70">
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="allGroups" ID="76" parentID="70">
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="anyGroups" ID="77" parentID="70">
+   <types> <type ID="70"/> <type ID="9"/> </types>
+</field>
+
+<field label="groupSenders" ID="78" parentID="70">
+   <types> <type ID="70"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="groupReceivers" ID="79" parentID="70">
+   <types> <type ID="70"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="links" ID="80" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K43$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K51$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K53$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K35$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K43$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="42"/> </types>
+</field>
+
+<field label="oneLinks" ID="81" parentID="70">
+   <types> <type ID="70"/> <type ID="42"/> </types>
+</field>
+
+<field label="twoLinks" ID="82" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K43$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K51$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K53$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="K35$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="K43$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="42"/> </types>
+</field>
+
+<field label="groupLinks" ID="83" parentID="70">
+   <types> <type ID="70"/> <type ID="42"/> </types>
+</field>
+
+<field label="outLinks" ID="84" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="K35$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$0"/> <atom label="K53$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$1"/> <atom label="K51$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="LinkIdent$0"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="K12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$0"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$1"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="LinkIdent$0"/> <atom label="K43$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="7"/> <type ID="42"/> </types>
+</field>
+
+<field label="inLinks" ID="85" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="K51$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="K53$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="K43$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$0"/> <atom label="K35$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$1"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="LinkIdent$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$0"/> <atom label="K12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$1"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="K43$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="LinkIdent$0"/> <atom label="K34$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="7"/> <type ID="42"/> </types>
+</field>
+
+<field label="sendTable" ID="86" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="SessionIdent$0"/> <atom label="H42$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="SessionIdent$0"/> <atom label="H04$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="SessionIdent$0"/> <atom label="H12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="SessionIdent$0"/> <atom label="H21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="SessionIdent$0"/> <atom label="H24$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="SessionIdent$0"/> <atom label="H40$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="SessionIdent$0"/> <atom label="H50$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="SessionIdent$0"/> <atom label="H05$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="SessionIdent$0"/> <atom label="H04$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="SessionIdent$0"/> <atom label="H12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="SessionIdent$0"/> <atom label="H21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="SessionIdent$0"/> <atom label="H24$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="SessionIdent$1"/> <atom label="H23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="SessionIdent$1"/> <atom label="H32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="SessionIdent$0"/> <atom label="H42$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="SessionIdent$0"/> <atom label="H40$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="6"/> <type ID="26"/> </types>
+</field>
+
+<field label="receiveTable" ID="87" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="H05$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H50$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H40$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H21$0"/> <atom label="ExternalLink$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H32$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H05$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H42$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H40$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H12$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H32$0"/> <atom label="ExternalLink$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H42$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="H23$0"/> <atom label="ExternalLink$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="H04$0"/> <atom label="ExternalLink$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H24$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H04$0"/> <atom label="Primitive$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="26"/> <type ID="18"/> </types>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="26"/> <type ID="60"/> </types>
+</field>
+
+<field label="effectiveSend" ID="88" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="H50$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H05$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H04$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H12$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H21$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H23$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H24$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="H32$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H42$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H40$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="26"/> <type ID="7"/> </types>
+</field>
+
+<field label="effectiveReceive" ID="89" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="H05$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H50$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="H40$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="H21$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H12$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H32$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="H42$0"/> <atom label="LinkIdent$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="H23$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H24$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="H04$0"/> <atom label="LinkIdent$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="26"/> <type ID="7"/> </types>
+</field>
+
+<field label="reasonableOneHeaders" ID="90" parentID="70">
+   <types> <type ID="70"/> <type ID="26"/> </types>
+</field>
+
+<field label="reasonableTwoHeaders" ID="91" parentID="70">
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="26"/> </types>
+</field>
+
+<field label="reasonableGroupHeaders" ID="92" parentID="70">
+   <types> <type ID="70"/> <type ID="26"/> </types>
+</field>
+
+<field label="acquireTables" ID="93" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="AcquireTable$2"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="AcquireTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="AcquireTable$2"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="AcquireTable$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="AcquireTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="AcquireTable$2"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="AcquireTable$2"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="AcquireTable$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="66"/> </types>
+</field>
+
+<field label="forwardTables" ID="94" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="ForwardTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="ForwardTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="ForwardTable$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="ForwardTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="ForwardTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="ForwardTable$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="ForwardTable$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="68"/> </types>
+</field>
+
+<field label="transmitTable" ID="95" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="ExternalSession$1"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="ExternalSession$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$0"/> <atom label="ExternalSession$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="M5$0"/> <atom label="LinkIdent$1"/> <atom label="ExternalSession$1"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M0$0"/> <atom label="LinkIdent$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M1$0"/> <atom label="LinkIdent$1"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M2$0"/> <atom label="LinkIdent$1"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$0"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M3$0"/> <atom label="LinkIdent$1"/> <atom label="Primitive$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="M4$0"/> <atom label="LinkIdent$0"/> <atom label="Primitive$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="7"/> <type ID="18"/> </types>
+   <types> <type ID="70"/> <type ID="9"/> <type ID="7"/> <type ID="63"/> </types>
+</field>
+
+<field label="oneHop" ID="96" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="H05$0"/> <atom label="K01$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H50$0"/> <atom label="K51$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H24$0"/> <atom label="K51$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H42$0"/> <atom label="K01$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H04$0"/> <atom label="K51$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H40$0"/> <atom label="K01$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="K32$0"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="K43$0"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="K12$0"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="K23$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="K12$0"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="K23$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="K32$0"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="K43$0"/> <atom label="K32$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="K01$0"/> <atom label="K12$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="K12$0"/> <atom label="K23$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="K23$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="K21$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="K32$0"/> <atom label="K21$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="K43$0"/> <atom label="K32$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="26"/> <type ID="42"/> <type ID="42"/> </types>
+</field>
+
+<field label="reachable" ID="97" parentID="70">
+   <tuple> <atom label="NetworkState$0"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H12$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H12$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H21$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H21$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H23$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H23$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H32$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H32$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H05$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H05$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H24$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H24$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H42$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H42$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H04$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H04$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H40$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$0"/> <atom label="H40$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H50$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="effectivelyReachable" ID="98" parentID="70">
+   <tuple> <atom label="NetworkState$1"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="NetworkState$1"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M0$0"/> </tuple>
+   <types> <type ID="70"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<sig label="this/Bridge" ID="99" parentID="2">
+</sig>
+
+<field label="left" ID="100" parentID="99">
+   <types> <type ID="99"/> <type ID="70"/> </types>
+</field>
+
+<field label="right" ID="101" parentID="99">
+   <types> <type ID="99"/> <type ID="70"/> </types>
+</field>
+
+<field label="reachableWithBridging" ID="102" parentID="99">
+   <types> <type ID="99"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="effectivelyReachableWithBridging" ID="103" parentID="99">
+   <types> <type ID="99"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<sig label="this/Layering" ID="104" parentID="2">
+   <atom label="Layering$0"/>
+</sig>
+
+<field label="over" ID="105" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="NetworkName$0"/> </tuple>
+   <types> <type ID="104"/> <type ID="5"/> </types>
+</field>
+
+<field label="under" ID="106" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="Service$0"/> </tuple>
+   <types> <type ID="104"/> <type ID="5"/> </types>
+</field>
+
+<field label="overMembers" ID="107" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="M5$0"/> </tuple>
+   <types> <type ID="104"/> <type ID="9"/> </types>
+</field>
+
+<field label="overAllGroups" ID="108" parentID="104">
+   <types> <type ID="104"/> <type ID="9"/> </types>
+</field>
+
+<field label="overAnyGroups" ID="109" parentID="104">
+   <types> <type ID="104"/> <type ID="9"/> </types>
+</field>
+
+<field label="attachments" ID="110" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="M1$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="M3$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="M5$0"/> <atom label="M2$0"/> </tuple>
+   <types> <type ID="104"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="overOneLinks" ID="111" parentID="104">
+   <types> <type ID="104"/> <type ID="42"/> </types>
+</field>
+
+<field label="overTwoLinks" ID="112" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="K15$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K51$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K53$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K35$0"/> </tuple>
+   <types> <type ID="104"/> <type ID="42"/> </types>
+</field>
+
+<field label="overGroupLinks" ID="113" parentID="104">
+   <types> <type ID="104"/> <type ID="41"/> </types>
+</field>
+
+<field label="implementations" ID="114" parentID="104">
+   <tuple> <atom label="Layering$0"/> <atom label="K15$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K51$0"/> <atom label="SessionIdent$0"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K53$0"/> <atom label="SessionIdent$1"/> </tuple>
+   <tuple> <atom label="Layering$0"/> <atom label="K35$0"/> <atom label="SessionIdent$1"/> </tuple>
+   <types> <type ID="104"/> <type ID="42"/> <type ID="6"/> </types>
+</field>
+
+<sig label="this/Subduction" ID="115" parentID="2">
+   <atom label="Subduction$0"/>
+</sig>
+
+<field label="general" ID="116" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="NetworkState$1"/> </tuple>
+   <types> <type ID="115"/> <type ID="70"/> </types>
+</field>
+
+<field label="special" ID="117" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="NetworkState$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="70"/> </types>
+</field>
+
+<field label="sharedMembers" ID="118" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="M3$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="9"/> </types>
+</field>
+
+<field label="sharedLinks" ID="119" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="K01$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="K10$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="K34$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="K43$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="42"/> </types>
+</field>
+
+<field label="layering" ID="120" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="Layering$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="104"/> </types>
+</field>
+
+<field label="reachableWithSubduction" ID="121" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M0$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M5$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M0$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M5$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M0$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M0$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M1$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M3$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M5$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M5$0"/> <atom label="M3$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<field label="effectivelyReachableWithSubduction" ID="122" parentID="115">
+   <tuple> <atom label="Subduction$0"/> <atom label="H12$0"/> <atom label="M1$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H21$0"/> <atom label="M2$0"/> <atom label="M1$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H23$0"/> <atom label="M2$0"/> <atom label="M3$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H32$0"/> <atom label="M3$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H05$0"/> <atom label="M0$0"/> <atom label="M5$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H50$0"/> <atom label="M5$0"/> <atom label="M0$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H24$0"/> <atom label="M2$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H42$0"/> <atom label="M4$0"/> <atom label="M2$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H04$0"/> <atom label="M0$0"/> <atom label="M4$0"/> </tuple>
+   <tuple> <atom label="Subduction$0"/> <atom label="H40$0"/> <atom label="M4$0"/> <atom label="M0$0"/> </tuple>
+   <types> <type ID="115"/> <type ID="26"/> <type ID="9"/> <type ID="9"/> </types>
+</field>
+
+<sig label="univ" ID="2" builtin="yes">
+</sig>
+
+<skolem label="$SubductionTest1_s" ID="123">
+   <tuple> <atom label="Subduction$0"/> </tuple>
+   <types> <type ID="115"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m0" ID="124">
+   <tuple> <atom label="M0$0"/> </tuple>
+   <types> <type ID="8"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m1" ID="125">
+   <tuple> <atom label="M1$0"/> </tuple>
+   <types> <type ID="10"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m2" ID="126">
+   <tuple> <atom label="M2$0"/> </tuple>
+   <types> <type ID="11"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m3" ID="127">
+   <tuple> <atom label="M3$0"/> </tuple>
+   <types> <type ID="12"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m4" ID="128">
+   <tuple> <atom label="M4$0"/> </tuple>
+   <types> <type ID="13"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_m5" ID="129">
+   <tuple> <atom label="M5$0"/> </tuple>
+   <types> <type ID="14"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k01" ID="130">
+   <tuple> <atom label="K01$0"/> </tuple>
+   <types> <type ID="44"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k10" ID="131">
+   <tuple> <atom label="K10$0"/> </tuple>
+   <types> <type ID="45"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k12" ID="132">
+   <tuple> <atom label="K12$0"/> </tuple>
+   <types> <type ID="46"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k21" ID="133">
+   <tuple> <atom label="K21$0"/> </tuple>
+   <types> <type ID="47"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k23" ID="134">
+   <tuple> <atom label="K23$0"/> </tuple>
+   <types> <type ID="48"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k32" ID="135">
+   <tuple> <atom label="K32$0"/> </tuple>
+   <types> <type ID="49"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k34" ID="136">
+   <tuple> <atom label="K34$0"/> </tuple>
+   <types> <type ID="50"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k43" ID="137">
+   <tuple> <atom label="K43$0"/> </tuple>
+   <types> <type ID="51"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k15" ID="138">
+   <tuple> <atom label="K15$0"/> </tuple>
+   <types> <type ID="52"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k51" ID="139">
+   <tuple> <atom label="K51$0"/> </tuple>
+   <types> <type ID="53"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k53" ID="140">
+   <tuple> <atom label="K53$0"/> </tuple>
+   <types> <type ID="54"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_k35" ID="141">
+   <tuple> <atom label="K35$0"/> </tuple>
+   <types> <type ID="55"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h12" ID="142">
+   <tuple> <atom label="H12$0"/> </tuple>
+   <types> <type ID="25"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h21" ID="143">
+   <tuple> <atom label="H21$0"/> </tuple>
+   <types> <type ID="27"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h23" ID="144">
+   <tuple> <atom label="H23$0"/> </tuple>
+   <types> <type ID="28"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h32" ID="145">
+   <tuple> <atom label="H32$0"/> </tuple>
+   <types> <type ID="29"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h05" ID="146">
+   <tuple> <atom label="H05$0"/> </tuple>
+   <types> <type ID="30"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h50" ID="147">
+   <tuple> <atom label="H50$0"/> </tuple>
+   <types> <type ID="31"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h24" ID="148">
+   <tuple> <atom label="H24$0"/> </tuple>
+   <types> <type ID="32"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h42" ID="149">
+   <tuple> <atom label="H42$0"/> </tuple>
+   <types> <type ID="33"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h04" ID="150">
+   <tuple> <atom label="H04$0"/> </tuple>
+   <types> <type ID="34"/> </types>
+</skolem>
+
+<skolem label="$SubductionSetup_h40" ID="151">
+   <tuple> <atom label="H40$0"/> </tuple>
+   <types> <type ID="35"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m0" ID="152">
+   <tuple> <atom label="M0$0"/> </tuple>
+   <types> <type ID="8"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m1" ID="153">
+   <tuple> <atom label="M1$0"/> </tuple>
+   <types> <type ID="10"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m2" ID="154">
+   <tuple> <atom label="M2$0"/> </tuple>
+   <types> <type ID="11"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m3" ID="155">
+   <tuple> <atom label="M3$0"/> </tuple>
+   <types> <type ID="12"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m4" ID="156">
+   <tuple> <atom label="M4$0"/> </tuple>
+   <types> <type ID="13"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_m5" ID="157">
+   <tuple> <atom label="M5$0"/> </tuple>
+   <types> <type ID="14"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k01" ID="158">
+   <tuple> <atom label="K01$0"/> </tuple>
+   <types> <type ID="44"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k10" ID="159">
+   <tuple> <atom label="K10$0"/> </tuple>
+   <types> <type ID="45"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k12" ID="160">
+   <tuple> <atom label="K12$0"/> </tuple>
+   <types> <type ID="46"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k21" ID="161">
+   <tuple> <atom label="K21$0"/> </tuple>
+   <types> <type ID="47"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k23" ID="162">
+   <tuple> <atom label="K23$0"/> </tuple>
+   <types> <type ID="48"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k32" ID="163">
+   <tuple> <atom label="K32$0"/> </tuple>
+   <types> <type ID="49"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k34" ID="164">
+   <tuple> <atom label="K34$0"/> </tuple>
+   <types> <type ID="50"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k43" ID="165">
+   <tuple> <atom label="K43$0"/> </tuple>
+   <types> <type ID="51"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k15" ID="166">
+   <tuple> <atom label="K15$0"/> </tuple>
+   <types> <type ID="52"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_k51" ID="167">
+   <tuple> <atom label="K51$0"/> </tuple>
+   <types> <type ID="53"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h12" ID="168">
+   <tuple> <atom label="H12$0"/> </tuple>
+   <types> <type ID="25"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h21" ID="169">
+   <tuple> <atom label="H21$0"/> </tuple>
+   <types> <type ID="27"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h23" ID="170">
+   <tuple> <atom label="H23$0"/> </tuple>
+   <types> <type ID="28"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h32" ID="171">
+   <tuple> <atom label="H32$0"/> </tuple>
+   <types> <type ID="29"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h05" ID="172">
+   <tuple> <atom label="H05$0"/> </tuple>
+   <types> <type ID="30"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h50" ID="173">
+   <tuple> <atom label="H50$0"/> </tuple>
+   <types> <type ID="31"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h24" ID="174">
+   <tuple> <atom label="H24$0"/> </tuple>
+   <types> <type ID="32"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h42" ID="175">
+   <tuple> <atom label="H42$0"/> </tuple>
+   <types> <type ID="33"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h04" ID="176">
+   <tuple> <atom label="H04$0"/> </tuple>
+   <types> <type ID="34"/> </types>
+</skolem>
+
+<skolem label="$SubductionTest1_h40" ID="177">
+   <tuple> <atom label="H40$0"/> </tuple>
+   <types> <type ID="35"/> </types>
+</skolem>
+
+</instance>
+
+<source filename="/Users/atdyer/research/alloy/models/zave/viz/net3.als" content="/* ====================================================================&#x000a;A STATIC MODEL OF NETWORKS, BRIDGING, AND LAYERING&#x000a;   Simplifying assumptions, permanent:  &#x000a;    * This is a model of static network states and their properties.&#x000a;    * Every member of a network has a unique name in that network, and&#x000a;      unique names are conflated with members.&#x000a;    * Component failures are not modeled; if a component has failed, it&#x000a;      does not exist in the network state.&#x000a;   Simplifying assumptions, temporary:  &#x000a;    * A machine can have no more than one member in a network (at least&#x000a;      when layering is involved).&#x000a;    * There is no representation of blocking or middlebox requirements&#x000a;      (including reverse-path middleboxes).&#x000a;    * There are no compound sessions.&#x000a;==================================================================== */&#x000a;/* --------------------------------------------------------------------&#x000a;TYPES&#x000a;-------------------------------------------------------------------- */&#x000a;   &#x000a;sig NetworkName { } one sig Service extends NetworkName { }&#x000a;   &#x000a;sig SessionIdent { }&#x000a;   &#x000a;sig LinkIdent { }&#x000a; &#x000a;sig Name { }&#x000a;   &#x000a;one sig Receive, Forward, Self, Primitive, Drop { }&#x000a;&#x000a;abstract sig Protocol { }&#x000a;one sig OneWay, TwoWay, AllCast, AnyCast extends Protocol { }&#x000a; &#x000a;sig Header &#x000a;   {  src, dst: Name, sessionIdent: SessionIdent, &#x000a;      protocol: Protocol, overlay: lone NetworkName }&#x000a;fact HeadersAreRecords { all h, h&apos;: Header |&#x000a;   (  h.sessionIdent = h&apos;.sessionIdent &amp;&amp; h.overlay = h&apos;.overlay&#x000a;   &amp;&amp; h.src = h&apos;.src &amp;&amp; h.dst = h&apos;.dst &amp;&amp; h.protocol = h&apos;.protocol  ) &#x000a;   =&gt; h = h&apos; }&#x000a;pred ReverseHeader [h, h&apos;: Header] {&#x000a;      h.src = h&apos;.dst &amp;&amp; h.dst = h&apos;.src &amp;&amp; h.protocol = h&apos;.protocol&#x000a;   &amp;&amp; h.sessionIdent = h&apos;.sessionIdent &amp;&amp; h.overlay = h&apos;.overlay }&#x000a;&#x000a;sig Link { &#x000a;   sndr: Name, &#x000a;   sndrIdent: LinkIdent,&#x000a;   rcvrs: some Name,&#x000a;   rcvrIdents: rcvrs -&gt; one LinkIdent&#x000a; }&#x000a;-- For computation of reachability, a link must be directional.  So a&#x000a;-- &quot;link&quot; represented in the model is actually a link plus direction.&#x000a;-- More specifically, a link with multiple senders (a two-way point-to&#x000a;-- point link or group link) must be represented by a set of links, one&#x000a;-- for each sender.&#x000a;fact LinksAreRecords {  all k, k&apos;: Link - GroupLink |&#x000a;   (  k.sndr = k&apos;.sndr &amp;&amp; k.sndrIdent = k&apos;.sndrIdent&#x000a;   &amp;&amp; k.rcvrs = k&apos;.rcvrs &amp;&amp; k.rcvrIdents = k&apos;.rcvrIdents  ) =&gt; k = k&apos; }  &#x000a;pred ReverseLink [k, k&apos;: Link - GroupLink] {&#x000a;      k.sndr = k&apos;.rcvrs &amp;&amp; k.sndrIdent = (k&apos;.rcvrs).(k&apos;.rcvrIdents)&#x000a;   &amp;&amp; k.rcvrs = k&apos;.sndr &amp;&amp; (k.rcvrs).(k.rcvrIdents) = k&apos;.sndrIdent  }&#x000a;sig GroupLink extends Link {  group: Name  }&#x000a;fact GroupLinksAreRecords {  all k, k&apos;: GroupLink |&#x000a;   (  k.sndr = k&apos;.sndr &amp;&amp; k.sndrIdent = k&apos;.sndrIdent&#x000a;   &amp;&amp; k.rcvrs = k&apos;.rcvrs &amp;&amp; k.rcvrIdents = k&apos;.rcvrIdents&#x000a;   &amp;&amp; k.group = k&apos;.group                               ) =&gt; k = k&apos;  }&#x000a;   &#x000a;sig ExternalReference { exNet: NetworkName }&#x000a;sig ExternalLink extends ExternalReference { exLink: LinkIdent }&#x000a;sig ExternalSession extends ExternalReference {exSession: SessionIdent}&#x000a; &#x000a;sig AcquireTable { arows: LinkIdent -&gt; Header -&gt; (Receive + Forward) }&#x000a;&#x000a;sig ForwardTable { &#x000a;   frows: (LinkIdent + Self) -&gt; Header -&gt; (LinkIdent + Drop) }&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;NETWORKS&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;-- All networks have unique names.&#x000a;fact { net in NetworkState lone -&gt; NetworkName }&#x000a;   &#x000a;sig NetworkState {&#x000a;-- Network topology.&#x000a;   net: NetworkName,&#x000a;   members: set Name,        -- every member has at least a unique name&#x000a;   disj infras, users: set members,    -- trusted and untrusted members&#x000a;   groups: set Name - members,                           -- group names&#x000a;   disj allGroups, anyGroups: set groups,&#x000a;   groupSenders: groups -&gt; Name,&#x000a;   groupReceivers: groups -&gt; Name,&#x000a;   links: set Link,&#x000a;   disj oneLinks, twoLinks, groupLinks: set links,&#x000a;   outLinks: members -&gt; LinkIdent -&gt; links,                  -- derived&#x000a;   inLinks: members -&gt; LinkIdent -&gt; links,                   -- derived&#x000a;-- Network traffic.&#x000a;   sendTable: members -&gt; SessionIdent -&gt; Header,&#x000a;   receiveTable: &#x000a;      members -&gt; Header -&gt; (Primitive + ExternalLink),&#x000a;   effectiveSend: members -&gt; Header -&gt; LinkIdent,            -- derived&#x000a;   effectiveReceive: members -&gt; Header -&gt; LinkIdent,         -- derived&#x000a;   reasonableOneHeaders, reasonableTwoHeaders,               -- derived&#x000a;      reasonableGroupHeaders: set Header,                    -- derived&#x000a;-- Behavior of network members.&#x000a;   acquireTables: members -&gt; lone AcquireTable,&#x000a;   forwardTables: members -&gt; lone ForwardTable,&#x000a;   transmitTable: &#x000a;      members -&gt; LinkIdent -&gt; (Primitive + ExternalSession),&#x000a;   oneHop: Header -&gt; links -&gt; links,                         -- derived&#x000a;   reachable: Header -&gt; members -&gt; members,                  -- derived&#x000a;   effectivelyReachable: Header -&gt; members -&gt; members        -- derived&#x000a;}  {&#x000a;-- Network topology.&#x000a;   -- Each member is an infrastructure member or user.&#x000a;      infras + users = members&#x000a;   -- Each group is one of two types.&#x000a;      groups = allGroups + anyGroups&#x000a;   -- Consistency of group members.  Broadcast and multicast groups are&#x000a;   -- conflated as AllCast groups because the only difference is that,&#x000a;   -- for broadcast groups, the senders are exactly the same as the&#x000a;   -- receivers.&#x000a;      all g: allGroups | (some g.groupSenders &amp;&amp; #g.groupReceivers&gt;1)&#x000a;      all g: anyGroups | &#x000a;      (  no (g.groupSenders &amp; g.groupReceivers) &amp;&amp; some g.groupSenders&#x000a;      &amp;&amp; # g.groupReceivers &gt; 1                                      )&#x000a;   -- Each link is one of three types.&#x000a;      links = oneLinks + twoLinks + groupLinks&#x000a;   -- Point-to-point link fields have the right types, cover twoLinks.&#x000a;      all k: oneLinks + twoLinks |&#x000a;         (  k in Link - GroupLink &amp;&amp; one k.rcvrs&#x000a;         &amp;&amp; some ((k.sndr + k.rcvrs) &amp; members)&#x000a;         &amp;&amp; no ((k.sndr + k.rcvrs) &amp; groups)  )&#x000a;      all k: twoLinks | some k&apos;: twoLinks - k | ReverseLink [k, k&apos;]&#x000a;   -- Group links have the right types.&#x000a;      groupLinks in GroupLink&#x000a;   -- Correctness of group links.  Group links cannot be bridging &#x000a;   -- links.  &#x000a;      -- A group link&apos;s sender and receivers match group and network&#x000a;      -- membership.&#x000a;      all k: groupLinks | let g = k.group | &#x000a;      (  g in groups &amp;&amp; g.(groupSenders + groupReceivers) in members &#x000a;      &amp;&amp; k.sndr in g.groupSenders&#x000a;      &amp;&amp; k.rcvrs = g.groupReceivers - k.sndr  )&#x000a;      -- Across a group&apos;s links, all linkIdents are consistent.&#x000a;      all g: groups |&#x000a;      let pairs = { m: members, i: LinkIdent | &#x000a;                     some k: (links &lt;: group).g |&#x000a;                        (k.sndr = m &amp;&amp; k.sndrIdent = i)&#x000a;                     || (m in k.rcvrs &amp;&amp; i = m.(k.rcvrIdents)) } |&#x000a;      (  all m: g.groupSenders + g.groupReceivers | lone m.pairs   )&#x000a;      -- Completeness of group links: if one part of group&#x000a;      -- communication is implemented as a link, then all must be.&#x000a;      all g: groups | &#x000a;         (some (links &lt;: group).g) =&gt;&#x000a;      (  all m: g.groupSenders | some k: groupLinks |&#x000a;            k.group = g &amp;&amp; k.sndr = m               )&#x000a;   -- For each member, its local linkIdents are disjoint, except for&#x000a;   -- reversing pairs and group links.&#x000a;      all disj k0, k1: links | &#x000a;         (k0.sndr = k1.sndr =&gt; k0.sndrIdent != k1.sndrIdent)&#x000a;      all disj k0, k1: oneLinks + twoLinks |&#x000a;      (  (k0.rcvrs = k1.rcvrs =&gt;&#x000a;            (k0.rcvrs).(k0.rcvrIdents) != (k1.rcvrs).(k1.rcvrIdents))&#x000a;      &amp;&amp; (k0.sndr = k1.rcvrs =&gt; &#x000a;            (  k0.sndrIdent != (k1.rcvrs).(k1.rcvrIdents) &#x000a;            || (k0 + k1 in twoLinks &amp;&amp; ReverseLink [k0, k1])  )  )  )&#x000a;      all disj k0, k1: groupLinks |&#x000a;         (some (k0.rcvrs &amp; k1.rcvrs) =&gt; k0.group = k1.group)&#x000a;      all k0: oneLinks + twoLinks, k1: groupLinks |&#x000a;         no (k0.rcvrIdents &amp; k1.rcvrIdents)&#x000a;   -- Derivation of inLinks and outLinks.&#x000a;      outLinks = { m: members, i: LinkIdent, k: links |&#x000a;         k.sndr = m &amp;&amp; k.sndrIdent = i                }         &#x000a;      inLinks = { m: members, i: LinkIdent, k: links |&#x000a;         (m -&gt; i) in k.rcvrIdents                    }&#x000a;-- Network traffic.  This models the traffic that members are expected&#x000a;-- to send and receive, and it is optional.  Note that infrastructure &#x000a;-- members can send and receive.&#x000a;-- The &quot;reasonable&quot; header sets point out headers that are being used&#x000a;-- responsibly: they are grouped into well-structured sessions, and &#x000a;-- they are sent and received by the right members within the network.&#x000a;-- Predicates and assertions can use these sets to distinguish traffic&#x000a;-- that should be transported (requirements) from possibly erroneous or &#x000a;-- malicious traffic (threat model).&#x000a;   -- Consistency of the sendTable, which is always deterministic.&#x000a;      all s: SessionIdent, h: s.(members.sendTable) | &#x000a;         one h &amp;&amp; h.sessionIdent = s&#x000a;   -- Consistency of the receiveTable.&#x000a;      all x: ExternalLink | &#x000a;         x in Header.(members.receiveTable) =&gt; x.exNet != net &#x000a;   -- Determinism of the receiveTable.&#x000a;      all m: members, h: Header | lone h.(m.receiveTable)&#x000a;   -- Derivation of effectiveSend.  If a send is effective, it is&#x000a;   -- supported by an entry in the member&apos;s forwardTable.&#x000a;      effectiveSend = { m: members, h: Header, ki: LinkIdent |&#x000a;            (m -&gt; h.sessionIdent -&gt; h) in sendTable&#x000a;         &amp;&amp; (h -&gt; ki) in Self.((m.forwardTables).frows) }&#x000a;   -- Derivation of effectiveReceive.  If a receive is effective, it is&#x000a;   -- supported by an entry in the member&apos;s acquireTable.&#x000a;      effectiveReceive = { m: members, h: Header, ki: LinkIdent |&#x000a;         (m -&gt; h) in receiveTable.(Primitive+ExternalLink) &#x000a;      &amp;&amp; (ki -&gt; h -&gt; Receive) in (m.acquireTables).arows              } &#x000a;   -- Derivation of sets of reasonable headers in the traffic model.&#x000a;      let headers = SessionIdent.(members.sendTable) &#x000a;                    + members.receiveTable.(Primitive+ExternalLink) | {&#x000a;      reasonableOneHeaders = { h: headers | let s = h.sessionIdent |&#x000a;            one (sessionIdent.s &amp; headers)&#x000a;         &amp;&amp; h.protocol = OneWay                                    &#x000a;         &amp;&amp; (effectiveSend.LinkIdent).h = h.src&#x000a;         &amp;&amp; (effectiveReceive.LinkIdent).h = h.dst                 }&#x000a;      reasonableTwoHeaders = { h: headers | let s = h.sessionIdent |&#x000a;         some h&apos;: headers - h |&#x000a;            sessionIdent.s = (h + h&apos;)&#x000a;         &amp;&amp; ReverseHeader [h, h&apos;] &amp;&amp; h.src != h.dst -- no self-sessions&#x000a;         &amp;&amp; h.protocol = TwoWay&#x000a;         &amp;&amp; (effectiveSend.LinkIdent).h = h.src&#x000a;         &amp;&amp; (effectiveSend.LinkIdent).h&apos; = h&apos;.src&#x000a;         &amp;&amp; (effectiveReceive.LinkIdent).h = h.dst           &#x000a;         &amp;&amp; (effectiveReceive.LinkIdent).h&apos; = h&apos;.dst                  }&#x000a;      reasonableGroupHeaders = { h: headers | &#x000a;         let s = h.sessionIdent | let hs = sessionIdent.s - h |&#x000a;            one (h + hs).dst &amp;&amp; h.dst in groups&#x000a;         &amp;&amp; h.src in (h.dst).(groupSenders)&#x000a;         &amp;&amp; one (h + hs).protocol &amp;&amp; lone (h + hs).overlay&#x000a;         &amp;&amp; h.protocol ! in (OneWay + TwoWay)&#x000a;         &amp;&amp; (h.protocol = AllCast =&gt; h.dst in allGroups)&#x000a;         &amp;&amp; (h.protocol = AnyCast =&gt; h.dst in anyGroups)&#x000a;         &amp;&amp; (effectiveSend.LinkIdent).h = h.src&#x000a;         &amp;&amp; (effectiveReceive.LinkIdent).h = &#x000a;               (h.dst).groupReceivers - h.src                 }       }  &#x000a;-- Behavior of network members.  Acquire and forward tables have to be&#x000a;-- modeled differently because they have too many columns for Alloy.&#x000a;   -- Consistency of the acquireTable:  all inLinks are real.&#x000a;      all m: members | &#x000a;         (((m.acquireTables).arows).(Receive+Forward)).Header&#x000a;      in (m.inLinks).links&#x000a;      -- An acquireTable can be nondeterministic, because, to implement&#x000a;      -- broadcast and multicast service, a member may have to both&#x000a;      -- receive and forward a packet.  If there is no matching entry&#x000a;      -- for an incoming packet, it is dropped.&#x000a;   -- Consistency of the forwardTable.  &#x000a;      -- All inLinks and outLinks are real.&#x000a;      all m: members, kin: &#x000a;         (((m.forwardTables).frows).(LinkIdent + Drop)).Header |&#x000a;         ( (m -&gt; kin) in inLinks.links || kin = Self )&#x000a;      all m: members, kout:&#x000a;          Header.((LinkIdent + Self).((m.forwardTables).frows)) |&#x000a;      kout != Drop =&gt; (m -&gt; kout) in outLinks.links&#x000a;      -- Because nondeterminism means replication, the table cannot&#x000a;      -- offer a nondeterministic choice between Drop and an outLink.&#x000a;      all m: members, kin: (LinkIdent + Self), h: Header,&#x000a;         disj kout, kout&apos;: (LinkIdent + Drop) |&#x000a;         (kin-&gt;h-&gt;kout) + (kin-&gt;h-&gt; kout&apos;) in (m.forwardTables).frows&#x000a;         =&gt; (kout + kout&apos;) in LinkIdent&#x000a;   -- Completeness and consistency of transmitTable.  &#x000a;      -- transmitTable is complete.&#x000a;         transmitTable.(Primitive+ExternalSession) = outLinks.links &#x000a;      -- transmitTable is deterministic, because a link has only one&#x000a;      -- embodiment.&#x000a;         all m: members, ki: LinkIdent | lone ki.(m.transmitTable)&#x000a;      -- External sessions are really external.&#x000a;         all x: ExternalSession | &#x000a;            x in LinkIdent.(members.transmitTable) =&gt; x.exNet != net &#x000a;      -- Links in a reversing pair must have the same embodiment.&#x000a;         all m, m&apos;: members, ki, ki&apos;: LinkIdent, k, k&apos;: Link |&#x000a;         (  (m -&gt; ki -&gt; k) + (m&apos; -&gt; ki&apos; -&gt; k&apos;) in outLinks&#x000a;         &amp;&amp; ReverseLink [k, k&apos;]                          )&#x000a;         =&gt; ki.(m.transmitTable) = ki&apos;.(m&apos;.transmitTable)&#x000a;      -- Links in a group must all have the same embodiment.&#x000a;         all m, m&apos;: members, ki, ki&apos;: LinkIdent, k, k&apos;: GroupLink |&#x000a;         (  (m -&gt; ki -&gt; k) + (m&apos; -&gt; ki&apos; -&gt; k&apos;) in outLinks&#x000a;         &amp;&amp; k.group = k&apos;.group                           )&#x000a;         =&gt; ki.(m.transmitTable) = ki&apos;.(m&apos;.transmitTable)&#x000a;-- Reachability.&#x000a;-- 1) (h -&gt; m -&gt; m&apos;) in reachable means that if a packet with header h&#x000a;--    is emitted by member m (sent or forwarded), then the packet will &#x000a;--    reach member m&apos; through a path all of whose internal members (if&#x000a;--    any) are infrastructure members.  &#x000a;-- 2) Some additional details about group communication, etc.: &#x000a;--     * If a packet is sent through an AllLink, then the packet is &#x000a;--       delivered to all receivers.  The basic semantics above hold.&#x000a;--     * If a packet is sent through an anyLink, it is delivered to &#x000a;--       only one receiver.  This is an exception to the above&#x000a;--       semantics, and means that only safety properties can be&#x000a;--       verified with it.&#x000a;--     * If a member&apos;s forwarding table is nondeterministic, the &#x000a;--       packet is replicated and sent to all outgoing links.  As with&#x000a;--       broadLinks and multiLinks, the basic semantics above hold.&#x000a;-- 3) Reachability is completely independent of the traffic model.&#x000a;-- 4) The transmitTable is not mentioned because we already know that&#x000a;--    it is consistent, complete, and deterministic.  Reachability &#x000a;--    assumes live and correct link implementations.&#x000a;-- 5) Because only forwarding in infrastructure members can contribute&#x000a;--    to reachability, in a peer-to-peer network with forwarding, all&#x000a;--    peers must be infras.&#x000a;      oneHop = {  h: Header, disj k, k&apos;: links |&#x000a;         some f: infras, ki, ki&apos;: LinkIdent |&#x000a;            (f -&gt; ki -&gt; k) in inLinks &amp;&amp; (f -&gt; ki&apos; -&gt; k&apos;) in outLinks&#x000a;         &amp;&amp; (ki -&gt; h -&gt; Forward) in (f.acquireTables).arows&#x000a;         &amp;&amp; (ki -&gt; h -&gt; ki&apos;) in (f.forwardTables).frows             }&#x000a;      reachable = {  h: Header, m, m&apos;: members | &#x000a;         some k, k&apos;: links | &#x000a;            m = k.sndr &amp;&amp; m&apos; in k&apos;.rcvrs&#x000a;         &amp;&amp; (  k = k&apos; || (k -&gt; k&apos;) in ^(h.oneHop)  )  }&#x000a;-- Effective reachability is a form of reachability that includes the&#x000a;-- traffic model, i.e., the intentions and cooperation of the senders&#x000a;-- and receivers.&#x000a;      effectivelyReachable = {  h: Header, m, m&apos;: members | &#x000a;         some k, k&apos;: links, kout, kin: LinkIdent | &#x000a;            (m -&gt; h -&gt; kout) in effectiveSend&#x000a;         &amp;&amp; (m -&gt; kout -&gt; k) in outLinks&#x000a;         &amp;&amp; (m&apos; -&gt; h -&gt; kin) in effectiveReceive&#x000a;         &amp;&amp; (m&apos; -&gt; kin -&gt; k&apos;) in inLinks&#x000a;         &amp;&amp; (  k = k&apos; || (k -&gt; k&apos;) in ^(h.oneHop)  )      }&#x000a;}&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;PROPERTIES OF NETWORK TOPOLOGIES &#x000a;-------------------------------------------------------------------- */ &#x000a;&#x000a;pred Fully_oneLink_connected [n: NetworkState] {&#x000a;-- A network in which there is a one-way link from each member to each&#x000a;-- other member.  It does not matter whether the members are infras or&#x000a;-- users, because no forwarding is necessary.&#x000a;   all disj m, m&apos;: n.members | some k: n.oneLinks |&#x000a;      k.sndr = m &amp;&amp; k.rcvrs = m&apos;                  }&#x000a;&#x000a;pred Fully_twoLink_connected [n: NetworkState] {&#x000a;-- A network in which there is a direct two-way link between each pair &#x000a;-- of members.  It does not matter whether the members are infras or&#x000a;-- users, because no forwarding is necessary.&#x000a;   all disj m, m&apos;: n.members | some k: n.twoLinks |&#x000a;      k.sndr = m &amp;&amp; k.rcvrs = m&apos;                  }&#x000a;&#x000a;pred Fully_broadcast_connected [n: NetworkState] {&#x000a;-- A network in which there is a broadcast group, implemented by links,&#x000a;-- including all members.&#x000a;   some g: n.allGroups | &#x000a;      g.(n.groupSenders) =n.members &amp;&amp; g.(n.groupReceivers) =n.members &#x000a;   &amp;&amp; (some k: n.groupLinks | k.group = g)                           }&#x000a;&#x000a;pred No_self_links [n: NetworkState] {--only oneLinks can be self-links&#x000a;   all k: n.oneLinks | k.sndr != k.rcvrs }&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;PROPERTIES OF NETWORK TRAFFIC&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;pred Fully_oneSession_active [n: NetworkState] {&#x000a;-- A network with a one-way session from each member to each other &#x000a;-- member.&#x000a;   all disj m, m&apos;: n.members | some h: Header |&#x000a;      h.src = m &#x000a;   &amp;&amp; (m -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; h.dst = m&apos; &#x000a;   &amp;&amp; (m&apos; -&gt; h) in (n.effectiveReceive).LinkIdent  }&#x000a;&#x000a;pred Users_fully_oneSession_active [n: NetworkState] {&#x000a;-- A network with a one-way session from each user member to each other &#x000a;-- user member.&#x000a;   all disj m, m&apos;: n.users | some h: Header |&#x000a;      h.src = m &#x000a;   &amp;&amp; (m -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; h.dst = m&apos; &#x000a;   &amp;&amp; (m&apos; -&gt; h) in (n.effectiveReceive).LinkIdent  }&#x000a;&#x000a;pred Fully_twoSession_active [n: NetworkState] {&#x000a;-- A network with a two-way session between each pair of members.&#x000a;   all disj m, m&apos;: n.members | some h, h&apos;: Header |&#x000a;   (  ReverseHeader [h, h&apos;]&#x000a;   &amp;&amp; h.src = m &amp;&amp; h.dst = m&apos;&#x000a;   &amp;&amp; (m -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m&apos; -&gt; h&apos;) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m&apos; -&gt; h) in (n.effectiveReceive).LinkIdent &#x000a;   &amp;&amp; (m -&gt; h&apos;) in (n.effectiveReceive).LinkIdent  )  }&#x000a;&#x000a;pred Users_fully_twoSession_active [n: NetworkState] {&#x000a;-- A network with a two-way session between each pair of user members.&#x000a;   all disj m, m&apos;: n.users | some h, h&apos;: Header |&#x000a;   (  ReverseHeader [h, h&apos;]&#x000a;   &amp;&amp; h.src = m &amp;&amp; h.dst = m&apos;&#x000a;   &amp;&amp; (m -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m&apos; -&gt; h&apos;) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m&apos; -&gt; h) in (n.effectiveReceive).LinkIdent &#x000a;   &amp;&amp; (m -&gt; h&apos;) in (n.effectiveReceive).LinkIdent  )  }&#x000a;&#x000a;pred Fully_broadcast_active [n: NetworkState] {&#x000a;-- A network with a broadcast session from each member.&#x000a;   some g: n.allGroups | &#x000a;      g.(n.groupSenders) =n.members &amp;&amp; g.(n.groupReceivers) =n.members &#x000a;   &amp;&amp; (all m: g.(n.groupSenders) | some h: Header |&#x000a;         h.src = m &amp;&amp; h.dst = g &amp;&amp; h.protocol = AllCast &#x000a;      &amp;&amp; (m -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;      &amp;&amp; all m&apos;: g.(n.groupReceivers) |&#x000a;            (m&apos; -&gt; h) in (n.effectiveReceive).LinkIdent )            }&#x000a;&#x000a;pred No_self_sessions [n: NetworkState] {&#x000a;-- Enabling a member to have a session with itself is not required.&#x000a;   all m: n.members | &#x000a;   no (m.(n.effectiveSend).LinkIdent&amp;m.(n.effectiveReceive).LinkIdent)}&#x000a;&#x000a;pred Header_sources_are_authentic [n: NetworkState] {&#x000a;-- Subsumed by the &quot;reasonable&quot; sets, but may be used separately.&#x000a;   all m: n.members, h: Header |&#x000a;      (m -&gt; h) in (n.effectiveSend).LinkIdent =&gt; h.src = m  }&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;PROPERTIES OF NETWORK BEHAVIOR&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;pred No_routing_loops [n: NetworkState] {&#x000a;   all h: Header | no k: n.links | (k -&gt; k) in ^(h.(n.oneHop)) }&#x000a;&#x000a;pred Deterministic_forwarding [n: NetworkState] {&#x000a;   all f: n.infras, ki: LinkIdent + Self, h: Header |&#x000a;      lone h.(ki.((f.(n.forwardTables)).frows))     }&#x000a;&#x000a;pred Network_satisfies_communication_demands [n: NetworkState] {&#x000a;-- Communication demands are specified by the send and receive tables.&#x000a;-- This is a liveness property.&#x000a;   all m0, m1: n.members, h: Header |&#x000a;   (  (m0 -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m1 -&gt; h) in (n.effectiveReceive).LinkIdent  )&#x000a;   =&gt; (h -&gt; m0 -&gt; m1) in n.effectivelyReachable               }&#x000a;&#x000a;pred Network_satisfies_reasonable_demands [n: NetworkState] {&#x000a;-- Communication demands are specified by the send and receive tables.&#x000a;-- This is a liveness property.&#x000a;   all m0, m1: n.members, h: n.reasonableOneHeaders + &#x000a;                  n.reasonableTwoHeaders + n.reasonableGroupHeaders |&#x000a;   (  (m0 -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m1 -&gt; h) in (n.effectiveReceive).LinkIdent  )&#x000a;   =&gt; (h -&gt; m0 -&gt; m1) in n.effectivelyReachable      }&#x000a;&#x000a;pred Effective_reachability_is_symmetric [n: NetworkState] {&#x000a;   all h: Header, m, m&apos;: n.members |&#x000a;      (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable &#x000a;   =&gt; some h&apos;: Header | ReverseHeader [h, h&apos;]&#x000a;      &amp;&amp; (h&apos; -&gt; m&apos; -&gt; m) in n.effectivelyReachable         }&#x000a;&#x000a;pred Only_authentic_traffic_delivered [n: NetworkState] {&#x000a;   all m, m&apos;: n.members, h: Header |&#x000a;      (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable =&gt; h.src = m  }&#x000a;  &#x000a;/* --------------------------------------------------------------------&#x000a;COMPOSITION OF NETWORKS BY BRIDGING&#x000a;   We only define bridging on two networks.  The semantics of longer&#x000a;bridging chains is given by the Bridging Equivalence Theorem.&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;sig Bridge {&#x000a;   disj left, right: NetworkState,&#x000a;   reachableWithBridging: Header -&gt; Name -&gt; Name,            -- derived&#x000a;   effectivelyReachableWithBridging: Header -&gt; Name -&gt; Name  -- derived &#x000a;}  {&#x000a;   no left.members &amp; right.members        -- name spaces cannot overlap   &#x000a;   some (left.links &amp; right.links)                    -- bridging links&#x000a;   no ((left.links &amp; right.links) &amp; GroupLink)--no bridging with groups&#x000a;   reachableWithBridging = &#x000a;   {  h: Header, m, m&apos;: left.members + right.members | &#x000a;      some k, k&apos;: left.links + right.links |&#x000a;         m = k.sndr &amp;&amp; m&apos; in k&apos;.rcvrs&#x000a;      &amp;&amp; (k = k&apos; || (k -&gt; k&apos;) in ^(h.(left.oneHop + right.oneHop)))  }&#x000a;   effectivelyReachableWithBridging = &#x000a;   {  h: Header, m, m&apos;: left.members + right.members | &#x000a;      some k, k&apos;: left.links + right.links, kout, kin: LinkIdent | &#x000a;         (m -&gt; h -&gt; kout) in left.effectiveSend + right.effectiveSend&#x000a;      &amp;&amp; (m -&gt; kout -&gt; k) in left.outLinks + right.outLinks&#x000a;      &amp;&amp; (m&apos; -&gt;h -&gt;kin) in left.effectiveReceive+right.effectiveReceive&#x000a;      &amp;&amp; (m&apos; -&gt; kin -&gt; k&apos;) in left.inLinks + right.inLinks&#x000a;      &amp;&amp; (k = k&apos; || (k -&gt; k&apos;) in ^(h.(left.oneHop + right.oneHop)) )  }&#x000a;}&#x000a;&#x000a;assert Bridging_equivalence_theorem {&#x000a;   all disj n0, n1, n2: NetworkState, b: Bridge | &#x000a;   {  b.left = n0 &amp;&amp; b.right = n1&#x000a;      n2.infras = n0.infras + n1.infras&#x000a;      n2.users = n0.users + n1.users&#x000a;      n2.allGroups = n0.allGroups + n1.allGroups&#x000a;      n2.anyGroups = n0.anyGroups + n1.anyGroups&#x000a;      n2.groupSenders = n1.groupSenders + n2.groupSenders&#x000a;      n2.groupReceivers = n1.groupReceivers + n2.groupReceivers&#x000a;      n2.oneLinks = n0.oneLinks + n1.oneLinks&#x000a;      n2.twoLinks = n0.twoLinks + n1.twoLinks&#x000a;      n2.groupLinks = n0.groupLinks + n1.groupLinks&#x000a;      n2.sendTable = n0.sendTable + n1.sendTable&#x000a;      n2.receiveTable = n0.receiveTable + n1.receiveTable&#x000a;      n2.acquireTables = n0.acquireTables + n1.acquireTables&#x000a;      n2.forwardTables = n0.forwardTables + n1.forwardTables&#x000a;   }  =&gt; &#x000a;      (  n2.reachable = b.reachableWithBridging&#x000a;      &amp;&amp; n2.effectivelyReachable = b.effectivelyReachableWithBridging )&#x000a;}&#x000a;   &#x000a;/* --------------------------------------------------------------------&#x000a;COMPOSITION OF NETWORKS BY LAYERING&#x000a;   The semantics of an overlay composed with an underlay is the same as&#x000a;the semantics of the overlay, so there is no need for an equivalence&#x000a;theorem.&#x000a;   Because of the Bridging Equivalence Theorem, there is no difference&#x000a;between layering a network on a single network or on a pair (or more)&#x000a;of bridged networks.&#x000a;   Subduction is a special situation that can arise when bridged&#x000a;networks are layered on a network.  It is handled separately, so this&#x000a;section covers only layering one network (equivalently a pair or more &#x000a;of bridged networks) on one network.&#x000a;-------------------------------------------------------------------- */  &#x000a;&#x000a;sig Layering { &#x000a;   disj over, under: NetworkName,&#x000a;   disj overMembers, overAllGroups, overAnyGroups: set Name,&#x000a;   attachments: Name lone -&gt; lone Name,&#x000a;   disj overOneLinks, overTwoLinks: set (Link - GroupLink),&#x000a;   overGroupLinks: set GroupLink,&#x000a;   implementations: Link -&gt; lone SessionIdent&#x000a;}  {&#x000a;   attachments.Name = overMembers + overAllGroups + overAnyGroups&#x000a;   implementations.SessionIdent = &#x000a;      overOneLinks + overTwoLinks + overGroupLinks&#x000a;   -- OneLinks come as singles.&#x000a;   all s: overOneLinks.implementations | one implementations.s &#x000a;   -- TwoLinks come in pairs.&#x000a;   all s: overTwoLinks.implementations | &#x000a;      (  # implementations.s = 2&#x000a;      &amp;&amp; some disj k,k&apos;: implementations.s | ReverseLink[k, k&apos;])&#x000a;   -- GroupLinks come in groups.&#x000a;   all s: overGroupLinks.implementations | &#x000a;      (  # implementations.s &gt;= 2&#x000a;      &amp;&amp; one (implementations.s).group  )&#x000a;}&#x000a;&#x000a;pred ValidOverlay [n: NetworkState, y: Layering] {&#x000a;   y.over = n.net&#x000a;-- Layering is consistent with overlay types.&#x000a;   y.overMembers in n.members&#x000a;   y.overAllGroups in n.allGroups &amp;&amp; y.overAnyGroups in n.anyGroups&#x000a;   y.overOneLinks in n.oneLinks &amp;&amp; y.overTwoLinks in n.twoLinks&#x000a;   y.overGroupLinks in n.groupLinks&#x000a;-- Implemented links have attached endpoints.&#x000a;   ((y.implementations).SessionIdent).(sndr + rcvrs) &#x000a;      in (y.attachments).Name&#x000a;-- Implemented groups have attached groups.&#x000a;   y.(overAllGroups + overAnyGroups) in (y.attachments).Name&#x000a;-- The overlay transmit table invokes the implementations.&#x000a;      all k: y.(overOneLinks + overTwoLinks + overGroupLinks), &#x000a;          s: k.(y.implementations) |&#x000a;         let x = (k.sndrIdent).((k.sndr).(n.transmitTable)) |&#x000a;            x in ExternalSession&#x000a;         &amp;&amp; x.exNet = y.under &amp;&amp; x.exSession = s&#x000a;}&#x000a;&#x000a;pred ValidUnderlay [n: NetworkState, y: Layering] {&#x000a;   y.under = n.net&#x000a;-- Layering is consistent with underlay types.&#x000a;   (y.overMembers).(y.attachments) in n.members&#x000a;   (y.overAllGroups).(y.attachments) in n.allGroups&#x000a;   (y.overAnyGroups).(y.attachments) in n.anyGroups&#x000a;-- Implemented links have endpoints attached in the underlay.&#x000a;   ((y.implementations).SessionIdent).(sndr + rcvrs) &#x000a;      in (y.attachments).Name&#x000a;-- Group links have attached groups.&#x000a;   (y.overGroupLinks).group in y.(overAllGroups + overAnyGroups)&#x000a;-- The members of an implemented group map into group membership in the&#x000a;-- underlay.  Note that the underlay group can be bigger than the &#x000a;-- implemented overlay group!&#x000a;   all g: y.(overAllGroups + overAnyGroups), &#x000a;       k: (group.g &amp; y.overGroupLinks)     |&#x000a;   (  (k.sndr).(y.attachments) in (g.(y.attachments)).(n.groupSenders)&#x000a;   &amp;&amp; (k.rcvrs).(y.attachments) &#x000a;         in (g.(y.attachments)).(n.groupReceivers)                   )&#x000a;-- Contributions to the construction of the underlay tables.&#x000a;   all k: Link, s: SessionIdent |&#x000a;      (k -&gt; s) in y.implementations&#x000a;   =&gt; (some h: Header |    &#x000a;   -- Rules for all implemented links.&#x000a;      -- Header construction.&#x000a;         (   h.src = (k.sndr).(y.attachments)&#x000a;         &amp;&amp; h.sessionIdent = s &amp;&amp; h.overlay = y.over &#x000a;      -- Contributions to sendTable.&#x000a;         &amp;&amp; (h.src -&gt; s -&gt; h) in n.sendTable  &#x000a;      -- Contributions to forwardTable.&#x000a;         &amp;&amp; (some ki: (h.src).(n.outLinks).(n.links) |&#x000a;               (Self -&gt; h -&gt; ki) in ((h.src).(n.forwardTables)).frows))&#x000a;   -- Rules for point-to-point implemented links.&#x000a;      &amp;&amp; (k in Link - GroupLink &#x000a;      -- Header construction.&#x000a;         =&gt; (  h.dst = (k.rcvrs).(y.attachments)&#x000a;            &amp;&amp; (  k in y.overOneLinks&#x000a;               =&gt; h.protocol = OneWay else h.protocol = TwoWay  )&#x000a;      -- Contributions to acquireTable.&#x000a;            &amp;&amp; (some ki: (h.dst).(n.inLinks).(n.links) |&#x000a;                  (ki -&gt; h -&gt; Receive) in &#x000a;                     ((h.dst).(n.acquireTables)).arows)&#x000a;      -- Contributions to receiveTable.&#x000a;            &amp;&amp; (some x: ExternalLink |&#x000a;                  x.exNet = y.over&#x000a;               &amp;&amp; x.exLink = (k.rcvrs).(k.rcvrIdents)&#x000a;               &amp;&amp; ((h.dst) -&gt; h -&gt; x) in n.receiveTable  )  )  )&#x000a;   -- Rules for group implemented links.&#x000a;      &amp;&amp; (k in GroupLink &#x000a;      -- Header construction.&#x000a;         =&gt; (  h.dst = (k.group).(y.attachments)&#x000a;            &amp;&amp; (  k.group in y.overAllGroups&#x000a;               =&gt; h.protocol = AllCast else h.protocol = AnyCast  )&#x000a;      -- Contributions to acquireTable.&#x000a;            &amp;&amp; (all m: (k.rcvrs).(y.attachments) |&#x000a;               some ki: m.(n.inLinks).(n.links) |&#x000a;                  (ki -&gt; h -&gt; Receive) in (m.(n.acquireTables)).arows&#x000a;               &amp;&amp; (some x: ExternalLink |&#x000a;      -- Contributions to receiveTable.&#x000a;                     x.exNet = y.over &#x000a;                  &amp;&amp; x.exLink = m.(k.rcvrIdents)  &#x000a;                  &amp;&amp; (m -&gt; h -&gt; x) in n.receiveTable  )  )  )&#x000a;      )  )&#x000a;}&#x000a;&#x000a;pred Network_satisfies_overlay_demands [n: NetworkState, y: Layering] {&#x000a;-- The communication demands of an overlay can be identified by the&#x000a;-- session identifiers in the layering.  This property is one way of&#x000a;-- checking that an instance of layering is correct.&#x000a;   all s: Link.(y.implementations), h: sessionIdent.s, &#x000a;      m0, m1: n.members |&#x000a;      (  (m0 -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;      &amp;&amp; (m1 -&gt; h) in (n.effectiveReceive).LinkIdent  )&#x000a;      =&gt; (h -&gt; m0 -&gt; m1) in n.effectivelyReachable                    }&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;SUBDUCTION&#x000a;   As can be seen from the fields of the object, subduction is similar&#x000a;to bridging.&#x000a;   Subduction is a special situation that can arise when a network&#x000a;(usually special-purpose) is both bridged with and layered on another&#x000a;network (usually general-purpose).  We believe this is common when&#x000a;special-purpose IP networks interoperate with the Internet.  It is also&#x000a;needed to add an overlay in which the endpoints do not participate.&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;sig Subduction {&#x000a;   general, special: NetworkState,&#x000a;   sharedMembers: set Name,   -- this is why subduction is not bridging&#x000a;   sharedLinks: set (Link - GroupLink),      -- no bridging with groups&#x000a;   layering: Layering,&#x000a;   reachableWithSubduction: Header -&gt; Name -&gt; Name,          -- derived&#x000a;   effectivelyReachableWithSubduction: Header -&gt; Name -&gt; Name-- derived&#x000a;}  {&#x000a;-- Except for explicitly shared members, name spaces cannot overlap.&#x000a;   sharedMembers in general.members &amp;&amp; sharedMembers in special.members&#x000a;   no ((general.members &amp; special.members) - sharedMembers)&#x000a;-- A shared member is the sender of some shared link, and also the&#x000a;-- receiver of one.&#x000a;   all m: sharedMembers | some disj k, k&apos;: sharedLinks |&#x000a;      m = k.sndr &amp;&amp; m = k&apos;.rcvrs&#x000a;-- Shared links are shared.&#x000a;   all k: sharedLinks | (k in general.links &amp;&amp; k in special.links)&#x000a;-- Shared inlinks have the same linkIdent in both networks.  Input on&#x000a;-- a shared inlink is acquired deterministically by the overlay or&#x000a;-- underlay.&#x000a;-- Constraints on shared inlinks.&#x000a;   all k: sharedLinks |&#x000a;      k.rcvrs in sharedMembers &#x000a;   =&gt; (  k.sndr ! in sharedMembers&#x000a;      -- The shared link has the same linkIdent in both networks.&#x000a;      &amp;&amp; (k.rcvrs).(special.inLinks).k = (k.rcvrs).(general.inLinks).k&#x000a;      &amp;&amp; (all h: Header |&#x000a;            let m = k.rcvrs | let i = m.(special.inLinks).k |&#x000a;            -- Input is acquired deterministically by the overlay or &#x000a;            -- underlay.&#x000a;               no (h.(i.(m.(special.acquireTables).arows)) &amp;&#x000a;                   h.(i.(m.(general.acquireTables).arows)) )&#x000a;            -- If a packet is being acquired by the overlay, then in&#x000a;            -- the underlay, it is handled as if received on an&#x000a;            -- implemented link.&#x000a;            &amp;&amp; (some h.(i.(m.(special.acquireTables).arows))&#x000a;               =&gt; some x: ExternalLink | &#x000a;                     h.(m.(general.receiveTable)) = x&#x000a;                  &amp;&amp; x.exNet = special.net &amp;&amp; x.exLink = i )&#x000a;          )  )&#x000a;-- Constraints on shared outlinks.&#x000a;   all k: sharedLinks |&#x000a;      k.sndr in sharedMembers &#x000a;   =&gt; (  k.rcvrs ! in sharedMembers&#x000a;      &amp;&amp; (let m = k.sndr | let i = m.(special.outLinks).k |&#x000a;         -- The shared link has the same linkIdent in both networks.&#x000a;            i = m.(general.outLinks).k&#x000a;         -- The shared link has the same implementation in both &#x000a;         -- networks.&#x000a;         &amp;&amp; i.(m.(special.transmitTable)) &#x000a;               = i.(m.(general.transmitTable))                     )  )&#x000a;-- The special network is layered on the general network.  Shared&#x000a;-- members of the special network are attached to themselves in the&#x000a;-- general network.&#x000a;   layering.over = special.net &amp;&amp; layering.under = general.net&#x000a;   all m: sharedMembers | (m -&gt; m) in layering.attachments&#x000a;   (layering.implementations).SessionIdent =&#x000a;      { k: special.links | k ! in sharedLinks }&#x000a;   ValidOverlay [special, layering]&#x000a;   ValidUnderlay [general, layering]&#x000a;-- These are the exact same definitions used for bridging!&#x000a;   reachableWithSubduction =&#x000a;   {  h: Header, m, m&apos;: general.members + special.members |&#x000a;      some k, k&apos;: general.links + special.links |&#x000a;         m = k.sndr &amp;&amp; m&apos; in k&apos;.rcvrs&#x000a;      &amp;&amp; (k=k&apos; || (k -&gt;k&apos;) in ^(h.(general.oneHop+special.oneHop)))  }&#x000a;   effectivelyReachableWithSubduction =&#x000a;   {  h: Header, m, m&apos;: general.members + special.members |&#x000a;      some k, k&apos;: general.links + special.links, kout, kin: LinkIdent |&#x000a;         (m -&gt;h -&gt;kout) in general.effectiveSend+special.effectiveSend&#x000a;      &amp;&amp; (m -&gt; kout -&gt; k) in general.outLinks + special.outLinks&#x000a;      &amp;&amp; (m&apos; -&gt; h -&gt; kin) in&#x000a;            general.effectiveReceive + special.effectiveReceive&#x000a;      &amp;&amp; (m&apos; -&gt; kin -&gt; k&apos;) in general.inLinks + special.inLinks&#x000a;      &amp;&amp; (k = k&apos; || (k-&gt; k&apos;) in ^(h.(general.oneHop+special.oneHop))) }&#x000a;}&#x000a;&#x000a;/* ====================================================================&#x000a;run P for 1 but&#x000a;   N&gt;=S NetworkName, S NetworkState,&#x000a;   Y Layering, B Bridge, U Subduction,&#x000a;   M Name, L&lt;=K LinkIdent, K Link, D SessionIdent, D-2D Header,&#x000a;   SxM AcquireTable, SxM ForwardTable, X ExternalReference&#x000a;==================================================================== */&#x000a;&#x000a;/* ====================================================================&#x000a;VERIFICATION ARCHIVE&#x000a;==================================================================== */   &#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF SUBDUCTION&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;one sig M0, M1, M2, M3, M4, M5 extends Name {}&#x000a;one sig K01, K10, K12, K21, K23, K32, K34, K43, K15, K51, K53, K35 &#x000a;        extends Link {}&#x000a;one sig H12, H21, H23, H32 extends Header {}&#x000a;one sig H05, H50, H24, H42, H04, H40 extends Header {}&#x000a;&#x000a;pred SubductionSetup [s: Subduction] {&#x000a;   some m0: M0, m1: M1, m2: M2, m3: M3, m4: M4, m5: M5,&#x000a;        k01: K01, k10: K10, k12: K12, k21: K21,&#x000a;        k23: K23, k32: K32, k34: K34, k43: K43,&#x000a;        k15: K15, k51: K51, k53: K53, k35: K35,&#x000a;        h12: H12, h21: H21, h23: H23, h32: H32,&#x000a;        h05: H05, h50: H50, h24: H24, h42: H42, h04: H04, h40: H40 |&#x000a;   let g = s.general, p = s.special             | {&#x000a;-- Fields of subduction.&#x000a;   s.sharedMembers = m1 + m3&#x000a;   s.sharedLinks = k01 + k10 + k34 + k43&#x000a;-- Topology of the special/overlay network.&#x000a;   p.members = m1 + m5 + m3&#x000a;   no p.oneLinks &amp;&amp; no p.groupLinks&#x000a;   p.twoLinks = k01 + k10 + k15 + k51 + k53 + k35 + k34 + k43&#x000a;   k15.sndr = m1 &amp;&amp; k15.rcvrs = m5 &amp;&amp; ReverseLink [k15, k51]&#x000a;   k53.sndr = m5 &amp;&amp; k53.rcvrs = m3 &amp;&amp; ReverseLink [k53, k35]&#x000a;   Deterministic_forwarding [p]&#x000a;-- Topology of the general/subducting network.&#x000a;   g.members = m0 + m1 + m2 + m3 + m4&#x000a;   g.infras = m1 + m2 + m3&#x000a;   no g.oneLinks &amp;&amp; no g.groupLinks&#x000a;   g.twoLinks = k01 + k10 + k12 + k21 + k23 + k32 + k34 + k43&#x000a;   k01.sndr = m0 &amp;&amp; k01.rcvrs = m1 &amp;&amp; ReverseLink [k01, k10]&#x000a;   k12.sndr = m1 &amp;&amp; k12.rcvrs = m2 &amp;&amp; ReverseLink [k12, k21]&#x000a;   k23.sndr = m2 &amp;&amp; k23.rcvrs = m3 &amp;&amp; ReverseLink [k23, k32]&#x000a;   k34.sndr = m3 &amp;&amp; k34.rcvrs = m4 &amp;&amp; ReverseLink [k34, k43]&#x000a;   Deterministic_forwarding [g]&#x000a;-- Extra constraints on layering.&#x000a;   (M5 -&gt; M2) in (s.layering).attachments&#x000a;   h12.src = m1 &amp;&amp; h12.dst = m2 &amp;&amp; ReverseHeader [h12, h21]&#x000a;   h23.src = m2 &amp;&amp; h23.dst = m3 &amp;&amp; ReverseHeader [h23, h32]&#x000a;   h05.src = m0 &amp;&amp; h05.dst = m5 &amp;&amp; ReverseHeader [h05, h50]&#x000a;   h24.src = m2 &amp;&amp; h24.dst = m4 &amp;&amp; ReverseHeader [h24, h42]&#x000a;   h04.src = m0 &amp;&amp; h04.dst = m4 &amp;&amp; ReverseHeader [h04, h40]&#x000a;   Network_satisfies_overlay_demands [g, s.layering]               }  }&#x000a;&#x000a;pred SubductionTest1 [s: Subduction] {&#x000a;   SubductionSetup [s]&#x000a;   some m0: M0, m1: M1, m2: M2, m3: M3, m4: M4, m5: M5,&#x000a;        k01: K01, k10: K10, k12: K12, k21: K21,&#x000a;        k23: K23, k32: K32, k34: K34, k43: K43,&#x000a;        k15: K15, k51: K51,&#x000a;        h12: H12, h21: H21, h23: H23, h32: H32,&#x000a;        h05: H05, h50: H50, h24: H24, h42: H42, h04: H04, h40: H40 |&#x000a;   let g = s.general, p = s.special             | {&#x000a;   p.infras = m1 + m3&#x000a;   p.effectiveSend = (m5 -&gt; h50 -&gt; m5.(p.outLinks).k51)&#x000a;   p.effectiveReceive = (m5 -&gt; h05 -&gt; m5.(p.inLinks).k15)&#x000a;   g.effectiveSend = (m0 -&gt; h05 -&gt; m0.(g.outLinks).k01)&#x000a;      + (m0-&gt;h04-&gt;m0.(g.outLinks).k01) + (m2-&gt;h24-&gt;m2.(g.outLinks).k23)&#x000a;      + (m4-&gt;h40-&gt;m4.(g.outLinks).k43) + (m4-&gt;h42-&gt;m4.(g.outLinks).k43)&#x000a;      + (m1-&gt;h12-&gt;m1.(g.outLinks).k12) + (m2-&gt;h23-&gt;m2.(g.outLinks).k23)&#x000a;      + (m2-&gt;h21-&gt;m2.(g.outLinks).k21) + (m3-&gt;h32-&gt;m3.(g.outLinks).k32)&#x000a;   g.effectiveReceive = (m0 -&gt; h50 -&gt; m0.(g.inLinks).k10)&#x000a;      + (m0-&gt;h40-&gt;m0.(g.inLinks).k10) + (m2-&gt;h42-&gt;m2.(g.inLinks).k32)&#x000a;      + (m4-&gt;h24-&gt;m4.(g.inLinks).k34) + (m4-&gt;h04-&gt;m4.(g.inLinks).k34)&#x000a;      + (m1-&gt;h21-&gt;m1.(g.inLinks).k21) + (m2-&gt;h12-&gt;m2.(g.inLinks).k12)&#x000a;      + (m2-&gt;h32-&gt;m2.(g.inLinks).k32) + (m3-&gt;h23-&gt;m3.(g.inLinks).k23)&#x000a;   s.effectivelyReachableWithSubduction = (h12 -&gt; m1 -&gt; m2) &#x000a;      + (h21 -&gt; m2 -&gt; m1) + (h23 -&gt; m2 -&gt; m3) + (h32 -&gt; m3 -&gt; m2)&#x000a;      + (h05 -&gt; m0 -&gt; m5) + (h50 -&gt; m5 -&gt; m0) + (h24 -&gt; m2 -&gt; m4) &#x000a;      + (h42 -&gt; m4 -&gt; m2) + (h04 -&gt; m0 -&gt; m4) + (h40 -&gt; m4 -&gt; m0)&#x000a;}  }&#x000a;-- This is use of subduction as in mobility example, to reach m5 in the &#x000a;-- overlay.&#x000a;run SubductionTest1 for 1 but&#x000a;   2 NetworkName, 2 NetworkState,&#x000a;   1 Layering, 0 Bridge, 1 Subduction,&#x000a;   6 Name, 2 LinkIdent, 6 Link, 5 SessionIdent, 10 Header,&#x000a;   6 AcquireTable, 6 ForwardTable, 4 ExternalReference&#x000a;&#x000a;pred SubductionTest2 [s: Subduction] {&#x000a;   SubductionSetup [s]&#x000a;   some m0: M0, m1: M1, m2: M2, m3: M3, m4: M4, m5: M5,&#x000a;        k01: K01, k10: K10, k12: K12, k21: K21,&#x000a;        k23: K23, k32: K32, k34: K34, k43: K43,&#x000a;        h12: H12, h21: H21, h23: H23, h32: H32,&#x000a;        h24: H24, h42: H42, h04: H04, h40: H40        |&#x000a;   let g = s.general, p = s.special             | {&#x000a;   p.infras = m1 + m3 + m5&#x000a;   no p.effectiveSend&#x000a;   no p.effectiveReceive&#x000a;   g.effectiveSend = &#x000a;        (m0-&gt;h04-&gt;m0.(g.outLinks).k01) + (m2-&gt;h24-&gt;m2.(g.outLinks).k23)&#x000a;      + (m4-&gt;h40-&gt;m4.(g.outLinks).k43) + (m4-&gt;h42-&gt;m4.(g.outLinks).k43)&#x000a;      + (m1-&gt;h12-&gt;m1.(g.outLinks).k12) + (m2-&gt;h23-&gt;m2.(g.outLinks).k23)&#x000a;      + (m2-&gt;h21-&gt;m2.(g.outLinks).k21) + (m3-&gt;h32-&gt;m3.(g.outLinks).k32)&#x000a;   g.effectiveReceive =&#x000a;        (m0-&gt;h40-&gt;m0.(g.inLinks).k10) + (m2-&gt;h42-&gt;m2.(g.inLinks).k32)&#x000a;      + (m4-&gt;h24-&gt;m4.(g.inLinks).k34) + (m4-&gt;h04-&gt;m4.(g.inLinks).k34)&#x000a;      + (m1-&gt;h21-&gt;m1.(g.inLinks).k21) + (m2-&gt;h12-&gt;m2.(g.inLinks).k12)&#x000a;      + (m2-&gt;h32-&gt;m2.(g.inLinks).k32) + (m3-&gt;h23-&gt;m3.(g.inLinks).k23)&#x000a;   s.effectivelyReachableWithSubduction = &#x000a;        (h12 -&gt; m1 -&gt; m2) + (h24 -&gt; m2 -&gt; m4) &#x000a;      + (h21 -&gt; m2 -&gt; m1) + (h23 -&gt; m2 -&gt; m3) + (h32 -&gt; m3 -&gt; m2)&#x000a;      + (h42 -&gt; m4 -&gt; m2) + (h04 -&gt; m0 -&gt; m4) + (h40 -&gt; m4 -&gt; m0)&#x000a;   (h04 -&gt; k12 -&gt; k23) ! in g.oneHop&#x000a;   (h40 -&gt; k32 -&gt; k21) ! in g.oneHop&#x000a;}  }&#x000a;-- This is use of subduction as in reflection-attack example.  Underlay&#x000a;-- endpoints m0 and m4 reach each other through the overlay.&#x000a;run SubductionTest2 for 1 but&#x000a;   2 NetworkName, 2 NetworkState,&#x000a;   1 Layering, 0 Bridge, 1 Subduction,&#x000a;   6 Name, 2 LinkIdent, 6 Link, 5 SessionIdent, 10 Header,&#x000a;   6 AcquireTable, 6 ForwardTable, 4 ExternalReference&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF LAYERING&#x000a;&#x000a;pred LayeringTest1 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some n.oneLinks&#x000a;   No_self_links [n]&#x000a;   (y.implementations).SessionIdent = n.oneLinks&#x000a;   ValidOverlay [n, y]                         }&#x000a;run LayeringTest1 for 1 but 2 NetworkName,&#x000a;   3 Name, 6 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest2 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some n.oneLinks&#x000a;   ! No_self_links [n]&#x000a;   (y.implementations).SessionIdent = n.oneLinks&#x000a;   ValidOverlay [n, y]                         }&#x000a;run LayeringTest2 for 1 but 2 NetworkName,&#x000a;   3 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest3 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   Fully_oneLink_connected [n]&#x000a;   (y.implementations).SessionIdent = n.oneLinks&#x000a;   ValidOverlay [n, y]                            }&#x000a;run LayeringTest3 for 1 but 2 NetworkName,&#x000a;   3 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest4 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some n.twoLinks&#x000a;   (y.implementations).SessionIdent = n.twoLinks&#x000a;   ValidOverlay [n, y]                            }&#x000a;run LayeringTest4 for 1 but 2 NetworkName,&#x000a;   3 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest5 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   Fully_twoLink_connected [n]&#x000a;   (y.implementations).SessionIdent = n.twoLinks&#x000a;   ValidOverlay [n, y]                            }&#x000a;run LayeringTest5 for 1 but 2 NetworkName,&#x000a;   3 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest6 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some y.overAllGroups&#x000a;   some y.overAnyGroups&#x000a;   some y.overGroupLinks&#x000a;   ValidOverlay [n, y]                            }&#x000a;run LayeringTest6 for 1 but 2 NetworkName,&#x000a;   5 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest7 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3&#x000a;   some k: y.overOneLinks | k.sndr = k.rcvrs &#x000a;   some k: y.overOneLinks | k.sndr != k.rcvrs &#x000a;   no y.overTwoLinks&#x000a;   no y.overGroupLinks&#x000a;   ValidUnderlay [n, y]&#x000a;   sessionIdent.(Link.(y.implementations)) in n.reasonableOneHeaders&#x000a;   Network_satisfies_overlay_demands [n, y]                        }&#x000a;run LayeringTest7 for 1 but 2 NetworkName,&#x000a;   3 Name, 4 LinkIdent, 6 Link, 3 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest8 [n: NetworkState, y: Layering] {&#x000a;   # members[n] &gt;= 3 &#x000a;   some y.overTwoLinks&#x000a;   no y.overOneLinks&#x000a;   no y.overGroupLinks&#x000a;   ValidUnderlay [n, y]&#x000a;   sessionIdent.(Link.(y.implementations)) in n.reasonableTwoHeaders&#x000a;   Network_satisfies_overlay_demands [n, y]                        }&#x000a;run LayeringTest8 for 1 but 2 NetworkName,&#x000a;   4 Name, 6 LinkIdent, 6 Link, 6 SessionIdent, 6 Header,&#x000a;   4 AcquireTable, 4 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest9 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some y.overAllGroups&#x000a;   no y.overAnyGroups&#x000a;   some y.overGroupLinks&#x000a;   no y.overOneLinks&#x000a;   no y.overTwoLinks&#x000a;   all k: y.overGroupLinks | # k.rcvrs = 2&#x000a;   ValidUnderlay [n,y]&#x000a;   sessionIdent.(Link.(y.implementations)) in n.reasonableGroupHeaders&#x000a;   Network_satisfies_overlay_demands [n, y]                          }&#x000a;run LayeringTest9 for 1 but 2 NetworkName,&#x000a;   6 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   4 AcquireTable, 4 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest10 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some y.overAnyGroups&#x000a;   no y.overAllGroups&#x000a;   some y.overGroupLinks&#x000a;   no y.overOneLinks&#x000a;   no y.overTwoLinks&#x000a;   all k: y.overGroupLinks | # k.rcvrs = 2&#x000a;   ValidUnderlay [n,y]&#x000a;   sessionIdent.(Link.(y.implementations)) in n.reasonableGroupHeaders&#x000a;   Network_satisfies_overlay_demands [n, y]                          }&#x000a;run LayeringTest10 for 1 but 2 NetworkName,&#x000a;   6 Name, 4 LinkIdent, 6 Link, 6 SessionIdent,&#x000a;   4 AcquireTable, 4 ForwardTable, 6 ExternalReference&#x000a;&#x000a;pred LayeringTest11 [n: NetworkState, y: Layering] {&#x000a;   # members[n] = 3 &#x000a;   some y.overTwoLinks&#x000a;   some y.overAllGroups&#x000a;   some y.overAnyGroups&#x000a;   some (y.overGroupLinks &amp; group.(y.overAllGroups))&#x000a;   some (y.overGroupLinks &amp; group.(y.overAnyGroups))&#x000a;   all k: y.overGroupLinks | # k.rcvrs = 2&#x000a;   ValidUnderlay [n,y]&#x000a;   sessionIdent.(Link.(y.implementations)) in n.(reasonableOneHeaders &#x000a;      + reasonableTwoHeaders + reasonableGroupHeaders)&#x000a;   Network_satisfies_overlay_demands [n, y]                          &#x000a;}&#x000a;run LayeringTest11 for 1 but 2 NetworkName,&#x000a;   6 Name, 6 LinkIdent, 8 Link, 6 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable, 6 ExternalReference&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF BRIDGING&#x000a;&#x000a;pred BridgingTest1 [ln, rn: NetworkState, b: Bridge] {&#x000a;   b.left = ln &amp;&amp; b.right = rn&#x000a;   no ln.groupLinks &amp;&amp; no rn.groupLinks&#x000a;   No_self_links [ln] &amp;&amp; No_self_links [rn] &#x000a;   some disj k, k&apos;, k&quot;: Link, h: Header |&#x000a;   (  k&apos; in ln.links &amp; rn.links &#x000a;   &amp;&amp; (h -&gt; k -&gt; k&apos;) in ln.oneHop &amp;&amp; (h -&gt; k&apos; -&gt; k&quot;) in rn.oneHop  )&#x000a;   some ln.reachable &amp;&amp; some rn.reachable&#x000a;   some b.reachableWithBridging - (ln.reachable + rn.reachable)    }&#x000a;run BridgingTest1 for 1 but&#x000a;   2 NetworkName, 2 NetworkState, -- 0 Layering, 1 Bridge,&#x000a;   4 Name, 2 LinkIdent, 3 Link, 1 SessionIdent, 1 Header,&#x000a;   4 AcquireTable, 4 ForwardTable, 0 ExternalReference&#x000a;&#x000a;pred BridgingTest2 [ln, rn: NetworkState, b: Bridge] {&#x000a;   b.left = ln &amp;&amp; b.right = rn&#x000a;   no ln.groupLinks &amp;&amp; no rn.groupLinks&#x000a;   No_self_links [ln] &amp;&amp; No_self_links [rn] &#x000a;   some disj k, k&apos;, k&quot;: Link, h: Header |&#x000a;   (  k&apos; in ln.links &amp; rn.links &#x000a;   &amp;&amp; (h -&gt; k -&gt; k&apos;) in ln.oneHop &amp;&amp; (h -&gt; k&apos; -&gt; k&quot;) in rn.oneHop  )&#x000a;   some ln.effectivelyReachable &amp;&amp; some rn.effectivelyReachable&#x000a;   some b.effectivelyReachableWithBridging &#x000a;      - (ln.effectivelyReachable + rn.effectivelyReachable)        }&#x000a;run BridgingTest2 for 1 but&#x000a;   2 NetworkName, 2 NetworkState,&#x000a;   4 Name, 2 LinkIdent, 4 Link, 1 SessionIdent, 1 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;pred BridgingTest3 [ln, rn: NetworkState, b: Bridge] {&#x000a;-- Bridging to implement group sessions.&#x000a;   b.left = ln &amp;&amp; b.right = rn&#x000a;   no ln.groupLinks &amp;&amp; no rn.groupLinks&#x000a;   No_self_links [ln] &amp;&amp; No_self_links [rn] &#x000a;   some g: Name | &#x000a;   (  g in ln.allGroups &amp;&amp; g in rn.allGroups&#x000a;   &amp;&amp; g.(ln.groupSenders) = g.(rn.groupSenders)&#x000a;   &amp;&amp; g.(ln.groupSenders) in (ln.members + rn.members)&#x000a;   &amp;&amp; # (g.(ln.groupSenders) &amp; ln.members) = 2&#x000a;   &amp;&amp; # (g.(rn.groupSenders) &amp; rn.members) = 2&#x000a;   &amp;&amp; (all m: g.(ln.groupSenders) |&#x000a;         some h: Header | &#x000a;         (  h.src = m &amp;&amp; h.dst = g&#x000a;         &amp;&amp; (h -&gt; m -&gt; (g.(ln.groupSenders)-m)) in &#x000a;               b.effectivelyReachableWithBridging  )  )  )  }&#x000a;run BridgingTest3 for 1 but&#x000a;   2 NetworkName, 2 NetworkState, -- 0 Layering, 1 Bridge,&#x000a;   5 Name, 2 LinkIdent, 6 Link, 1 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;check Bridging_equivalence_theorem for 1 but&#x000a;   3 NetworkName, 3 NetworkState,&#x000a;   2 Name, 2 LinkIdent, 2 Link, 2 SessionIdent, 2 Header,&#x000a;   2 AcquireTable, 2 ForwardTable&#x000a;check Bridging_equivalence_theorem for 1 but&#x000a;   3 NetworkName, 3 NetworkState,&#x000a;   3 Name, 3 LinkIdent, 3 Link, 3 SessionIdent, 3 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;-------------------------------------------------------------------- */&#x000a;/*&#x000a;check Bridging_equivalence_theorem for 1 but            &#x000a;   3 NetworkName, 3 NetworkState,&#x000a;   4 Name, 4 LinkIdent, 4 Link, 4 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;check Bridging_equivalence_theorem for 1 but&#x000a;-- In 4096 MB, this ran all night and did not finish.&#x000a;   3 NetworkName, 3 NetworkState,&#x000a;   5 Name, 4 LinkIdent, 6 Link, 3 SessionIdent, 4 Header,&#x000a;   5 AcquireTable, 5 ForwardTable&#x000a;*/&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF GROUPLINKS AND GROUPSESSIONS&#x000a;&#x000a;pred GroupTest1 [n: NetworkState] { &#x000a;-- generate allGroup reachability via allLinks!&#x000a;   some disj g0, g1, g2: n.allGroups, disj m0, m1, m2: n.members,&#x000a;        disj s0, s1, s2: SessionIdent | {&#x000a;      g0.(n.groupSenders) = m0 + m1 + m2&#x000a;      g0.(n.groupReceivers) = m0 + m1 + m2&#x000a;      g1.(n.groupSenders) = m1&#x000a;      g1.(n.groupReceivers) = m1 + m2&#x000a;      g2.(n.groupSenders) = m2&#x000a;      g2.(n.groupReceivers) = m0 + m1&#x000a;      no n.oneLinks &amp;&amp; no n.twoLinks&#x000a;      all m: g0.(n.groupSenders), m&apos;: g0.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g0 &amp;&amp; h.sessionIdent = s0&#x000a;      &amp;&amp; (n.effectiveSend.LinkIdent).h = h.src&#x000a;      &amp;&amp; (n.effectiveReceive.LinkIdent).h = &#x000a;            (h.dst).(n.groupReceivers) - h.src&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )&#x000a;      all m: g1.(n.groupSenders), m&apos;: g1.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g1 &amp;&amp; h.sessionIdent = s1&#x000a;      &amp;&amp; (n.effectiveSend.LinkIdent).h = h.src&#x000a;      &amp;&amp; (n.effectiveReceive.LinkIdent).h = &#x000a;            (h.dst).(n.groupReceivers) - h.src&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )&#x000a;      all m: g2.(n.groupSenders), m&apos;: g2.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g2 &amp;&amp; h.sessionIdent = s2&#x000a;      &amp;&amp; (n.effectiveSend.LinkIdent).h = h.src&#x000a;      &amp;&amp; (n.effectiveReceive.LinkIdent).h = &#x000a;            (h.dst).(n.groupReceivers) - h.src&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )         }&#x000a;   all h: Header | h.protocol = AllCast      &#x000a;   Header_sources_are_authentic [n]                             } &#x000a;run GroupTest1 for 1 but&#x000a;   6 Name, 6 LinkIdent, 6 Link, 3 SessionIdent, 5 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred GroupTest2 [n: NetworkState] { &#x000a;-- generate anyGroup reachability via anyLinks!&#x000a;   some disj g0: n.anyGroups, disj m0, m1, m2: n.members,&#x000a;        disj s0: SessionIdent | {&#x000a;      g0.(n.groupSenders) = m0&#x000a;      g0.(n.groupReceivers) = m1 + m2&#x000a;      no n.oneLinks &amp;&amp; no n.twoLinks&#x000a;      all m: g0.(n.groupSenders), m&apos;: g0.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g0 &amp;&amp; h.sessionIdent = s0&#x000a;      &amp;&amp; h.protocol = AnyCast&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )         }&#x000a;   Header_sources_are_authentic [n]                             }&#x000a;run GroupTest2 for 1 but&#x000a;   6 Name, 6 LinkIdent, 6 Link, 3 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred GroupTest3 [n: NetworkState] { &#x000a;-- generate allGroup reachability via oneLinks!&#x000a;   some disj g0, g1, g2: n.allGroups, disj m0, m1, m2: n.members,&#x000a;        disj s0, s1, s2: SessionIdent                             | {&#x000a;      g0.(n.groupSenders) = m0 + m1 + m2&#x000a;      g0.(n.groupReceivers) = m0 + m1 + m2&#x000a;      g1.(n.groupSenders) = m1&#x000a;      g1.(n.groupReceivers) = m1 + m2&#x000a;      g2.(n.groupSenders) = m2&#x000a;      g2.(n.groupReceivers) = m0 + m1&#x000a;      no n.twoLinks &amp;&amp; no n.groupLinks&#x000a;      all m: g0.(n.groupSenders), m&apos;: g0.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g0 &amp;&amp; h.sessionIdent = s0&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )&#x000a;      all m: g1.(n.groupSenders), m&apos;: g1.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g1 &amp;&amp; h.sessionIdent = s1&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )&#x000a;      all m: g2.(n.groupSenders), m&apos;: g2.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g2 &amp;&amp; h.sessionIdent = s2&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )         }&#x000a;   all h: Header | h.protocol = AllCast      &#x000a;   Header_sources_are_authentic [n]                             } &#x000a;run GroupTest3 for 1 but&#x000a;   6 Name, 2 LinkIdent, 3 Link, 3 SessionIdent, 5 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred GroupTest4 [n: NetworkState] { &#x000a;-- generate anyGroup reachability via oneLinks!&#x000a;   some disj g0: n.anyGroups, disj m0, m1, m2: n.members,&#x000a;        disj s0: SessionIdent                           | {&#x000a;      g0.(n.groupSenders) = m0&#x000a;      g0.(n.groupReceivers) = m1 + m2&#x000a;      no n.twoLinks &amp;&amp; no n.groupLinks &#x000a;      all m: g0.(n.groupSenders), m&apos;: g0.(n.groupReceivers) - m | &#x000a;      some h: Header | &#x000a;      (  h.src = m &amp;&amp; h.dst = g0 &amp;&amp; h.sessionIdent = s0&#x000a;      &amp;&amp; h.protocol = AnyCast&#x000a;      &amp;&amp; (h -&gt; m -&gt; m&apos;) in n.effectivelyReachable     )         }&#x000a;      Header_sources_are_authentic [n]                          }&#x000a;run GroupTest4 for 1 but&#x000a;   6 Name, 2 LinkIdent, 3 Link, 1 SessionIdent, 1 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred GroupTest5 [n: NetworkState] {&#x000a;   # n.members = 3&#x000a;   Fully_broadcast_connected [n]&#x000a;   Fully_broadcast_active [n]&#x000a;   Network_satisfies_communication_demands [n]  }&#x000a;run GroupTest5 for 1 but&#x000a;   6 Name, 1 LinkIdent, 3 Link, 1 SessionIdent, 3 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;-------------------------------------------------------------------- */&#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF BEHAVIOR AND PREDICATE LIBRARY&#x000a;&#x000a;pred LibraryTest1 [n: NetworkState] { ! No_routing_loops [n] }&#x000a;run LibraryTest1 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, &#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest2 [n: NetworkState] { &#x000a;   No_self_links [n]&#x000a;   No_self_sessions [n]&#x000a;   some n.reasonableOneHeaders&#x000a;   Network_satisfies_reasonable_demands [n] }&#x000a;run LibraryTest2 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest3 [n: NetworkState] { &#x000a;   No_self_links [n]&#x000a;   No_self_sessions [n]&#x000a;   some n.reasonableTwoHeaders&#x000a;   Network_satisfies_reasonable_demands [n] }&#x000a;run LibraryTest3 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest4 [n: NetworkState] { &#x000a;   No_self_links [n]&#x000a;   No_self_sessions [n]&#x000a;   some n.reasonableGroupHeaders&#x000a;   Network_satisfies_reasonable_demands [n] }&#x000a;run LibraryTest4 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest5 [n: NetworkState] { &#x000a;   ! No_self_links [n]&#x000a;   ! No_self_sessions [n]&#x000a;   some h: Header | h.src = h.dst &amp;&amp; h in n.reasonableOneHeaders&#x000a;   Network_satisfies_reasonable_demands [n] }&#x000a;run LibraryTest5 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest6 [n: NetworkState] { &#x000a;   No_self_links [n]&#x000a;   No_self_sessions [n]&#x000a;   some (Name.(n.effectiveSend).LinkIdent &amp;&#x000a;         Name.(n.effectiveReceive).LinkIdent)&#x000a;   all m0, m1: n.members, h: Header |&#x000a;   (  (m0 -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;   &amp;&amp; (m1 -&gt; h) in (n.effectiveReceive).LinkIdent  )&#x000a;   =&gt; (h -&gt; m0 -&gt; m1) in n.reachable&#x000a;   ! Network_satisfies_communication_demands [n]   }&#x000a;-- This illustrates a subtle distinction between effective and non-&#x000a;-- effective reachability.  Even though (h -&gt; m0 -&gt; m1) is in&#x000a;-- reachable, m0 might send on the wrong link (from which the packet is&#x000a;-- not forwarded), or m1 might receive on the wrong link (from which &#x000a;-- the packet is not acquired).  The definition of effectivelyReachable&#x000a;-- weeds out these cases.&#x000a;run LibraryTest6 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest7 [n: NetworkState] {&#x000a;   Header.(n.effectivelyReachable) in (n.users -&gt; n.users)&#x000a;   some n.effectivelyReachable&#x000a;   No_self_sessions [n]&#x000a;   Header_sources_are_authentic [n]&#x000a;   Effective_reachability_is_symmetric [n]               }&#x000a;run LibraryTest7 for 1 but&#x000a;   4 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;pred LibraryTest8 [n: NetworkState] {&#x000a;   some n.effectiveSend &amp;&amp; Header_sources_are_authentic [n]  }&#x000a;run LibraryTest8 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest9 [n: NetworkState] {&#x000a;   some n.effectivelyReachable &amp;&amp; Only_authentic_traffic_delivered [n]}&#x000a;run LibraryTest9 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred LibraryTest10 [n: NetworkState] {&#x000a;      Network_satisfies_reasonable_demands [n]&#x000a;   &amp;&amp; ! Network_satisfies_communication_demands [n]  }&#x000a;run LibraryTest10 for 1 but                                    &#x000a;   4 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;pred LibraryTest11 [n: NetworkState] { ! Deterministic_forwarding [n] }&#x000a;run LibraryTest11 for 1 but&#x000a;   3 Name, 3 LinkIdent, 6 Link, &#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;assert LibraryTest12 {&#x000a;   all n: NetworkState | n.effectivelyReachable in n.reachable  }&#x000a;check LibraryTest12 for 1 but                          &#x000a;   4 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;assert LibraryTest13 {&#x000a;   all n: NetworkState | &#x000a;      Header_sources_are_authentic [n]&#x000a;   =&gt; Only_authentic_traffic_delivered [n]  }&#x000a;check LibraryTest13 for 1 but                                    &#x000a;   4 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;assert LibraryTest14 {&#x000a;   all n: NetworkState | &#x000a;      Network_satisfies_communication_demands [n]&#x000a;   =&gt; Network_satisfies_reasonable_demands [n]     }&#x000a;check LibraryTest14 for 1 but                                    &#x000a;   4 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;&#x000a;assert LibraryTest15 { &#x000a;   all n: NetworkState | {&#x000a;   No_self_links [n]&#x000a;   No_self_sessions [n]&#x000a;-- A user has exactly one incoming linkIdent and one outgoing.&#x000a;   all m: n.users | &#x000a;   (  one m.(n.inLinks).(n.links) &amp;&amp; one m.(n.outLinks).(n.links)  )&#x000a;-- Users are not directly connected.&#x000a;   no k: n.links | ( k.sndr in n.users &amp;&amp; some (k.rcvrs &amp; n.users) )&#x000a;-- All traffic is between users.&#x000a;   ((n.effectiveSend).LinkIdent).Header in n.users&#x000a;   ((n.effectiveReceive).LinkIdent).Header in n.users&#x000a;   (all m0, m1: n.users, h: Header |&#x000a;      (  (m0 -&gt; h) in (n.effectiveSend).LinkIdent&#x000a;      &amp;&amp; (m1 -&gt; h) in (n.effectiveReceive).LinkIdent  )&#x000a;   =&gt; (h -&gt; m0 -&gt; m1) in n.reachable                  )&#x000a;   } =&gt; Network_satisfies_communication_demands [n]   }&#x000a;-- Compare this to LibraryTest6!&#x000a;check LibraryTest15 for 1 but&#x000a;   4 Name, 4 LinkIdent, 6 Link, 3 SessionIdent, 6 Header,&#x000a;   4 AcquireTable, 4 ForwardTable&#x000a;-------------------------------------------------------------------- */ &#x000a;&#x000a;/* --------------------------------------------------------------------&#x000a;TESTS OF ONE/TWO-WAY LINKS/SESSIONS&#x000a;&#x000a;pred TwoWayTest1 [n: NetworkState] {&#x000a;   # n.members = 3&#x000a;   Fully_oneLink_connected [n]&#x000a;   Fully_oneSession_active [n]&#x000a;   Network_satisfies_communication_demands [n]  }&#x000a;run TwoWayTest1 for 1 but&#x000a;   3 Name, 4 LinkIdent, 6 Link, 6 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest2 [n: NetworkState] {&#x000a;   # n.members = 3&#x000a;   Fully_twoLink_connected [n]&#x000a;   Fully_oneSession_active [n]&#x000a;   Network_satisfies_communication_demands [n]  }&#x000a;run TwoWayTest2 for 1 but&#x000a;   3 Name, 2 LinkIdent, 6 Link, 6 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest3 [n: NetworkState] {&#x000a;   # n.members = 3&#x000a;   Fully_oneLink_connected [n]&#x000a;   Fully_twoSession_active [n]&#x000a;   Network_satisfies_communication_demands [n]  }&#x000a;run TwoWayTest3 for 1 but&#x000a;   3 Name, 4 LinkIdent, 6 Link, 3 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest4 [n: NetworkState] {&#x000a;   # n.members = 3&#x000a;   Fully_twoLink_connected [n]&#x000a;   Fully_twoSession_active [n]&#x000a;   Network_satisfies_communication_demands [n]  }&#x000a;run TwoWayTest4 for 1 but&#x000a;   3 Name, 2 LinkIdent, 6 Link, 3 SessionIdent, 6 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest5 [n: NetworkState] { &#x000a;   # n.members = 3&#x000a;   Fully_oneLink_connected [n]&#x000a;   some h: n.reasonableOneHeaders | h.src = h.dst    &#x000a;   Network_satisfies_reasonable_demands [n]        }&#x000a;run TwoWayTest5 for 1 but&#x000a;   3 Name, 4 LinkIdent, 6 Link, 3 SessionIdent, 3 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest6 [n: NetworkState] { &#x000a;   # n.members = 3&#x000a;   some disj m0, m1, m2: n.members, disj h0, h1, h2, h3: Header,&#x000a;      disj s0, s1: SessionIdent |&#x000a;   (  h0.src = m0 &amp;&amp; h0.dst = m1 &amp;&amp; h0.sessionIdent = s0&#x000a;   &amp;&amp; h1.src = m1 &amp;&amp; h1.dst = m0 &amp;&amp; h1.sessionIdent = s0&#x000a;   &amp;&amp; h2.src = m1 &amp;&amp; h2.dst = m2 &amp;&amp; h2.sessionIdent = s1&#x000a;   &amp;&amp; h3.src = m2 &amp;&amp; h3.dst = m1 &amp;&amp; h3.sessionIdent = s1&#x000a;   &amp;&amp; (h0+h1+h2+h3).protocol = TwoWay&#x000a;   &amp;&amp; no (h0+h1+h2+h3).overlay                         )&#x000a;   all h: Header | (  (n.effectiveSend.LinkIdent).h = h.src&#x000a;                   &amp;&amp; (n.effectiveReceive.LinkIdent).h = h.dst  )&#x000a;   Network_satisfies_reasonable_demands [n]                     }&#x000a;run TwoWayTest6 for 1 but&#x000a;   3 Name, 4 LinkIdent, 6 Link, 2 SessionIdent, 4 Header,&#x000a;   3 AcquireTable, 3 ForwardTable&#x000a;&#x000a;pred TwoWayTest7 [n: NetworkState] {&#x000a;-- Testing the definition of reachability.  Most importantly, the &#x000a;-- forwarder should not be reachable from itself.&#x000a;   one n.infras&#x000a;   no n.oneLinks&#x000a;   some disj h, h&apos;: Header, disj m, m&apos;: n.users, f: n.infras,&#x000a;        disj k, k&apos;: n.links, disj fk, fk&apos;: LinkIdent |&#x000a;      h.src = m &amp;&amp; h.dst = m&apos; &amp;&amp; h&apos;.src = m&apos; &amp;&amp; h&apos;.dst = m&#x000a;   &amp;&amp; (f -&gt; fk -&gt; k) in n.inLinks &amp;&amp; k.sndr = m&#x000a;   &amp;&amp; (f -&gt; fk&apos; -&gt; k&apos;) in n.inLinks &amp;&amp; k&apos;.sndr = m&apos;&#x000a;   &amp;&amp; (f.(n.forwardTables)).frows = &#x000a;         (fk -&gt; h -&gt; fk&apos;) + (fk&apos; -&gt; h&apos; -&gt; fk) &#x000a;   &amp;&amp; (f.(n.acquireTables)).arows = &#x000a;         (fk -&gt; h -&gt; Forward) + (fk&apos; -&gt; h&apos; -&gt; Forward) &#x000a;   No_routing_loops [n]                                         }&#x000a;run TwoWayTest7 for 1 but&#x000a;   3 Name, 2 LinkIdent, 4 Link, 1 SessionIdent, 2 Header,&#x000a;   3 AcquireTable, 3 ForwardTable, 0 ExternalReference&#x000a;-------------------------------------------------------------------- */&#x000a;"/>
+
+<source filename="/$alloy4$/models/util/integer.als" content="module util/integer&#x000a;&#x000a;/*&#x000a; * A collection of utility functions for using Integers in Alloy.&#x000a; * Note that integer overflows are silently truncated to the current bitwidth&#x000a; * using the 2&apos;s complement arithmetic, unless the &quot;forbid overfows&quot; option is&#x000a; * turned on, in which case only models that don&apos;t have any overflows are &#x000a; * analyzed. &#x000a; */&#x000a;&#x000a;fun add  [n1, n2: Int] : Int { this/plus[n1, n2] }&#x000a;fun plus [n1, n2: Int] : Int { n1 fun/add n2 }&#x000a;&#x000a;fun sub   [n1, n2: Int] : Int { this/minus[n1, n2] }&#x000a;fun minus [n1, n2: Int] : Int { n1 fun/sub n2 }&#x000a;&#x000a;fun mul [n1, n2: Int] : Int { n1 fun/mul n2 }&#x000a;&#x000a;/**&#x000a; * Performs the division with &quot;round to zero&quot; semantics, except the following 3 cases&#x000a; * 1) if a is 0, then it returns 0&#x000a; * 2) else if b is 0, then it returns 1 if a is negative and -1 if a is positive&#x000a; * 3) else if a is the smallest negative integer, and b is -1, then it returns a&#x000a; */&#x000a;fun div [n1, n2: Int] : Int { n1 fun/div n2 }&#x000a;&#x000a;/** answer is defined to be the unique integer that satisfies &quot;a = ((a/b)*b) + remainder&quot; */&#x000a;fun rem [n1, n2: Int] : Int { n1 fun/rem n2 }&#x000a;&#x000a;/** negate */&#x000a;fun negate [n: Int] : Int { 0 fun/sub n }&#x000a;&#x000a;/** equal to */&#x000a;pred eq [n1, n2: Int] { int[n1] = int[n2] }&#x000a;&#x000a;/** greater than */&#x000a;pred gt [n1, n2: Int] { n1 &gt; n2 }&#x000a;&#x000a;/** less then */&#x000a;pred lt [n1, n2: Int] { n1 &lt; n2 }&#x000a;&#x000a;/** greater than or equal */&#x000a;pred gte [n1, n2: Int] { n1 &gt;= n2 }&#x000a;&#x000a;/** less than or equal */&#x000a;pred lte [n1, n2: Int] { n1 &lt;= n2 }&#x000a;&#x000a;/** integer is zero */&#x000a;pred zero [n: Int] { n = 0 }&#x000a;&#x000a;/** positive */&#x000a;pred pos  [n: Int] { n &gt; 0 }&#x000a;&#x000a;/** negative */&#x000a;pred neg  [n: Int] { n &lt; 0 }&#x000a;&#x000a;/** non-positive */&#x000a;pred nonpos [n: Int] { n &lt;= 0 }&#x000a;&#x000a;/** non-negative */&#x000a;pred nonneg [n: Int] { n &gt;= 0 }&#x000a;&#x000a;/** signum (aka sign or sgn) */&#x000a;fun signum [n: Int] : Int { n&lt;0 =&gt; (0 fun/sub 1) else (n&gt;0 =&gt; 1 else 0) }&#x000a;&#x000a;/**&#x000a; * returns the ith element (zero-based) from the set s&#x000a; * in the ordering of &apos;next&apos;, which is a linear ordering&#x000a; * relation like that provided by util/ordering&#x000a; */&#x000a;fun int2elem[i: Int, next: univ-&gt;univ, s: set univ] : lone s {&#x000a;  {e: s | #^next.e = int i }&#x000a;}&#x000a;&#x000a;/**&#x000a; * returns the index of the element (zero-based) in the&#x000a; * ordering of next, which is a linear ordering relation&#x000a; * like that provided by util/ordering&#x000a; */&#x000a;fun elem2int[e: univ, next: univ-&gt;univ] : lone Int {&#x000a;  Int[#^next.e]&#x000a;}&#x000a;&#x000a;/** returns the largest integer in the current bitwidth */&#x000a;fun max:one Int { fun/max }&#x000a;&#x000a;/** returns the smallest integer in the current bitwidth */&#x000a;fun min:one Int { fun/min }&#x000a;&#x000a;/** maps each integer (except max) to the integer after it */&#x000a;fun next:Int-&gt;Int { fun/next }&#x000a;&#x000a;/** maps each integer (except min) to the integer before it */&#x000a;fun prev:Int-&gt;Int { ~next }&#x000a;&#x000a;/** given a set of integers, return the largest element */&#x000a;fun max [es: set Int]: lone Int { es - es.^prev }&#x000a;&#x000a;/** given a set of integers, return the smallest element */&#x000a;fun min [es: set Int]: lone Int { es - es.^next }&#x000a;&#x000a;/** given an integer, return all integers prior to it */&#x000a;fun prevs [e: Int]: set Int { e.^prev }&#x000a;&#x000a;/** given an integer, return all integers following it */&#x000a;fun nexts [e: Int]: set Int { e.^next }&#x000a;&#x000a;/** returns the larger of the two integers */&#x000a;fun larger [e1, e2: Int]: Int { let a=int[e1], b=int[e2] | (a&lt;b =&gt; b else a) }&#x000a;&#x000a;/** returns the smaller of the two integers */&#x000a;fun smaller [e1, e2: Int]: Int { let a=int[e1], b=int[e2] | (a&lt;b =&gt; a else b) }&#x000a;"/>
+
+</alloy>

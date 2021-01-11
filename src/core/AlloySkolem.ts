@@ -36,7 +36,7 @@ interface IDSkolem {
  */
 export class AlloySkolem extends AlloyElement {
 
-    private readonly _types: Array<AlloySignature>;
+    private readonly _types: AlloySignature[][];
     private readonly _tuples: Array<AlloyTuple>;
 
     /**
@@ -47,7 +47,7 @@ export class AlloySkolem extends AlloyElement {
      * @param tuples The contents of this skolem
      */
     constructor (name: string,
-                 types: Array<AlloySignature>,
+                 types: AlloySignature[][],
                  tuples: Array<AlloyTuple>) {
 
         super(name);
@@ -124,7 +124,7 @@ export class AlloySkolem extends AlloyElement {
     /**
      * Returns a copy of the types that define the columns of this skolem.
      */
-    types (): Array<AlloySignature> {
+    types (): AlloySignature[][] {
 
         return this._types.slice();
 
@@ -169,28 +169,37 @@ export class AlloySkolem extends AlloyElement {
         // Get and check skolem attributes
         let id = element.getAttribute('ID');
         let label = element.getAttribute('label');
-        let typesEl = element.querySelector('types');
+        // let typesEl = element.querySelector('types');
+        let typesEls = element.querySelectorAll('types');
 
         if (!id) throw Error('Skolem has no ID attribute');
         if (!label) throw Error('Skolem has no label attribute');
-        if (!typesEl) throw Error('Skolem has no type(s)');
+        // if (!typesEl) throw Error('Skolem has no type(s)');
 
         // Get and check the types of this skolem
+        // let typeIDs = Array
+        //     .from(typesEl.querySelectorAll('type'))
+        //     .map(el => el.getAttribute('ID'));
+        // if (typeIDs.includes(null)) throw Error('Undefined type in skolem');
         let typeIDs = Array
-            .from(typesEl.querySelectorAll('type'))
-            .map(el => el.getAttribute('ID'));
-        if (typeIDs.includes(null)) throw Error('Undefined type in skolem');
+            .from(typesEls)
+            .map(typesel => Array
+                .from(typesel.querySelectorAll('type'))
+                .map(el => el.getAttribute('ID')));
+        if (typeIDs.some(IDs => IDs.includes(null))) throw Error('Undefined type in skolem');
 
-        let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
-        if (types.includes(undefined)) throw Error('A skolem type has not been created');
+        // let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
+        // if (types.includes(undefined)) throw Error('A skolem type has not been created');
+        let types: (AlloySignature|undefined)[][] = typeIDs.map(IDs => IDs.map(id => sigs.get(parseInt(id!))));
+        if (types.some(ts => ts.includes(undefined))) throw Error('A skolem type has not been created');
 
         // Get and assemble the tuples
         let tuples = Array
             .from(element.querySelectorAll('tuple'))
-            .map(el => AlloyTuple.buildSkolemTuple(label!, el, types as Array<AlloySignature>));
+            .map(el => AlloyTuple.buildSkolemTuple(label!, el, types as AlloySignature[][]));
 
         // Create the skolem
-        let skolem = new AlloySkolem(label, types as Array<AlloySignature>, tuples);
+        let skolem = new AlloySkolem(label, types as AlloySignature[][], tuples);
 
         // Inject the skolem into witnesses
         if (types.length === 1) {

@@ -194,7 +194,7 @@
          */
         static buildFieldTuple(element, types) {
             let atoms = AlloyTuple._getTupleAtoms(element, types);
-            let id = types[0].id() + '<:' + atoms.map(a => a.name()).join('->');
+            let id = types[0][0].id() + '<:' + atoms.map(a => a.name()).join('->');
             return new AlloyTuple(id, atoms);
         }
         /**
@@ -226,9 +226,15 @@
                 .map(atom => atom.getAttribute('label'));
             if (atomLabels.includes(null))
                 throw Error('Atom has no label attribute');
-            let atoms = atomLabels.map((label, i) => types[i].findAtom(label));
-            if (atoms.includes(null))
+            let atoms = atomLabels.map((label, i) => {
+                const tuptypes = types.find(typearray => typearray[i].findAtom(label) !== null);
+                return tuptypes[i].findAtom(label);
+                // const type = types[i].find(type => type.findAtom(label!) !== null)
+                // return type!.findAtom(label!);
+            });
+            if (atoms.includes(null)) {
                 throw Error('Unable to find all atoms in tuple');
+            }
             return atoms;
         }
     }
@@ -344,17 +350,24 @@
             this._is_meta = is_meta ? is_meta : false;
             this._is_private = is_private ? is_private : false;
             // Check that the field has an arity of at least two
-            if (types.length < 2) {
+            if (types[0].length < 2) {
                 throw Error(`Field ${name} has arity less than two.`);
             }
             // Check that all tuples are composed of correct types
-            tuples.forEach(tuple => {
-                tuple.atoms().forEach((atom, i) => {
-                    if (!atom.isType(types[i])) {
-                        throw Error(`Tuple ${tuple} has incorrect types.`);
-                    }
-                });
-            });
+            // tuples.forEach(tuple => {
+            //     tuple.atoms().forEach((atom, i) => {
+            //         if (!types[i].some(type => atom.isType(type))) {
+            //             throw Error(`Tuple ${tuple} has incorrect types.`)
+            //         }
+            //     })
+            // })
+            // tuples.forEach(tuple => {
+            //     tuple.atoms().forEach((atom, i) => {
+            //         if (!atom.isType(types[i])) {
+            //             throw Error(`Tuple ${tuple} has incorrect types.`);
+            //         }
+            //     });
+            // });
         }
         /**
          * Returns the number of "columns" in the relation defined by this field.
@@ -377,7 +390,7 @@
          * of this field.
          */
         id() {
-            return this._types[0].name() + '<:' + this.name();
+            return this._types[0][0].name() + '<:' + this.name();
         }
         /**
          * Returns true if this is a meta field, false otherwise.
@@ -393,23 +406,25 @@
         }
         join(item) {
             let arity = this.arity();
-            let lastType = this.types()[arity - 1];
+            let lastTypes = this.types()[arity - 1];
             if (typeof item === 'string') {
-                if (lastType.name() === item || lastType.name() === 'this/' + item) {
-                    item = lastType;
-                }
-                else {
-                    let atoms = lastType.atoms(true);
-                    let atom = atoms.find(atom => atom.name() === item);
-                    if (atom)
-                        item = atom;
-                }
+                lastTypes.forEach(lastType => {
+                    if (lastType.name() === item || lastType.name() === 'this/' + item) {
+                        item = lastType;
+                    }
+                    else {
+                        let atoms = lastType.atoms(true);
+                        let atom = atoms.find(atom => atom.name() === item);
+                        if (atom)
+                            item = atom;
+                    }
+                });
             }
             if (typeof item === 'string') {
                 return [];
             }
             if (item.expressionType() === 'signature') {
-                if (lastType !== item)
+                if (!lastTypes.some(lastType => lastType === item))
                     return [];
                 const tuples = this.tuples()
                     .map(tuple => new AlloyTuple('', tuple.atoms().slice(0, -1)));
@@ -439,7 +454,7 @@
          * Returns the signature that defines this field.
          */
         parent() {
-            return this._types[0];
+            return this._types[0][0];
         }
         /**
          * Returns the number of "rows" in the relation defined by this field.
@@ -490,7 +505,8 @@
             let id = element.getAttribute('ID');
             let parentID = element.getAttribute('parentID');
             let label = element.getAttribute('label');
-            let typesEl = element.querySelector('types');
+            // let typesEl = element.querySelector('types');
+            let typesEls = element.querySelectorAll('types');
             let meta = element.getAttribute('meta') === 'yes';
             let priv = element.getAttribute('private') === 'yes';
             if (!id)
@@ -499,21 +515,28 @@
                 throw Error('Field has no parentID attribute');
             if (!label)
                 throw Error('Field has no label attribute');
-            if (!typesEl)
-                throw Error('Field has no types');
+            // if (!typesEl) throw Error('Field has no types');
             // Get the parent signature of the field
             let parent = sigs.get(parseInt(parentID));
             if (!parent)
                 throw Error('Field parent type has not been created');
-            // Get and check the types used in this field
             let typeIDs = Array
-                .from(typesEl.querySelectorAll('type'))
-                .map(el => el.getAttribute('ID'));
-            if (typeIDs.includes(null))
+                .from(typesEls)
+                .map(typesel => Array
+                .from(typesel.querySelectorAll('type'))
+                .map(el => el.getAttribute('ID')));
+            if (typeIDs.some(IDs => IDs.includes(null)))
                 throw Error('Undefined type in field');
-            let types = typeIDs.map(id => sigs.get(parseInt(id)));
-            if (types.includes(undefined))
+            // Get and check the types used in this field
+            // let typeIDs = Array
+            //     .from(typesEl.querySelectorAll('type'))
+            //     .map(el => el.getAttribute('ID'));
+            // if (typeIDs.includes(null)) throw Error('Undefined type in field');
+            let types = typeIDs.map(IDs => IDs.map(id => sigs.get(parseInt(id))));
+            if (types.some(ts => ts.includes(undefined)))
                 throw Error('A field type has not been created');
+            // let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
+            // if (types.includes(undefined)) throw Error('A field type has not been created');
             // Get and assemble the tuples
             let tuples = Array
                 .from(element.querySelectorAll('tuple'))
@@ -1191,21 +1214,29 @@
             // Get and check skolem attributes
             let id = element.getAttribute('ID');
             let label = element.getAttribute('label');
-            let typesEl = element.querySelector('types');
+            // let typesEl = element.querySelector('types');
+            let typesEls = element.querySelectorAll('types');
             if (!id)
                 throw Error('Skolem has no ID attribute');
             if (!label)
                 throw Error('Skolem has no label attribute');
-            if (!typesEl)
-                throw Error('Skolem has no type(s)');
+            // if (!typesEl) throw Error('Skolem has no type(s)');
             // Get and check the types of this skolem
+            // let typeIDs = Array
+            //     .from(typesEl.querySelectorAll('type'))
+            //     .map(el => el.getAttribute('ID'));
+            // if (typeIDs.includes(null)) throw Error('Undefined type in skolem');
             let typeIDs = Array
-                .from(typesEl.querySelectorAll('type'))
-                .map(el => el.getAttribute('ID'));
-            if (typeIDs.includes(null))
+                .from(typesEls)
+                .map(typesel => Array
+                .from(typesel.querySelectorAll('type'))
+                .map(el => el.getAttribute('ID')));
+            if (typeIDs.some(IDs => IDs.includes(null)))
                 throw Error('Undefined type in skolem');
-            let types = typeIDs.map(id => sigs.get(parseInt(id)));
-            if (types.includes(undefined))
+            // let types: Array<AlloySignature|undefined> = typeIDs.map(id => sigs.get(parseInt(id!)));
+            // if (types.includes(undefined)) throw Error('A skolem type has not been created');
+            let types = typeIDs.map(IDs => IDs.map(id => sigs.get(parseInt(id))));
+            if (types.some(ts => ts.includes(undefined)))
                 throw Error('A skolem type has not been created');
             // Get and assemble the tuples
             let tuples = Array
@@ -1384,7 +1415,7 @@
                 return fields[0];
             if (!sig) {
                 let list = fields
-                    .map(fld => fld.types()[0].name() + ' <: ' + name)
+                    .map(fld => fld.types()[0][0].name() + ' <: ' + name)
                     .join('\n');
                 throw Error('The name is ambiguous due to multiple matches:\n' + list);
             }
@@ -1393,7 +1424,7 @@
                 : sig;
             if (signature === null)
                 return null;
-            return fields.find(fld => fld.types()[0] === signature) || null;
+            return fields.find(fld => fld.types()[0][0] === signature) || null;
         }
         /**
          * Return an array of all fields in this instance.

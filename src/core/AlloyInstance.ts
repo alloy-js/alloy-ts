@@ -146,7 +146,7 @@ export class AlloyInstance {
 
         if (!sig) {
             let list = fields
-                .map(fld => fld.types()[0].name() + ' <: ' + name)
+                .map(fld => fld.types()[0][0].name() + ' <: ' + name)
                 .join('\n');
             throw Error('The name is ambiguous due to multiple matches:\n' + list);
         }
@@ -157,7 +157,7 @@ export class AlloyInstance {
 
         if (signature === null) return null;
 
-        return fields.find(fld => fld.types()[0] === signature) || null;
+        return fields.find(fld => fld.types()[0][0] === signature) || null;
 
     }
 

@@ -132,10 +132,10 @@ export class AlloyTuple extends AlloyWitness {
      * @param element The XML tuple element
      * @param types The array of types for this tuple
      */
-    static buildFieldTuple (element: Element, types: Array<AlloySignature>): AlloyTuple {
+    static buildFieldTuple (element: Element, types: AlloySignature[][]): AlloyTuple {
 
         let atoms = AlloyTuple._getTupleAtoms(element, types);
-        let id = types[0].id() + '<:' + atoms.map(a => a.name()).join('->');
+        let id = types[0][0].id() + '<:' + atoms.map(a => a.name()).join('->');
 
         return new AlloyTuple(id, atoms);
 
@@ -152,7 +152,7 @@ export class AlloyTuple extends AlloyWitness {
      * @param element The XML tuple element
      * @param types The array of types for this tuple
      */
-    static buildSkolemTuple (skolemName: string, element: Element, types: Array<AlloySignature>): AlloyTuple {
+    static buildSkolemTuple (skolemName: string, element: Element, types: AlloySignature[][]): AlloyTuple {
 
         let atoms = AlloyTuple._getTupleAtoms(element, types);
         let id = skolemName + '<:' + atoms.map(a => a.name()).join('->');
@@ -168,7 +168,7 @@ export class AlloyTuple extends AlloyWitness {
      * @param types The array of types for this tuple
      * @private
      */
-    private static _getTupleAtoms (element: Element, types: Array<AlloySignature>): Array<AlloyAtom> {
+    private static _getTupleAtoms (element: Element, types: AlloySignature[][]): Array<AlloyAtom> {
 
         let atomLabels = Array
             .from(element.querySelectorAll('atom'))
@@ -176,9 +176,16 @@ export class AlloyTuple extends AlloyWitness {
 
         if (atomLabels.includes(null)) throw Error('Atom has no label attribute');
 
-        let atoms = atomLabels.map((label, i) => types[i].findAtom(label!));
+        let atoms = atomLabels.map((label, i) => {
+            const tuptypes = types.find(typearray => typearray[i].findAtom(label!) !== null);
+            return tuptypes![i].findAtom(label!);
+            // const type = types[i].find(type => type.findAtom(label!) !== null)
+            // return type!.findAtom(label!);
+        });
 
-        if (atoms.includes(null)) throw Error('Unable to find all atoms in tuple');
+        if (atoms.includes(null)) {
+            throw Error('Unable to find all atoms in tuple');
+        }
 
         return atoms as Array<AlloyAtom>;
 
