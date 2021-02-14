@@ -223,9 +223,11 @@ export class AlloyField extends AlloyElement {
     /**
      * Returns a copy of this field's tuples.
      */
-    tuples (): AlloyTuple[] {
+    tuples (includeLNFalse?: boolean): AlloyTuple[] {
 
-        return this._tuples.slice();
+        return includeLNFalse
+            ? this._tuples.slice()
+            : this._tuples.slice().filter(t => t.attributes()['LN'] !== 'false');
 
     }
 

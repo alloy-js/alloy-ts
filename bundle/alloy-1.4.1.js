@@ -115,11 +115,13 @@
          *
          * @param id The unique identifier for this tuple
          * @param atoms The ordered array of atoms that comprise this tuple
+         * @param attributes A dictionary of key/value pair attributes
          */
-        constructor(id, atoms) {
+        constructor(id, atoms, attributes) {
             super(`{${atoms.map(atom => atom.name()).join('->')}}`);
             this._id = id;
             this._atoms = atoms;
+            this._attributes = attributes || {};
         }
         /**
          * Returns the number of atoms in this tuple.
@@ -132,6 +134,9 @@
          */
         atoms() {
             return this._atoms.slice();
+        }
+        attributes() {
+            return this._attributes;
         }
         /**
          * Returns true if this tuple is equivalent to the provided tuple. Tuples
@@ -195,7 +200,8 @@
         static buildFieldTuple(element, types) {
             let atoms = AlloyTuple._getTupleAtoms(element, types);
             let id = types[0].id() + '<:' + atoms.map(a => a.name()).join('->');
-            return new AlloyTuple(id, atoms);
+            const attrs = AlloyTuple._getTupleAttributes(element);
+            return new AlloyTuple(id, atoms, attrs);
         }
         /**
          * Assemble a tuple for a [[AlloySkolem|skolem]].
@@ -209,9 +215,10 @@
          * @param types The array of types for this tuple
          */
         static buildSkolemTuple(skolemName, element, types) {
-            let atoms = AlloyTuple._getTupleAtoms(element, types);
-            let id = skolemName + '<:' + atoms.map(a => a.name()).join('->');
-            return new AlloyTuple(id, atoms);
+            const atoms = AlloyTuple._getTupleAtoms(element, types);
+            const id = skolemName + '<:' + atoms.map(a => a.name()).join('->');
+            const attrs = AlloyTuple._getTupleAttributes(element);
+            return new AlloyTuple(id, atoms, attrs);
         }
         /**
          * Assemble the array of [[AlloyAtom|atoms]] that comprise a tuple.
@@ -230,6 +237,13 @@
             if (atoms.includes(null))
                 throw Error('Unable to find all atoms in tuple');
             return atoms;
+        }
+        static _getTupleAttributes(element) {
+            const attrs = {};
+            element.getAttributeNames().forEach(name => {
+                attrs[name] = element.getAttribute(name);
+            });
+            return attrs;
         }
     }
 
@@ -456,8 +470,10 @@
         /**
          * Returns a copy of this field's tuples.
          */
-        tuples() {
-            return this._tuples.slice();
+        tuples(includeLNFalse) {
+            return includeLNFalse
+                ? this._tuples.slice()
+                : this._tuples.slice().filter(t => t.attributes()['LN'] !== 'false');
         }
         /**
          * Returns a copy of the types that define the columns of this relation.

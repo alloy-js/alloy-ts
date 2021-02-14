@@ -3,6 +3,10 @@ import { AlloyAtom } from './AlloyAtom';
 import { AlloySignature } from './AlloySignature';
 import { AlloyWitness } from './AlloyWitness';
 
+interface Attributes {
+    [key: string]: string
+}
+
 /**
  * # AlloyTuple
  *
@@ -15,6 +19,7 @@ export class AlloyTuple extends AlloyWitness {
 
     private readonly _id: string;
     private readonly _atoms: Array<AlloyAtom>;
+    private readonly _attributes: Attributes;
 
     /**
      * Create a new Alloy tuple.
@@ -26,13 +31,15 @@ export class AlloyTuple extends AlloyWitness {
      *
      * @param id The unique identifier for this tuple
      * @param atoms The ordered array of atoms that comprise this tuple
+     * @param attributes A dictionary of key/value pair attributes
      */
-    constructor (id: string, atoms: Array<AlloyAtom>) {
+    constructor (id: string, atoms: Array<AlloyAtom>, attributes?: Attributes) {
 
         super(`{${atoms.map(atom => atom.name()).join('->')}}`);
 
         this._id = id;
         this._atoms = atoms;
+        this._attributes = attributes || {};
 
     }
 
@@ -51,6 +58,12 @@ export class AlloyTuple extends AlloyWitness {
     atoms (): Array<AlloyAtom> {
 
         return this._atoms.slice();
+
+    }
+
+    attributes (): Attributes {
+
+        return this._attributes;
 
     }
 
@@ -136,8 +149,9 @@ export class AlloyTuple extends AlloyWitness {
 
         let atoms = AlloyTuple._getTupleAtoms(element, types);
         let id = types[0].id() + '<:' + atoms.map(a => a.name()).join('->');
+        const attrs = AlloyTuple._getTupleAttributes(element);
 
-        return new AlloyTuple(id, atoms);
+        return new AlloyTuple(id, atoms, attrs);
 
     }
 
@@ -154,10 +168,11 @@ export class AlloyTuple extends AlloyWitness {
      */
     static buildSkolemTuple (skolemName: string, element: Element, types: Array<AlloySignature>): AlloyTuple {
 
-        let atoms = AlloyTuple._getTupleAtoms(element, types);
-        let id = skolemName + '<:' + atoms.map(a => a.name()).join('->');
+        const atoms = AlloyTuple._getTupleAtoms(element, types);
+        const id = skolemName + '<:' + atoms.map(a => a.name()).join('->');
+        const attrs = AlloyTuple._getTupleAttributes(element);
 
-        return new AlloyTuple(id, atoms);
+        return new AlloyTuple(id, atoms, attrs);
 
     }
 
@@ -181,6 +196,18 @@ export class AlloyTuple extends AlloyWitness {
         if (atoms.includes(null)) throw Error('Unable to find all atoms in tuple');
 
         return atoms as Array<AlloyAtom>;
+
+    }
+
+    private static _getTupleAttributes (element: Element): Attributes {
+
+        const attrs: Attributes = {};
+
+        element.getAttributeNames().forEach(name => {
+            attrs[name] = element.getAttribute(name)!;
+        });
+
+        return attrs;
 
     }
 
