@@ -1,5 +1,7 @@
 {
-  "excludeNotExported": true,
-  "includes": "src/",
-  "mode": "file"
+  "categorizeByGroup": true,
+  "entryPoints": ["./src"],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "hideGenerator": true
 }
